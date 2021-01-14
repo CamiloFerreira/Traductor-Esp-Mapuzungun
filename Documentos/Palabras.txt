@@ -67,11 +67,11 @@ ALWE CHEL: Fantasma con forma humana.
 ALWE MAPU: Tierra de los muertos.
 ALLMALL: Menos mal, que bueno.
 ALLKN: Escuchar, oír.
-ALLK GWE: Oído
+ALLK GWE: Oído.
 ALLK TUWE: Lugar donde escuchar.
 ALLK TUPAN: Vine a escuchar.
-ALLK TUPEN: Estoy escuchando
-ALLKTU PAPEN: Vine a escuchar
+ALLK TUPEN: Estoy escuchando.
+ALLKTU PAPEN: Vine a escuchar.
 ANGE: Rostro, cara.
 ANTG/ ANTÜ: Sol, día.
 ANüNGE: Siéntate o toma asiento.
@@ -95,11 +95,7 @@ AKULN: Traer.
 AKUN LEGFG: Lugar donde llega el río.
 ALNCHE: Harta gente.
 AILLA KOIAM: Nueve robles.
-AILLA RHEWE: Nueve comunidades unidas por un
-pacto político de defensa mutua y el reconocimiento
-de sus integrantes a un jefe o gobernador, el ngidol
-lonko. Más allá del numeral, el aillarehue puede
-estar constituido por número variable de rhewe.
+AILLA RHEWE: Nueve comunidades unidas por un pacto político de defensa mutua y el reconocimiento de sus integrantes a un jefe o gobernador, el ngidol lonko.
 ARHEN: Calor.
 ARHENKO: Agua caliente.
 ALN: Harto, mucho.
@@ -187,13 +183,7 @@ BOROWA o FORHOWA: Coronta de Choclo.
 BORHO o FORHO: Hueso o diente, depende del
 contexto de la frase o conversación.
 BOTM o FOTM: Hijo por parte del padre.
-BOKI o FOKI: Enredadera, enredadera que crece
-en la sombra en medio del bosque más frondoso,
-es una enredadera tupida en que se fábrica todo
-tipo de cestería como; llepg, klko o chaiwe, paneras,
-canasto se elabora fibra fina para coser o amarrar
-en la construcción de la rhuka, también para cordel
-para animales.
+BOKI o FOKI: Enredadera, enredadera que crece en la sombra en medio del bosque más frondoso, es una enredadera tupida en que se fábrica todo tipo de cestería como; llepg, klko o chaiwe, paneras, canasto se elabora fibra fina para coser o amarrar en la construcción de la rhuka, también para cordel para animales.
 BOCHAN o FOCHAN: Rastrojo.
 BGTA o FGTA: Esposo, cónyuge.
 BDG o FDG: Perdiz.
@@ -203,25 +193,16 @@ BUNAI o FUNAI: Podrido.
 BURHE o FURHE: Picante.
 BUCHEN o FUCHEN: Silvestre.
 BIO-BIO o FIU-FIU: Pájaro que canta Fiufiu.
-BOLU o FOLU: Árbol o arbusto medicinal que
-contiene un alcaloide, la boldina. Es de hojas
-ásperas, coriáceas, fragantes, follaje verde oscuro,
-frutos dulces.
-BGTAKOIAM o FGCHAKOIAM: Inmenso roble, roble
-grande.
+BOLU o FOLU: Árbol o arbusto medicinal que contiene un alcaloide, la boldina. Es de hojas ásperas, coriáceas, fragantes,follaje verde oscuro,frutos dulces.
+BGTAKOIAM o FGCHAKOIAM: Inmenso roble, roble grande.
 CHALLWA: Pescado.
 CHALLWATUN: Comer o consumir pescado.
 CHALLWAN: Pescar.
 CHALLWAPAN: Venir a pescar.
 CHALIN: Saludar, encuentro.
 CHALITUN: Saludar.
-CHAMALL o KPAM: Indumentaria consistente
-originalmente en un tejido al Telar de lana de
-chileweke (llamo), después de lana de oveja, un paño
-rectangular sin costura que envuelve a la mujer que
-es similar a un vestido entero que cubre hasta más
-abajo de la rodilla, lleva woltrhg (tejido fino de color
-vistoso como aplicación en todo el contorno).
+CHAMALL o KPAM: Indumentaria consistente originalmente en un tejido al Telar de lana de chileweke (llamo), después de lana de oveja, un paño rectangular sin costura que envuelve a la mujer que es similar a un vestido entero que cubre hasta más
+abajo de la rodilla, lleva woltrhg (tejido fino de color vistoso como aplicación en todo el contorno).
 CHAU: Padre, papá.
 CHAUANTG: Padre Sol.
 CHAWAI: Aro.
@@ -241,13 +222,8 @@ CHAF-FEI: Igualmente.
 CHAFO: Resfriado con fiebre.
 CHAKAIKO: Aguada de los chacales.
 CHE: Persona, gente, ser humano.
-CHE TRHUKN: Respetar como persona a otra,
-especialmente mayores, escucharle, apoyarlo en su petición, no desobedecerle, no insultarlo, ETC.
-CHERHUFE O CHERHUBE: Ser turbio, Bola de fuego
-que emerge desde las alturas que se dejan ver y de
-acuerdo a la ubicación de su caída con sus energías
-absorbe personas que luego morirá, es decir, se
-distingue por anuncios negativos.
+CHE TRHUKN: Respetar como persona a otra, especialmente mayores, escucharle, apoyarlo en su petición, no desobedecerle, no insultarlo, ETC.
+CHERHUFE O CHERHUBE: Ser turbio, Bola de fuego que emerge desde las alturas que se dejan ver y de acuerdo a la ubicación de su caída con sus energías absorbe personas que luego morirá, es decir, se distingue por anuncios negativos.
 CHEMKN: Cosa, algo.
 CHEUKE: Flamenco.
 CHEUKETNG: Flamenco domado.
@@ -262,8 +238,7 @@ CHLLFG LONGKO: Mente suelta.
 CHPIL-LONGKO: Despeinado (a).
 CHUMI CHIAM: Que le habrá sucedido.
 CHINGAI: Fleco.
-CHINGAN: Alimento obsequiado en una ceremonia
-y se guarda de vuelta a casa.
+CHINGAN: Alimento obsequiado en una ceremonia y se guarda de vuelta a casa.
 CHILKO: Planta medicinal, también se usa para
 teñir, produce una flor de tono fucsia.
 CHILLWE: Gaviota.
@@ -285,19 +260,14 @@ DHNGUN: Hablar, conversar.
 DHNGULN: Hablarle a alguien.
 DHAWN: Hacer mal.
 DHAF KALAN: No Cultivar la Tierra con azadón.
-DHATUN: Ceremonia de tratamiento para la sanar
-enfermo, realizado por MACHI, con presencia de la
-familia y/o del LOFCHE (Comunidad) la participación
-y apoyo es colectivo. Esto es el mal llamado
-“Machitun”, que literalmente significa tomar la o
-el Machi. La terminación TUN: Significa tomar,
-agarrar, sujetar, comer; (Ej.; kofketun: comer pan,
-chilkatun: estudiar, Kdhautun: hacer un trabajo), por
-lo tanto Machitun; está mal usado.
+DHATUN: Ceremonia de tratamiento para la sanar enfermo, realizado por MACHI, con presencia de la familia y/o del LOFCHE (Comunidad) la participación y apoyo es colectivo. Esto es el mal llamado “Machitun”, que literalmente significa tomar la oel Machi. 
+TUN: Significa tomar,agarrar, sujetar, comer; 
+kofketun: comer pan.
+chilkatun: estudiar.
+Kdhautun: hacer un trabajo.
 DHATUWE: Lugar apto para la realización de
 Dhatun; ceremonia de sanación con Machi.
-DHEA: Mujer joven, soltera, familiar o amiga de un
-varón.
+DHEA: Mujer joven, soltera, familiar o amiga de un varón.
 DHEIU: Junto, en conjunto.
 DHEIULN: Juntar.
 DHEIUL-LAN: No juntar.
@@ -345,15 +315,7 @@ EIMN: Ustedes más de dos (tres o más).
 ECHEL: Reserva de comida del día anterior.
 ECHIU: Estornudar.
 EKULL: Frazada, abrigo.
-ELUWON: Ceremonia fúnebre, Funeral, la traducción
-textual significa preparación a una partida. En
-el Pueblo Mapuche el ELUWN: Es una ceremonia
-de despedida que hace la familia el LOFCHE a su
-difunto, especialmente a los mayores en donde
-se participa en forma colectiva en que se hacen
-WEUPIN, AMULPGLLIN, CHARHUTUN, en que todas las
-familias aportan con alimentación para compartir
-en la despedida del difunto.
+ELUWON: Ceremonia fúnebre, Funeral, la traducción textual significa preparación a una partida.
 ELN: Dejar.
 EL-AN: no dejar.
 ELMEN: Fui a dejar.
@@ -432,8 +394,7 @@ GFL o PALI: Pelota de madera para jugar palín.
 GHIEU: Allá.
 GKL: Apretado.
 GKLKLEI: Está apretado.
-IÑCHE: Yo. (Pronombres personales; da énfasis a la
-dualidad en primera, segunda y tercera persona).
+IÑCHE: Yo.
 IÑCHU: Nosotros dos, dualidad.
 IÑCHIÑ: Nosotros más de dos.
 EIMI: Tú
@@ -469,47 +430,27 @@ AFN-ILO: Carne a la olla.
 ILHO KORHG: Cazuela.
 KORHG: Sopa.
 MRHKE: Harina tostada.
-MRHKE KORHG: Sopa de harina tostada con huevo,
-papas, sal y cilantro. Se consume de madrugada.
-ÑACHI: Primera sangre del animal aliñada con
-verduras, ají, limón, se cuaja y se consume.
+MRHKE KORHG: Sopa de harina tostada con huevo,papas, sal y cilantro. Se consume de madrugada.
+ÑACHI: Primera sangre del animal aliñada con verduras, ají, limón, se cuaja y se consume.
 ÑACHITUN: Consumir Ñachi.
-APOL: Pulmón del animal recién extraído, condimentado, relleno, pre-cocido, debe quedar al dente
-para consumirlo.
+APOL: Pulmón del animal recién extraído, condimentado, relleno, pre-cocido, debe quedar al dente para consumirlo.
 APOLTUN: Consumir apol.
 KARHGTU: Pana recién extraída, picada, aliñada con
 verduras y limón.
 KARHGTUN: Comer, consumir karhgtu.
 CHARHKI: Carne de caballo, cosida en sal, oreada
 al humo.
-PIDHKU: Especie de guiso hecha de diferentes
-cereales, legumbres, sin mayor condimento con
-químico.
-AFNWA: Choclo cosido, se puede acompañar con
-carne u otro producto que se desee.
-MANANGKU: Harina cocida con grasa, aliñado con
-cebolla picada fina, reemplaza el pan.
-MILKAO: Es papa molida tipo puré que se mezcla
-con papa rayada seca, se amasa, se agrega harina,
-comúnmente se le da forma circular y se fríe, se
-recomienda servirlo recién hecho.
-MLLOKIÑ: Cereal cosido molido, apanado, puede
-ser al natural como con sal y/o verduras, reemplaza
-el pan.
-MLTRHN: También conocido por el nombre de
-Catuto. Se prepara de trigo cosido, molido apanado
-muy finamente, puede consumirse al natural o con
-otros ingredientes como sal, mermelada, pasadas
-en aceite, ETC. También sustituye el pan.
+PIDHKU: Especie de guiso hecha de diferentes cereales, legumbres, sin mayor condimento con químico.
+AFNWA: Choclo cosido, se puede acompañar con carne u otro producto que se desee.
+MANANGKU: Harina cocida con grasa, aliñado con cebolla picada fina, reemplaza el pan.
+MILKAO: Es papa molida tipo puré que se mezcla con papa rayada seca, se amasa, se agrega harina, comúnmente se le da forma circular y se fríe, se recomienda servirlo recién hecho.
+MLLOKIÑ: Cereal cosido molido, apanado, puede ser al natural como con sal y/o verduras, reemplaza el pan.
+MLTRHN: También conocido por el nombre de Catuto. Se prepara de trigo cosido, molido apanado muy finamente, puede consumirse al natural .
 KAKO: Es mote que puede ser de WA: Maíz,
-KAWELLA: Cebada. KACHILLA: Trigo; Hervido, pelado
-con ceniza y se consume frío o caliente con sal o
-azúcar o al natural.
-TKN: Es de trigo limpio partido semi-molido, similar
-al quaquer, que es para espesar sopa, guiso, con
-leche, ETC.
-TIKN KORHG: Sopa de locro solo con papa y verdura
-o con cazuela de cerdo, pollo, ETC.
+KAWELLA: Cebada. 
+KACHILLA: Trigo; Hervido, pelado con ceniza y se consume frío o caliente con sal o azúcar o al natural.
+TKN: Es de trigo limpio partido semi-molido, similar al quaquer, que es para espesar sopa, guiso, con leche, ETC.
+TIKN KORHG: Sopa de locro solo con papa y verdura o con cazuela de cerdo, pollo, ETC.
 POÑI: Papa.
 KOFN POÑI: Papa asada en ceniza o al rescoldo.
 MALLUPOÑI: Papas cosidas.
@@ -517,25 +458,14 @@ CHELKO POÑI: Sopa a base de papas con
 condimento.
 KOFKE POÑI: Pan de papa.
 KOIWE: Árbol nativo de hojas peremnes
-FUNA POÑO: Chuño, papas puestas en humedad
-por un determinado tiempo.
+FUNA POÑO: Chuño, papas puestas en humedad por un determinado tiempo.
 RHNGO: Harina cruda.
 FUÑFUÑ: Sopa con harina cruda refregada.
 RHNGALTKU KOFKE: Tortilla al rescoldo.
-IWIÑKOFKE: Sopaipilla, masa frita con grasa de
-caballo.
-ZIMITA: Sopaipilla cocidas al agua, aliñado se
-consume con la sopa.
-CHANGD O CHANGLE: Planta similar a los
-champiñones de color amarillo que sale en lo
-montes con abundancia de Tierra de hoja, el cual
-se sancocha y luego se hacen fritas con manteca,
-cebollas, huevo y aliños para servirlo con papas
-cocidas, pan o mllokiñ.
-ÑENGM: Diweñe o llamado hongo por los
-occidentales; que es un fruto que produce el
-walle (roble) se pueden consumir como pebre con
-verduras o fritos con huevos y verduras.
+IWIÑKOFKE: Sopaipilla, masa frita con grasa de caballo.
+ZIMITA: Sopaipilla cocidas al agua, aliñado se consume con la sopa.
+CHANGD O CHANGLE: Planta similar a los champiñones de color amarillo que sale en lo montes con abundancia de Tierra de hoja, el cual se sancocha y luego se hacen fritas con manteca, cebollas, huevo y aliños para servirlo con papas cocidas, pan o mllokiñ.
+ÑENGM: Diweñe o llamado hongo por los occidentales; que es un fruto que produce el walle (roble) se pueden consumir como pebre con verduras o fritos con huevos y verduras.
 IAFG: Duro.
 IEN: Llevar.
 ILHLU: Leche.
@@ -601,18 +531,13 @@ KATAN: Perforar
 KATAN PILUN: Perforar oreja.
 KARHA: Pueblo.
 KG-LA: Número tres.
-KOLIWE O KG-LA: Coligüe, Arbusto que palos finos
-muy preciado para la construcción de los techos y
-paredes de la rhuka.
+KOLIWE O KG-LA: Coligüe, Arbusto que palos finos muy preciado para la construcción de los techos y paredes de la rhuka.
 KILANTU: Monte de coliwe.
 KG-LAKOIAM: Tres montes.
 KG-LA WEZKE: Tres contras
 KELLM O KELIN: Enrojecido.
-KILLAI: Árbol que crece muy alto que se uso
-ancestralmente como champú o detergente a su
-vez es medicinal.
-KINCHAMALI: Hierba medicinal que crece en las
-alturas, especialmente indicado para el resfriado.
+KILLAI: Árbol que crece muy alto que se uso ancestralmente como champú o detergente a su vez es medicinal.
+KINCHAMALI: Hierba medicinal que crece en las alturas, especialmente indicado para el resfriado.
 KIMN: Sabiduría, conocimiento.
 KIMCHE: Gente Sabia.
 KIMNCHE: Conocimiento de la gente.
@@ -624,8 +549,7 @@ KODKILLARAIEN: Copihue, flor nativa.
 KOÑIN: Parir.
 KOÑIÑ/CHOIUN: NACIMIENTO MAPUCHE.
 KOM: Todos.
-KON: Identificación al jugador que hace de
-contraparte en el palin y se le atiende de lo mejor.
+KON: Identificación al jugador que hace de contraparte en el palin y se le atiende de lo mejor.
 KONN: Entrar.
 KONKON: Ave que hace anuncios negativos.
 KÜLFUN: Agil, alentado.
@@ -673,23 +597,16 @@ LLALLA: Suegra.
 CHEDHKUI: Suegro, el padre de la esposa.
 CHEDHKUIWEN: denominación entre suegro y yerno.
 ÑOÑO: Bis abuelo, padre o madre de los abuelos.
-(La denominación del parentesco en un tanto largo,
-complejo, pero, con mucha precisión, motivo por el
-que dejamos parte pendiente para el otro número
-del CHILKATUWE).
 KTIL: Loco, desordenado.
-KULLKULL: Instrumento de viento, hecho de
-hasta de vacuno que emiten sonidos de llamado,
-usado sólo por varones.
-KURHA: Piedra.
+KULLKULL: Instrumento de viento, hecho de hasta de vacuno que emiten sonidos de llamado,usado sólo por varones.
+KURHA: Piedra. 
 KURHGLEMU: Monte negro o monte oscuro.
 KURHA MAÑKE: Cóndor de Piedra.
 KURHA MILLA: Piedra Dorada
 KURHA PANGUI: Puma de piedra.
 KURHA MALAL: Corral de piedra.
 KURHG PULLI: Tierra oscura.
-KURHG ñAMKU: Águila Negra. Padre de Lautaro y
-nombre de otro gran cacique del siglo XVIII.
+KURHG ñAMKU: Águila Negra. Padre de Lautaro y nombre de otro gran cacique del siglo XVIII.
 LA: Muerto.
 LAN: Morir.
 LAI: Murió
@@ -720,10 +637,7 @@ LIKANKURHA: Piedra poderosa.
 LIKAN ANTG: Astro sol poderoso.
 LONGKO: Jefe o cabeza, depende del contexto.
 LOLO: Hoyo.
-LOFCHE: Comunidad, es la segunda unidad esencial
-de existencia entre parentesco después del KUNL
-(familia) que conforman lo que actualmente se
-llama reducción.
+LOFCHE: Comunidad, es la segunda unidad esencial de existencia entre parentesco después del KUNL (familia) que conforman lo que actualmente se llama reducción.
 LONGKOPANGUI: Cabeza de puma.
 LONKOMILLA: Cabeza dorada o de oro.
 LPMN: Quemar.
@@ -740,230 +654,69 @@ LLAI: Alejarse solo.
 LLALLIÑ: Araña.
 LLAPD: Escarcha.
 LLEPEIÑ: Hormiga.
-LLEPG: Bandeja redonda, grande, de mimbre, se usa
-para ventear cereales, trigo, maíz, ETC.
+LLEPG: Bandeja redonda, grande, de mimbre, se usa para ventear cereales, trigo, maíz, ETC.
 DHULLIÑMAWIDHA: Monte escogido o predilecto.
-DHKEKO: Un jeme (medida de hondura) del agua.
-Río que con el Laja configuran lo que se denomina
-Isla del Laja en la Frontera. Nace del volcán Antuco y
-desemboca por la ribera norte del BíoBío.
+DHKEKO: Un jeme (medida de hondura) del agua. Río que con el Laja configuran lo que se denomina Isla del Laja en la Frontera. Nace del volcán Antuco y desemboca por la ribera norte del BíoBío.
 DHKIWALA: Pato atascado.
-ELIKURHA: Dejó Piedra, Nombre de un cacique
-contemporáneo de Lautaro y que le da nombre
-al paraje donde vivió, los valles de la cordillera de
-Nahuelbuta que bajan hasta el lago Lanalhue.
-IKALMA: La Encajada.
-Laguna de la cordillera de Lonquimay, “encajada”
-en sus estribaciones. Una de las fuentes del Bío-Bío
-y próxima a ella se encuentra un paso andino muy
-frecuentado por su baja altura.
-ITATA: Donde abunda el pastoreo.
-Río importante que nace en Los Andes y que con
-curso oeste traviesa las serranías de Cholguán
-entre densas selvas, para ya en el valle recibir el
-tributo del río Ñuble. Desemboca en el Pacífico en
-el lugar denominado Punta Coico, donde se forman
-las conocidas Vegas de Itata.
+ELIKURHA: Dejó Piedra, Nombre de un cacique contemporáneo de Lautaro y que le da nombre al paraje donde vivió, los valles de la cordillera de Nahuelbuta que bajan hasta el lago Lanalhue.
+IKALMA: La Encajada. Laguna de la cordillera de Lonquimay, “encajada” en sus estribaciones. Una de las fuentes del Bío-Bío y próxima a ella se encuentra un paso andino muy frecuentado por su baja altura.
+ITATA: Donde abunda el pastoreo. Río importante que nace en Los Andes y que con curso oeste traviesa las serranías de Cholguán entre densas selvas, para ya en el valle recibir el tributo del río Ñuble. Desemboca en el Pacífico en el lugar denominado Punta Coico, donde se forman las conocidas Vegas de Itata.
 IFMTU: Aves, animales en general.
-LAWAL Ciprés o Alerce. Es una conífera que alcanza
-los 60 metros. Habita entre los 500 y 1000 metros.
-De tronco recto, su madera es sumamente preciada
-por el hermoso color rojo oscuro con vetas en relieve
-y por su gran resistencia a la humedad. Virtudes que
-los han convertido en especie en extinción.
-LANALWE: Alma muerta
-Hermoso lago enclavado en la vertiente E de
-Nahuelbuta, extendiéndose en su eje mayor hacia
-el oeste, para desaguar al mar por el río Paicabí. La
-rodeaban en tiempos pasados espesos bosques,
-hoy destruidos por el hombre. A él se abre el valle
-de Elicura y en su extremo oriental se alza la cuesta
-de Purén.
-LAPELAPE: Grito de guerra de los mapuches.
-¡A muerte! (Lape es muerte; la repetición de la 
-58
-palabra indica idea de intensidad, abundancia o
-agrupamiento).
-LARHKETRHE O LARAQUETE: Barranca en forma
-de mentón.
-Cerro de mediana altura que se desprende del
-cordón central de la cordillera de Nahuelbuta y
-avanza hacia el mar, cortándose en su orilla de
-forma abrupta. Se alza entre el río y quebrada de
-CHLLFG LONGKO o Chifilongko por el norte y el río
-Larhaketrhe por el sur. En su cumbre se desarrolló
-la primera parte de la batalla de MARHIWENU
-O Marihuenu, en la que LEFTRHARHU O Lautaro
-derrotó y puso en fuga a Francisco Villagra (26 de
-febrero de 1554).
+LANALWE: Alma muerta. LAPELAPE: Grito de guerra de los mapuches. ¡A muerte! (Lape es muerte; la repetición de la palabra indica idea de intensidad, abundancia o agrupamiento).
+LARHKETRHE O LARAQUETE: Barranca en forma de mentón.Cerro de mediana altura que se desprende del cordón central de la cordillera de Nahuelbuta y avanza hacia el mar, cortándose en su orilla de forma abrupta. 
 LEFTRHARHU (Lautaro): Aguila Veloz. (Ver traro)
 LEMULEMU: Bosque Frondoso.
 LEMUNAG: Abajo en el monte.
 LEMULLANKA: Piedrecillas del bosque.
-LIENTUR O LIG-EMTUHRPU: Exactamente todo
-blanco (Lig-emturrh) Blanco en la totalidad.
+LIENTUR O LIG-EMTUHRPU: Exactamente todo blanco (Lig-emturrh) Blanco en la totalidad.
 LILPGLLI: Loma de los riscos.
-LIGMAI: Emblanquecido
-LIGKOM: Todo blanco
+LIGMAI: Emblanquecido.
+LIGKOM: Todo blanco.
 LIGKOPANGI: Agua cristalina del sol.
-LIGKOIAM: Roble blanco. Nombre de un jefe militar
-aliado de Lautaro.
-LINGUE o LIGNGE: Uno de los arboles más
-característico de los bosques mapuches. Se alza
-casi a la altura de los coyanes (veinticinco -
-treinta metros). Produce un fruto que es una baya
-de color violáceo oscuro, casi negra, nacida de
-flores profusas y amarillas que se dan en forma de
-umbela: Su madera es óptima y de gran belleza,
-utilizándose en la fabricación de muebles finos.
-Su corteza contiene mucho tanino, excelente para
-la curtiembre de cueros, además de utilizarse
-como colorante; como infusión, es un astringente
-poderoso. 
+LIGKOIAM: Roble blanco. Nombre de un jefe militar aliado de Lautaro.
+LINGUE o LIGNGE: Uno de los arboles más característico de los bosques mapuches. Se alza casi a la altura de los coyanes (veinticinco - treinta metros). 
 LGPINAGMEU: Plumas abajo.
-LOFNOPAN: Venir del otro extremo del LOF o
-comunidad.
+LOFNOPAN: Venir del otro extremo del LOF o comunidad.
 LONGKOPANGI: Cabeza de puma.
 LONGKOTURH: Gran jefe.
 LONGKO: Cabeza, y figurado, jefe.
-LONKIMAI: Efectivamente parece jefe.
-Volcán de la cordillera de Los Andes, al oeste del
-curso superior del BíoBío, vecino (al sur) del volcán
-Tolhuaca.
+LONKIMAI: Efectivamente parece jefe. Volcán de la cordillera de Los Andes, al oeste del curso superior del BíoBío, vecino (al sur) del volcán Tolhuaca.
 LUAN: Guanaco.
-LUMA: Árbol mirtáceo de madera dura y resistente
-a la humedad. Con su madera se confeccionaban
-utensilios como platos, cucharas, cachiporras,
-mazos de guerra, arados rudimentarios, etc.
-LUMAKO: Aguada de las lumas.
-Paraje pantanoso en las faldas orientales del
-Nahuelbuta, próximo a la cuesta de Purén.
-LLAIMA: Significa desaguadero y también, valle.
-Volcán de la cordillera de Los Andes coronado por
-nieves eternas que se distinguen desde largas
-distancias. En sus faldas crecen las araucarias y está
-rodeado de pequeños lagos que configuran parte
-de la cuenca del Cautín.
+LUMA: Árbol mirtáceo de madera dura y resistente a la humedad. Con su madera se confeccionaban utensilios como platos, cucharas, cachiporras mazos de guerra, arados rudimentarios, etc.
+LUMAKO: Aguada de las lumas.Paraje pantanoso en las faldas orientales del Nahuelbuta, próximo a la cuesta de Purén.
+LLAIMA:desaguaderom valle. Volcán de la cordillera de Los Andes coronado por nieves eternas que se distinguen desde largas distancias. 
 LLAMGKO: Valle.
-LLANKA: De llanca: piedrecitas azul verdosa que se
-utilizaban de adornos.
-LLANKAN: Denominación de la asistente del o de
-la Machi.
+LLANKA: De llanca: piedrecitas azul verdosa que se utilizaban de adornos.
+LLANKAN: Denominación de la asistente del o de la Machi.
 LLANK-LEN: Estoy caído, sólo, o suelto.
 LLÑKINAWEL: Tigre rana
-LLANTEN: Hierba de hojas dentadas y de nervios
-muy marcados. Es medicinal y se usa principalmente
-para cicatrizar heridas, y como infusión, para ulceras.
-MAKANA: Mazo de guerra grueso en su parte
-activa y fino en la empuñadura para asirlo con
-una sola mano, midiendo alrededor de un metro y
-construido con madera muy densa, generalmente
-con luma. Los registros de su uso lo datan sólo para
-el siglo XVI.
-MACHI: Médico, muy brevemente lo podemos
-definir como Terapeuta familiar, que son
-principalmente mujeres que son absorbidas por
-las antiguas energías positivas y negativas, se
-transforman en personas con conocimientos,
-habilidades, sensibilidades pocos explicables en
-castellano. Sufren un rotundo cambio sobre sus
-energías y espíritu, adquieren sabiduría por medio
-de sueños y cumplen el rol de dirigir ceremonias
-sagradas en el LOFCHE (comunidad). El rol esencial
-que cumplen los o las MACHI es el de respeto,
-sanidad y unidad. La ceremonia de curación se
-llama.
-DHATUN, ceremonia de tratamiento de sanación a
-cargo del o de la MACHI.
+LLANTEN: Hierba de hojas dentadas y de nervios muy marcados. Es medicinal y se usa principalmente para cicatrizar heridas, y como infusión, para ulceras.
+MAKANA: Mazo de guerra grueso en su parte activa y fino en la empuñadura para asirlo con una sola mano, midiendo alrededor de un metro y construido con madera muy densa, generalmente con luma. Los registros de su uso lo datan sólo para el siglo XVI.
+MACHI: Médico, muy brevemente lo podemos definir como Terapeuta familiar, que son principalmente mujeres que son absorbidas por las antiguas energías positivas y negativas.
+DHATUN:ceremonia de tratamiento de sanación a cargo del o de la MACHI.
 MAICHIN: Llamado con seña con la mano.
 MAITEN: Árbol de uso medicinal.
 MAITENRHEWE: Rhewe de maiten.
-MAKUÑ: Manta, hecho en telar con diferentes
-diseños propios, para niños, adultos, Longko, que
-usan los hombres Mapuche (s).
+MAKUÑ: Manta, hecho en telar con diferentes diseños propios, para niños, adultos, Longko, que usan los hombres Mapuche (s).
 MALHEN: Mujer
-MALLE: Tío carnal. Apelativo de los niños a sus
-mayores. Trato afectuoso entre adultos
-MALLEKO: Malle deformado de mallo, greda blanca;
-y ko, agua. Río que nace en el volcán Tolhuaca y va a
-unirse al río Trolpangui (El paso del puma), llamado
-hoy Vergara (Bergara).
-MALLIN: Aguazal, bajos aguachentos. Por extensión
-se denominan así las plantas que crecen en ese.
-MALON: Podía ser cualquier tipo de violencia,
-y entre los más comunes estaba el robo y el
-compromiso incumplido, o un pretendido insulto;
-también debe considerarse la invasión de territorios
-de caza ajenos. Generalmente el conflicto entraba
-a negociación de las partes y si no se llegaba a un
-acuerdo, daba paso al malón: un ataque por sorpresa
-al ofensor o enemigos de otro rehue; si se triunfaba,
-fuera de resarcirse materialmente, se restauraban
-los respetos y equilibrios al demostrar fortaleza
-frente al resto de los rehues, y restituyendo también
-de este modo, el sentido de su propia seguridad. La
-presencia del conquistador no permitió facilitar los
-malones.
-La presencia del Wingka y la adopción generalizada
-del caballo modificaron sustancialmente la
-situación maloquera. Los Rewe (s) al romper su
-proverbial aislamiento formando aillarewe y
-confederaciones, llegado los momentos de paz
-con el español, eran entonces estas alianzas debían
-establecer sus equilibrios de poder. En estos casos,
-si un Rewe se sentía agraviado, potencialmente
-comprometía a todo el aillarewe en su dispositivo
-de reparaciones; de una situación bipolar se pasaba
-a una multipolar. Además con el caballo, el malón
-se amplió acortando los espacios maloqueros.
-Lo que en un tiempo pudo haber sido la disputa
-entre dos rewe(s), distantes a lo más a una decena
-de kilómetros, ahora los conflictos multipolares
-envolvían territorios superando la centena.
+MALLE: Tío carnal. Apelativo de los niños a sus mayores. Trato afectuoso entre adultos
+MALLEKO: Malle deformado de mallo, greda blanca.
+MALLIN: Aguazal, bajos aguachentos. Por extensión se denominan así las plantas que crecen en ese.
+MALON: Podía ser cualquier tipo de violencia, y entre los más comunes estaba el robo y el compromiso incumplido, o un pretendido insulto;
+también debe considerarse la invasión de territorios de caza ajenos. 
 MALIKEO: Donde se origina el deseo negativo.
 MAMÜLLMAPU: Tierra Arbolada. Tierra de las Leñas.
-La región pampeana comprendida por el Chadileufú
-en el oeste, la línea que pasa desde la Sierra de
-la Ventana a Trenel y se proyecta a Las Tunas por
-el este; luego, por el norte, el río Quinto y al sur,
-el río Colorado. Es la extensa área donde estaban
-asentadas las comunidades rhankele; otros las
-denominan mamllche(s) y hay quienes establecen
-diferencias entre estos dos gentilicios, lo cual no
-compartimos.
-MNULWE o MNUWE: Adornos fantásticos que
-llevaban antiguos guerreros en la cabeza; penachos
-de plumas y más frecuentemente cabezas de
-animales (zorros, gatos monteses, etc.). También se
-utilizaba en fiestas.
+MNULWE o MNUWE: Adornos fantásticos que llevaban antiguos guerreros en la cabeza; penachos de plumas y más frecuentemente cabezas de animales (zorros, gatos monteses, etc.). También se utilizaba en fiestas.
 MANGILWENU: Cielo que anuncia la subida de ríos.
-MAÑIO: Conífera siempre verde y de ramas muy
-tupidas. Su madera se utiliza para la construcción
-y mueblería.
+MAÑIO: Conífera siempre verde y de ramas muy tupidas. Su madera se utiliza para la construcción y mueblería.
 MAÑKE: Cóndor.
-MANKEL: Nombre ancestral que significa para dar
-un punta píe.
+MANKEL: Nombre ancestral que significa para dar un punta píe.
 MAÑKELPI O MAÑKELIPI: Pluma de Cóndor
-MAPOCHO: De mapu - ch (e-c) o. Río de los
-mapuche(s)
+MAPOCHO: De mapu - ch (e-c) o. Río de los mapuche(s)
 MAPU: Tierra, país, patria.
 MAPUDNGUN: Lengua, habla o hablar de la tierra.
-Idioma guardando un lugar destacado entre las lenguas milenarias de América, por la expresividad y
-precisión de su vocabulario, sobre todo en lo que se
-refiere al pensamiento y al sentimiento, El Mapudngun; ancestralmente ha sido transmitido en forma
-oral, por lo tanto, en su uso lo más importante es su
-buena pronunciación y la escritura sin dejar de ser
-importante podría ser secundario. Destacamos algunas reflexiones expertas sobre esta lengua. De
-Bernardo Havestadt, autor del famoso Chilidüngun
-escrito en latín: “Aun cuando sirve a los bárbaros, la
-lengua Mapuche no es salvaje. Por el contrario, está
-por encima de las restantes lenguas, como las cimas
-de Los Andes sobrepasan a las demás cadenas montañosas. Quien las domina, ve a las restantes lenguas
-como obscurecidas a sus plantas y notan todo lo que
-tienen de deficiente y de superfluo”. Valga contextualizar que Havestadt dominaba ocho lenguas.
-MARHICHIWEU: Es una frase emblemática que
-significa diez veces venceremos.
-MARHIWALL: MARIHUAL: Diez vueltas alrededor.
+MARHICHIWEU: Es una frase emblemática que significa diez veces venceremos.
+MARHIWALL o  MARIHUAL: Diez vueltas alrededor.
 MARHILUAN: Diez Huanacos.
 MARHIPI: Diez veces dijo.
 MARHIPOWAL: Faltan diez para llegar.
@@ -973,42 +726,10 @@ MARHI: Diez, 10
 MARHILUAN: Diez guanacos.
 MARHILLANGKA: Diez piedras preciosas
 MARHIPILLANG: Diez volcanes.
-MAULE: Sí llueve, Indica estado: Estar con lluvia.
-Río caudaloso que marca el límite norte de la
-región histórica llamada La Frontera. Sólo como
-constatación de hecho, históricamente El Maule
-separa dos formas de conquista con características
-totalmente diferentes. La de Santiago al Maule en
-que la violencia es suficiente para la expropiación y
-ocupación del espacio en detrimento de sus dueños
-originales. En cambio, desde el Maule al sur, la
-violencia fue insuficiente para lograr los objetivos
-de conquista, estableciéndose de este modo,
-relaciones sociales y espaciales entre Mapuche (s)
-y españoles, que pueden considerarse únicas en
-América, mencionar dos conquistas es hacer una
-diferencia, porque la Conquista fue sólo una, pese a
-todo lo que ha sucedido internamente.
-MELIPGLLI O MELIPULLI: Cuatro cerros. Nombre
-dado a la rada de Puerto Montt.
-MEDHKEN O MEZKN: Traducción literal es algo
-molido, sin embargo, así se distingue la preparación
-milenaria propia del ají seco Mapuche, ahumado,
-tostado, molido que se aliña en seco o se prepara con pebre, es el principal saborizante del Pueblo
-Mapuche.
-MICHIMALONKO: MINCHE-EMALL-LONGKO= Toki
-que vivía en el Alto Aconcagua y desde la llegada
-de Valdivia al Mapocho, actuó como un gran
-agitador de un levantamiento general de Mapuche
-(s) en ambos valles. En 1547 es sometido y va en la
-expedición colonizadora de Valdivia como capitán
-de los (indios-amigos), participando en las batallas
-de Andalién y Penco. Vuelve a Santiago donde al
-poco tiempo pretende rebelarse nuevamente y es
-ahorcado.
-MICHIZ: Arbusto espinoso: Hojas y frutos se utilizan
-en infusión para inflamaciones; la corteza y raíz,
-para tinciones de amarillos.
+MELIPGLLI O MELIPULLI: Cuatro cerros. Nombre dado a la rada de Puerto Montt.
+MEDHKEN O MEZKN: moler.
+MICHIMALONKO: MINCHE-EMALL-LONGKO= Toki que vivía en el Alto Aconcagua y desde la llegada de Valdivia al Mapocho, actuó como un gran agitador de un levantamiento general de Mapuche (s) en ambos valles. En 1547 es sometido y va en la expedición colonizadora de Valdivia como capitán de los (indios-amigos), participando en las batallas de Andalién y Penco. Vuelve a Santiago donde al poco tiempo pretende rebelarse nuevamente y es ahorcado.
+MICHIZ: Arbusto espinoso: Hojas y frutos se utilizan en infusión para inflamaciones; la corteza y raíz,para tinciones de amarillos.
 MELILAFKEN: Cuatro mares.
 MILLAKEUPU: Puente de oro.
 MILLARHAIEN: Flor de Oro
@@ -1016,8 +737,7 @@ MILLATRHAI: Cascada de Oro
 MININKO: Agua para el baño. Balneario
 MONGEN: Vida.
 MOLUCHE: Gente de guerra.
-MULCHEN O MOLUCHEN: Preparar gente para la
-guerra. Gente del oeste
+MULCHEN O MOLUCHEN: Preparar gente para la guerra.Gente del oeste.
 MUDHAI: Bebida preparada a temperatura muy
 bien calculada ni hervida ni sin hervir con agua
 cristalina de vertiente y cereales como. Arvejas,
