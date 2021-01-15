@@ -67,7 +67,7 @@ def BuscarPalabras(iLetras,aLetras):
 				traduccion = ''
 				if ( len(li.text.split(":")) > 1 ):
 					traduccion = li.text.split(":")[1]
-					pal[letra].append({text:traduccion})
+					pal[letra].append([text,traduccion])
 			except AttributeError:
 				pass
 	return pal
@@ -148,7 +148,7 @@ def BuscarPalabras2(iLetras,aLetras):
 
 			#Se obtiene la primera palabra para ordenar alfabeticamente
 			p = normalize(palabra[:1].lower())
-			dic[p].append({palabra : significado})
+			dic[p].append([palabra,significado])
 	#---------------------------------------------------------------------
 
 	return dic
