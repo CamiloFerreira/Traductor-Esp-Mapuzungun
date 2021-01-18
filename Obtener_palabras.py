@@ -26,6 +26,7 @@ def normalize(s):
         ("í", "i"),
         ("ó", "o"),
         ("ú", "u"),
+        ("ü","u")
     )
     for a, b in replacements:
         s = s.replace(a, b).replace(a.upper(), b.upper())
@@ -49,9 +50,6 @@ def BuscarPalabras(iLetras,aLetras):
 
 	for i in aLetras : 
 		pal[i]= []
-
-	cambiar_letra = False # Bandera para cambiar indice de iLetras
-
 
 	#-------------------------------------------------
 	#Recopilacion de palabras para la primera pagina 
@@ -156,6 +154,43 @@ def BuscarPalabras2(iLetras,aLetras):
 
 
 
+
+
+#Funcion para realizar busqueda en la pagina
+#https://www.mapuche.nl/espanol/idioma/index_idioma.htm
+
+#Para esta pagina se le debe pasar como parametro la letra para el diccionario 
+#https://www.mapuche.nl/espanol/idioma/"letra".htm <- tiene esa estructura
+def BuscarPalabras3(iLetras,aLetras):
+
+	pal = {} #Diccionario para establecer palabra + traduccion
+
+	for i in aLetras:
+		pal[i]=[]
+
+	for letra in aLetras:
+
+		try:
+			web = CargarWeb("https://www.mapuche.nl/espanol/idioma/"+letra+".htm")
+			contenido = web.find("td",attrs={'width':'749'}).text.split("\n") # Obtiene la parte que contiene las palabras + traduccion
+			for i in contenido:
+				if(len(i.strip().split("-")) > 1):
+					palabra = i.strip().split("-")[1].strip() # separa la palabra por la "-" y quita los espacios vacios
+					letra = normalize(palabra[:1]).lower() # obtiene la primera letra de la palabra 
+					traduccion = i.strip().split("-")[0].strip() # separa la traduccion por la "-" y quita los espacios vacios
+					if(len(letra)>0):
+						pal[letra].append([palabra.upper(),traduccion])
+					#print(palabra,":",traduccion)
+			
+		except Exception as e:
+			pass
+
+
+
+
+	return pal
+
+
 #----------------------------------------------------------------
 # Proceso de guardado de las palabras en json
 #-------------------------------------------------------------------
@@ -165,8 +200,13 @@ pal = BuscarPalabras(iLetras,aLetras)
 #Obtiene las palabras del txt
 pal2= BuscarPalabras2(iLetras,aLetras)
 
-pal.update(pal2) # Se juntan los dos diccionarios
+#Obtiene las palabras de la segunda pagina
+pal3 = BuscarPalabras3(iLetras,aLetras)
 
+
+# Se juntan los dos diccionarios
+pal.update(pal2) 
+pal.update(pal3)
 
 
 #Diccionario para guardar palabra + traduccion y convertir en json
