@@ -612,6 +612,82 @@
             [
                 "ANKACHOIN",
                 " Aborto, nacimiento anormal"
+            ],
+            [
+                "AM ",
+                " Nada"
+            ],
+            [
+                "AM ",
+                " Alma"
+            ],
+            [
+                "ANTG WAI ",
+                " Rayo de sol"
+            ],
+            [
+                "AUKAN LIKAN ",
+                " Poder alzado"
+            ],
+            [
+                "AUKAN ALKA ",
+                " Gallo alzado"
+            ],
+            [
+                "AIN ",
+                " Querido, Amor"
+            ],
+            [
+                "AILEN ",
+                " Brasa encendida"
+            ],
+            [
+                "AINKURHA ",
+                " Piedra preferida"
+            ],
+            [
+                "AINKO ",
+                " Agua preferida"
+            ],
+            [
+                "AINTUI ",
+                " Se transforma en favorita"
+            ],
+            [
+                "ALIWENKO ",
+                " \u00c1rbol de agua"
+            ],
+            [
+                "ALEN ",
+                " Claridad de la noche"
+            ],
+            [
+                "ALIWEN ",
+                " \u00c1rbol"
+            ],
+            [
+                "ALONKURHA ",
+                " Piedra luminosa"
+            ],
+            [
+                "ALON ",
+                " Luminosidad nocturna"
+            ],
+            [
+                "ANTGMAN ",
+                " C\u00f3ndor del sol"
+            ],
+            [
+                "ANTG CHIWAI ",
+                " Neblina del sol"
+            ],
+            [
+                "AUKAN ",
+                " Guerrero"
+            ],
+            [
+                "AFLKOFKEWE ",
+                " Horno"
             ]
         ],
         "b": [
@@ -947,7 +1023,11 @@
             ],
             [
                 "CHI",
-                " Art\u00edculo El, la"
+                " el,la"
+            ],
+            [
+                "CHORHI",
+                " Langosta"
             ],
             [
                 "CHOIKE",
@@ -1024,6 +1104,22 @@
             [
                 "CHULKUWG",
                 " Padastro"
+            ],
+            [
+                "CHI",
+                "el,la"
+            ],
+            [
+                "CHIWAI ",
+                " Neblina"
+            ],
+            [
+                "CHALLA ",
+                " Olla"
+            ],
+            [
+                "CHALLWA ILHO ",
+                " Carne de pescado"
             ]
         ],
         "d": [
@@ -1492,6 +1588,10 @@
             [
                 "ELLAN",
                 " Cojo"
+            ],
+            [
+                "EKULL",
+                " Frazada"
             ]
         ],
         "f": [
@@ -1506,6 +1606,14 @@
             [
                 "FOTM",
                 " Hijo var\u00f3n por parte del padre"
+            ],
+            [
+                "FELEI O BELEI ",
+                " bien"
+            ],
+            [
+                "FRHIKAWE ",
+                " Sarten"
             ]
         ],
         "g": [
@@ -1851,6 +1959,34 @@
             [
                 "IA\u00d1CHI KUTRHAN",
                 " Escalofr\u00edo"
+            ],
+            [
+                "IENGU",
+                "Y,con"
+            ],
+            [
+                "IAGUELTUWE ",
+                " Comedor"
+            ],
+            [
+                "ILWWEN RHAIEN ",
+                " Roc\u00edo de flor"
+            ],
+            [
+                "ILWEN LAFKEN ",
+                " Roc\u00edo del mar"
+            ],
+            [
+                "ILHO ",
+                " Carne"
+            ],
+            [
+                "ILHO KORHG ",
+                " Cazuela"
+            ],
+            [
+                "IAFGTUN ",
+                " Servirse, alimentarse"
             ]
         ],
         "j": [],
@@ -2250,6 +2386,82 @@
             [
                 "KMAU KUTRHAN",
                 " Ascaris"
+            ],
+            [
+                "Ka",
+                "otro,y"
+            ],
+            [
+                "KAI",
+                "Y"
+            ],
+            [
+                "KI\u00d1E",
+                "UN,uno,una"
+            ],
+            [
+                "KAFEI o KABEI ",
+                " Tambien"
+            ],
+            [
+                "KAM",
+                "O"
+            ],
+            [
+                "KALLFG ",
+                " Azul"
+            ],
+            [
+                "KALLFG LLANGKA ",
+                " Joya az\u00fal"
+            ],
+            [
+                "KALLFG MA\u00d1KE ",
+                " C\u00f3ndor az\u00fa"
+            ],
+            [
+                "KALLFG KOIAM ",
+                " Roble az\u00fal"
+            ],
+            [
+                "KALLFG NAWEL ",
+                " Tigre az\u00fal"
+            ],
+            [
+                "KALLFG WENU ",
+                " Cielo azulado"
+            ],
+            [
+                "KARHG LLAWEN ",
+                " Frutilla verde"
+            ],
+            [
+                "KARHG LPI ",
+                " Pluma az\u00fal"
+            ],
+            [
+                "KARHG PANGI ",
+                " Le\u00f3n az\u00fal"
+            ],
+            [
+                "KARHU ",
+                " Vaso"
+            ],
+            [
+                "KCHALONKOWE ",
+                " Champo"
+            ],
+            [
+                "KUDHI ",
+                " Molino de piedra"
+            ],
+            [
+                "KURHAM ",
+                " Huevo"
+            ],
+            [
+                "KOLLM KOPIU ",
+                " Copihue pint\u00f3n"
             ]
         ],
         "l": [
@@ -2548,6 +2760,62 @@
             [
                 "LALATUN",
                 " Ataque"
+            ],
+            [
+                "LIENLEGFG ",
+                " R\u00edo preferido"
+            ],
+            [
+                "LILA ",
+                " Patio"
+            ],
+            [
+                "LEMUN ANTG ",
+                " Sol del monte"
+            ],
+            [
+                "LEGFUKO ",
+                " Agua de r\u00edo"
+            ],
+            [
+                "LEFI \u00d1ANKU ",
+                " \u00c1guila veloz"
+            ],
+            [
+                "LIFKO ",
+                " Agua limpia cristalina"
+            ],
+            [
+                "LIG RHAIEN ",
+                " Flor blanca"
+            ],
+            [
+                "LIG MA\u00d1KE ",
+                " C\u00f3ndor blanco"
+            ],
+            [
+                "LONGKO MILLA ",
+                " Cabeza de oro"
+            ],
+            [
+                "LIKAN ANTG ",
+                " Astro sol poderoso"
+            ],
+            [
+                "LLFKEN ",
+                " Rel\u00e1mpago"
+            ],
+            [
+                "LLANGKA ",
+                " Perla"
+            ],
+            [
+                "LLAGFE\u00d1 ANTG ",
+                " Sombra del sol"
+            ],
+            [
+                "LLANGKATU ",
+                " Collar"
             ]
         ],
         "m": [
@@ -2754,6 +3022,46 @@
             [
                 "MOI KUTRHAN",
                 " For\u00fanculo, divieso"
+            ],
+            [
+                "MEU",
+                " en el , en la"
+            ],
+            [
+                "MANGIL LEGFG ",
+                " R\u00edo inundado"
+            ],
+            [
+                "MELI PILLANG ",
+                " Cuatro volcanes"
+            ],
+            [
+                "MILLLA RHEWE ",
+                " Rhewe de oro"
+            ],
+            [
+                "MILLA LELFN ",
+                " Campo de oro"
+            ],
+            [
+                "MILL WENU ",
+                " Cielo dorado"
+            ],
+            [
+                "MILLAN ",
+                " De oro"
+            ],
+            [
+                "MILLA KURHA ",
+                " Piedra de oro"
+            ],
+            [
+                "MIZKI LAWEN ",
+                " Medicina de la abeja"
+            ],
+            [
+                "MELINAG ",
+                " Cuatro veces"
             ]
         ],
         "n": [
@@ -3016,6 +3324,30 @@
             [
                 "NRHNARH KUTRHAN",
                 " Sarpullido"
+            ],
+            [
+                "NGI",
+                "Mio, de mi propiedad"
+            ],
+            [
+                "NGTANTU ",
+                "Cama"
+            ],
+            [
+                "NAWEL ",
+                " Tigre"
+            ],
+            [
+                "NAWEL KURHA ",
+                " Piedra del tigre"
+            ],
+            [
+                "NEIN MA\u00d1KE ",
+                " Aliento del c\u00f3ndor"
+            ],
+            [
+                "NEWENCHE ",
+                " Persona fortacha"
             ]
         ],
         "\u00f1": [
@@ -3130,6 +3462,14 @@
             [
                 "\u00d1IRHI",
                 " \u00c1rbol o arbusto de corteza lisa y lustrosa y de flores de p\u00e9talos anchos, suaves y casi"
+            ],
+            [
+                "\u00d1AMKU ",
+                " \u00c1guila"
+            ],
+            [
+                "\u00d1ANKUPEL ",
+                " Cuello de \u00e1guila"
             ]
         ],
         "o": [
@@ -3518,6 +3858,46 @@
             [
                 "PITRHU KUTRHAN",
                 " Erupciones cut\u00e1neas"
+            ],
+            [
+                "PU",
+                "Los,Las"
+            ],
+            [
+                "PU",
+                "Entre,dentro"
+            ],
+            [
+                "PELONTUWE ",
+                " L\u00e1mpara"
+            ],
+            [
+                "PO\u00d1I ",
+                " Papa"
+            ],
+            [
+                "PIDHKU ",
+                " Comida espesa"
+            ],
+            [
+                "PANGILEF ",
+                " Puma veloz"
+            ],
+            [
+                "PAILA KURHA ",
+                " Piedra dada vuelta"
+            ],
+            [
+                "PAINE KURHA ",
+                " Piedra celeste"
+            ],
+            [
+                "PILLANG LIKAN ",
+                " Poder del volc\u00e1n"
+            ],
+            [
+                "PILLMAIKEN ",
+                " Golondrina"
             ]
         ],
         "q": [],
@@ -3721,6 +4101,26 @@
             [
                 "RHE KUTRHAN",
                 " enfermedad com\u00fan, natural"
+            ],
+            [
+                "RHALI ",
+                " Plato"
+            ],
+            [
+                "RHFUWE ",
+                " Cucharon"
+            ],
+            [
+                "RHAN KURHA ",
+                " Piedra de plata"
+            ],
+            [
+                "RHELMU ",
+                " Arco iris"
+            ],
+            [
+                "RHELUN ",
+                " Solo madera de lun"
             ]
         ],
         "s": [
@@ -4004,7 +4404,7 @@
             ],
             [
                 "TRHUTRHUKA",
-                " Instrumento de viento constituido por una ca\u00f1a hueca, variando entre los dos y seis metros de largo; por un extremo se le aplica una"
+                " Instrumento de viento constituido por una ca\u00f1a hueca, variando entre los dos y seis metros de largo; por un extremo se le aplica una boquilla de hueso, y en el otro, una caja de resonancia del mismo material, pudiendo ser un cuerno de vaca"
             ],
             [
                 "TRHOLTRHO",
@@ -4017,6 +4417,22 @@
             [
                 "TRHALTRHALFE",
                 " Roncador"
+            ],
+            [
+                "TAMI",
+                "tu"
+            ],
+            [
+                "TAMU",
+                "su , de usted"
+            ],
+            [
+                "TAIU",
+                "Nuestro"
+            ],
+            [
+                "TAKUWE NGTANTU ",
+                " Cubrecama"
             ]
         ],
         "u": [
@@ -4198,6 +4614,74 @@
             [
                 "WOIN KUTRHAN",
                 " Mareo"
+            ],
+            [
+                "WELU ",
+                " Pero"
+            ],
+            [
+                "WITRHATRIPAWE ",
+                " Ba\u00f1o"
+            ],
+            [
+                "WITRG ",
+                " Cucharon"
+            ],
+            [
+                "WEKUN RHUKA ",
+                " Fuera de la casa"
+            ],
+            [
+                "WENTE RHUKA ",
+                " Techo"
+            ],
+            [
+                "WALL RHUKA ",
+                " Alrededor de la casa"
+            ],
+            [
+                "WAIWEN ",
+                " Viento del sur"
+            ],
+            [
+                "WAIKIL ",
+                " Flechero"
+            ],
+            [
+                "WAIKILEF ",
+                " Lanza veloz"
+            ],
+            [
+                "WAIKI MILLA ",
+                " Lanza de oro"
+            ],
+            [
+                "WANGLEN ",
+                " Estrella"
+            ],
+            [
+                "WEIKO ",
+                " Brote de agua"
+            ],
+            [
+                "WENTELIKAN ",
+                " Sobre el poder"
+            ],
+            [
+                "WENU MA\u00d1KE ",
+                " C\u00f3ndor de la altura"
+            ],
+            [
+                "WENULEF ",
+                " Corredor de altura"
+            ],
+            [
+                "WICHAL ",
+                " Aliado"
+            ],
+            [
+                "WILKI RHUKA ",
+                " Nido del zorzal"
             ]
         ],
         "x": [],
@@ -4206,6 +4690,10 @@
             [
                 "ZIMITA",
                 " Sopaipilla cocidas al agua, ali\u00f1ado se consume con la sopa"
+            ],
+            [
+                "ZAKINGKO ",
+                " Agua escogida"
             ]
         ]
     }

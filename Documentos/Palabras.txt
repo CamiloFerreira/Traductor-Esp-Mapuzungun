@@ -244,7 +244,7 @@ teñir, produce una flor de tono fucsia.
 CHILLWE: Gaviota.
 CHILEWEKE: Llamo.
 CHILLANG: Encillar.
-CHI: Artículo El, la
+CHI:El, la.
 CHORHI: Langosta.
 CHOIKE: Avestrúz.
 CHEUKE PANGUI: Avestruz puma.
@@ -1157,20 +1157,13 @@ TRHOMPE/PAUPAWEN: Instrumento de percusión que lo tocan hombres y mujeres.
 TRHUFTRHUF: Fermento, ebullición de un líquido. 
 TRHUMAO: Tierra de arenisca delgada y volátil.
 TRHUTRHUKA: Instrumento de viento constituido por una caña hueca, variando entre los dos y seis
-metros de largo; por un extremo se le aplica una
-boquilla de hueso, y en el otro, una caja de resonancia del mismo material, pudiendo ser un cuerno de
-vaca. Se toca de pie precisando de buenos pulmones y sus dos únicas notas son graves, lúgubres, y se
-escuchan a gran distancia.
+metros de largo; por un extremo se le aplica una boquilla de hueso, y en el otro, una caja de resonancia del mismo material, pudiendo ser un cuerno de vaca. Se toca de pie precisando de buenos pulmones y sus dos únicas notas son graves, lúgubres, y se escuchan a gran distancia.
 TRHOLTRHO: Espina, cardo
 TRHOLTRHONTU: Espinal.
 TRHLA: Garza.
 UIA: Ayer.
 UMAÑ: Añejo, de antes.
-ÚLMEN O MAS BIEN GLMEN: Persona con muchos
-bienes materiales, un hombre rico. Otra acepción
-es la de un hombre ponderado y sabio, cuya voz es
-escuchada con atención y deferencia. Es un hombre
-influyente, un Gran Hombre.
+ÚLMEN O MAS BIEN GLMEN: Persona con muchos bienes materiales, un hombre rico. Otra acepción es la de un hombre ponderado y sabio, cuya voz es escuchada con atención y deferencia. Es un hombre influyente, un Gran Hombre.
 UKAN: Rebanada, pedazo.
 UKAN KOFKE: Pedazo de pan.
 ULPO: Harina tostada preparada con agua hervida
@@ -1261,6 +1254,134 @@ WELUZUAM KUTRHAN: Demencia, trastorno
 mental.
 WEZAOTRHIN KUTRHAN: Mal de ojo.
 WOIN KUTRHAN: Mareo.
-
-
-
+PU:Los,Las.
+PU:Entre,dentro.
+CHI:el,la.
+IENGU:Y,con.
+Ka:otro,y.
+KAI:Y.
+NGI:Mio, de mi propiedad.
+KIÑE:UN,uno,una.
+KAFEI o KABEI : Tambien.
+KAM:O.
+MEU: en el , en la.
+WELU : Pero.
+AM : Nada.
+AM : Alma.
+FELEI O BELEI : bien.
+TAMI:tu.
+TAMU:su , de usted.
+TAIU:Nuestro.
+IAGUELTUWE : Comedor. 
+ANTG WAI : Rayo de sol
+GRHKTUWE : Lugar de descanso. 
+AUKAN LIKAN : Poder alzado.
+WITRHATRIPAWE : Baño.
+AUKAN ALKA : Gallo alzado.
+AIN : Querido, Amor.
+AILEN : Brasa encendida.
+AINKURHA : Piedra preferida.
+AINKO : Agua preferida.
+AINTUI : Se transforma en favorita.
+ALIWENKO : Árbol de agua.
+ALEN : Claridad de la noche.
+ALIWEN : Árbol.
+CHIWAI : Neblina.
+LIENLEGFG : Río preferido.
+ALONKURHA : Piedra luminosa.
+ALON : Luminosidad nocturna.
+ANTGMAN : Cóndor del sol.
+ANTG CHIWAI : Neblina del sol.
+AUKAN : Guerrero.
+KALLFG : Azul.
+KALLFG LLANGKA : Joya azúl.
+KALLFG MAÑKE : Cóndor azú.
+KALLFG KOIAM : Roble azúl.
+KALLFG NAWEL : Tigre azúl.
+KALLFG WENU : Cielo azulado.
+KARHG LLAWEN : Frutilla verde.
+KARHG LPI : Pluma azúl.
+KARHG PANGI : León azúl.
+ILWWEN RHAIEN : Rocío de flor.
+ILWEN LAFKEN : Rocío del mar.
+NGTANTU :Cama.
+EKULL: Frazada
+TAKUWE NGTANTU : Cubrecama
+KAWITU : Catre.
+PELONTUWE : Lámpara.
+KARHU : Vaso.
+RHALI : Plato.
+CHALLA : Olla.
+WITRG : Cucharon.
+RHFUWE : Cucharon.
+KCHALONKOWE : Champo.
+FRHIKAWE : Sarten.
+AFLKOFKEWE : Horno.
+WEKUN RHUKA : Fuera de la casa.
+WENTE RHUKA : Techo.
+WALL RHUKA : Alrededor de la casa.
+LILA : Patio.
+KUDHI : Molino de piedra.
+KURHAM : Huevo.
+POÑI : Papa.
+PIDHKU : Comida espesa.
+ILHO : Carne.
+ILHO KORHG : Cazuela.
+CHALLWA ILHO : Carne de pescado.
+IAFGTUN : Servirse, alimentarse.
+KOLLM KOPIU : Copihue pintón. 
+ÑAMKU : Águila.
+LEMUN ANTG : Sol del monte. 
+ÑANKUPEL : Cuello de águila
+LEMUNKO : Agua de la montaña. 
+PANGILEF : Puma veloz.
+LEGFUKO : Agua de río.
+PAILA KURHA : Piedra dada vuelta.
+LEFI ÑANKU : Águila veloz. 
+PAINE KURHA : Piedra celeste.
+LIFKO : Agua limpia cristalina. 
+PILLANG LIKAN : Poder del volcán.
+LIG RHAIEN : Flor blanca. 
+PILLMAIKEN : Golondrina.
+LIG MAÑKE : Cóndor blanco.
+RHAN KURHA : Piedra de plata
+LIG KOIAM : Roble blanco.
+RHELMU : Arco iris.
+LONGKO MILLA : Cabeza de oro. 
+RHELUN : Solo madera de lun.
+LIKAN ANTG : Astro sol poderoso. 
+WAIWEN : Viento del sur.
+LLFKEN : Relámpago. 
+WAIKIL : Flechero.
+LLANGKA : Perla. 
+WAIKILEF : Lanza veloz.
+LLAGFEÑ ANTG : Sombra del sol.
+WAIKI MILLA : Lanza de oro.
+LLANGKATU : Collar. 
+WANGLEN : Estrella
+LLANGK TAPL : Hoja caída. 
+WEIKO : Brote de agua.
+MANGIL LEGFG : Río inundado.
+WENTELIKAN : Sobre el poder
+MAÑKE MILLA : Cóndor de oro.
+WENU MAÑKE : Cóndor de la altura
+MARHI LIKAN : Diez poderes/cuarzos.
+WENULEF : Corredor de altura
+MARHI WIÑO : Diez chueca.
+WICHAL : Aliado
+MAZAKAL : Pompones de adorno.
+WILKI RHUKA : Nido del zorzal.
+MELI PILLANG : Cuatro volcanes.
+ZAKINGKO : Agua escogida
+MILLALI : Similar al oro.
+MILLLA RHEWE : Rhewe de oro.
+MILLA LELFN : Campo de oro.
+MILL WENU : Cielo dorado.
+MILLAN : De oro. 
+MILLA KURHA : Piedra de oro. 
+MIZKI LAWEN : Medicina de la abeja.
+MELINAG : Cuatro veces. 
+NAWEL : Tigre. 
+NAWEL KURHA : Piedra del tigre.
+NEIN MAÑKE : Aliento del cóndor.
+NEWENCHE : Persona fortacha.
