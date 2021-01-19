@@ -1,0 +1,16 @@
+#textarea
+{
+	margin-top: 0%;
+	margin-left: 10%;
+	padding-left: 10%;
+	padding-top: 10%;
+	width: 80% ;
+	height: 100%;
+}
+
+section
+{
+	height: 10px;
+	width: 100%;
+	background-color: #4468E1;
+}
