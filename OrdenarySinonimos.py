@@ -112,25 +112,26 @@ def ObtenerSinonimos():
 			palabra = lista[i][0]
 			significado = lista[i][1]
 
-			# Se obtendran los sinonimos de wordreference , donde a su pagina se pasa como parametro la palabra 
-			url = "https://www.wordreference.com/sinonimos/"+palabra
-			web = CargarWeb(url)
-	
-			try :
-					#Carga los sinonimos 
-				sinonimos = web.find("div",attrs={"class":"trans clickable"}).findAll("li")
-
-				#Si existen sinonimos 
-
-				aSin = [] #Lista para guardar los sinonimos
-				for S in sinonimos:
+			for sig in significado : 			
+				# Se obtendran los sinonimos de wordreference , donde a su pagina se pasa como parametro la palabra 
+				url = "https://www.wordreference.com/sinonimos/"+sig
+				web = CargarWeb(url)
 		
-					for s in S.text.split(","):
-						aSin.append(s.strip())
+				try :
+						#Carga los sinonimos 
+					sinonimos = web.find("div",attrs={"class":"trans clickable"}).findAll("li")
 
-				data["Palabras"][l][i] = [palabra,aSin]
-			except Exception as e:
-				pass
+					#Si existen sinonimos 
+
+					aSin = [] #Lista para guardar los sinonimos
+					for S in sinonimos:
+			
+						for s in S.text.split(","):
+							aSin.append(s.strip())
+
+					data["Palabras"][l][i] = [palabra,aSin]
+				except Exception as e:
+					pass
 
 	with open('json/dic2.json','w') as file:
 		json.dump(data,file,indent=4)
