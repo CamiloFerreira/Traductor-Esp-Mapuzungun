@@ -121,10 +121,8 @@ def ObtenerSinonimos():
 						#Carga los sinonimos 
 					sinonimos = web.find("div",attrs={"class":"trans clickable"}).findAll("li")
 					#Si existen sinonimos 
-					aSin = [] #Lista para guardar los sinonimos
-					aSin.append(significado)
+					aSin = significado #Lista para guardar los sinonimos
 					for S in sinonimos:
-			
 						for s in S.text.split(","):
 							aSin.append(s.strip())
 
