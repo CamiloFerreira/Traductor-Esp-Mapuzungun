@@ -10,3 +10,13 @@ Objetivos para este proyecto:
     • Realizar webScraping respecto a los diccionarios que se encuentran actualmente 
     • Generar tokens de cada palabra para identificar tanto “Adjetivos” – “Sustantivos” etc
 
+# Como ejecutar este proyecto 
+
+Tener en consideracion que este proyecto esta siendo creado con python3.6 , las librerias para ejecutar todos los scripts  , se encuentra en el archivo requeriments.txt , ejecutando "pip install -r requeriments.txt " .
+
+Para ejecutar la web con flask si te encuentras en linux solo ejecuta .sh que se encuentra llamado "ejecutar.sh"
+
+instalar un modulo de spacy  ( Modulo para trabajar con NLP)
+
+python -m spacy download es_core_news_sm
+
