@@ -3,7 +3,7 @@ import json
 
 def BuscarTraduccion(buscar):
 	#Abre el archivo json
-	with open('json/dic2.json') as file:
+	with open('json/dicSin.json') as file:
 		
 		#Carga el archivo json
 		data = json.load(file)
@@ -27,27 +27,14 @@ def BuscarTraduccion(buscar):
 		return aPal
 			#print(lista)
 
-#nlp = es_core_news_sm.load()
-#doc = nlp("yo quiero caminar , pero no puedo")
-#print([(w.text, w.pos_) for w in doc]
-correr = True
-while (correr):
-
+def Traduccir(text):
 	nlp = es_core_news_sm.load()
-	text = input("Ingresa oracion : ")
 	buscar = nlp(text)
-
-
 	t = " "
 	for w in buscar:
-		print (w.text)
-		if(BuscarTraduccion(w.text) != None):
-			print(BuscarTraduccion(w.text))
-		else : 
-			print (w.text + ", No existe ! ")
-	#print("Traduccion : ",t)
-
-	#print(BuscarTraduccion(buscar))
-
-	if(text == "fin"):
-		correr = False
+		trad = BuscarTraduccion(w.text)
+		if ( len(trad) > 0 ):
+			t +=trad[0] + " "
+		else:
+			t += w.text + " " 
+	return t 

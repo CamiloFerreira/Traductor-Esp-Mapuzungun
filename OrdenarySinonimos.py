@@ -111,17 +111,19 @@ def ObtenerSinonimos():
 		for i in tqdm(range(len(lista)),ascii=True,desc=cad):
 			palabra = lista[i][0]
 			significado = lista[i][1]
+			aSin = []
 
 			for sig in significado : 			
 				# Se obtendran los sinonimos de wordreference , donde a su pagina se pasa como parametro la palabra 
 				url = "https://www.wordreference.com/sinonimos/"+sig
 				web = CargarWeb(url)
-		
+				
 				try :
 						#Carga los sinonimos 
 					sinonimos = web.find("div",attrs={"class":"trans clickable"}).findAll("li")
 					#Si existen sinonimos 
-					aSin = significado #Lista para guardar los sinonimos
+					aSin.append(sig)
+					#print(aSin)
 					for S in sinonimos:
 						for s in S.text.split(","):
 							aSin.append(s.strip())
@@ -130,7 +132,7 @@ def ObtenerSinonimos():
 				except Exception as e:
 					pass
 
-	with open('json/dic2.json','w') as file:
+	with open('json/dicSin.json','w') as file:
 		json.dump(data,file,indent=4)
 
 print("Seleccione Operacion : ")
