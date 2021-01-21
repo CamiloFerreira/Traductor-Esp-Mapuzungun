@@ -39,6 +39,46 @@ def CargarWeb(url):
 	return soup
 
 
+#Funcion para quitar valores repetidos en los diccionarios
+
+def QuitarRepetidos(d2,aLetras):
+	d={}
+
+	for l in aLetras:
+		d[l] = []
+
+	repetido = False
+	for l in d2 :
+		for i in range(len(d2[l])):
+			pal = d2[l][i]
+			for le in d :
+				#si no existen datos en el diccionario "D" se llena con el primero
+				if(len(d[le]) == 0 ):
+					d[le].append(pal)
+				else:
+					#carga las palabras del segundo diccionario 
+					#si detecta un valor repetido sube la bandera y termina el bucle
+					for y in range(len(d[le])):
+						pal2 = d[le][y]
+						if(pal2[0].lower() == pal[0].lower()):
+							repetido = True
+							break
+
+					if(repetido):
+						palabra = pal[0]
+						print("Palabras : ",palabra)
+						if(pal2[1] != pal[1]):
+							sig = pal2[1]+"," + pal[1]
+							d[le][y] = [palabra,sig] 
+						repetido = False
+					else:
+						d[le].append(pal)
+	return d
+
+
+
+
+
 #Funcion para realizar busqueda en la pagina
 #https://www.interpatagonia.com/mapuche/diccionario.html
 def BuscarPalabras(iLetras,aLetras):
@@ -153,9 +193,6 @@ def BuscarPalabras2(iLetras,aLetras):
 
 
 
-
-
-
 #Funcion para realizar busqueda en la pagina
 #https://www.mapuche.nl/espanol/idioma/index_idioma.htm
 
@@ -195,6 +232,7 @@ def BuscarPalabras3(iLetras,aLetras):
 # Proceso de guardado de las palabras en json
 #-------------------------------------------------------------------
 
+print("Obteniendo palabras .....")
 #Obtiene las palabras de la primera pagina
 pal = BuscarPalabras(iLetras,aLetras)
 #Obtiene las palabras del txt
@@ -207,6 +245,11 @@ pal3 = BuscarPalabras3(iLetras,aLetras)
 # Se juntan los dos diccionarios
 pal.update(pal2) 
 pal.update(pal3)
+
+#Se quitan los valores repetidos para cada diccionario
+
+print("Quitando palabras repetidas .....")
+pal = QuitarRepetidos(pal,aLetras)
 
 
 #Diccionario para guardar palabra + traduccion y convertir en json

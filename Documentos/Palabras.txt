@@ -1385,3 +1385,15 @@ NAWEL : Tigre.
 NAWEL KURHA : Piedra del tigre.
 NEIN MAÑKE : Aliento del cóndor.
 NEWENCHE : Persona fortacha.
+iñche:yo.
+eymi:tu.
+fey:el,ella.
+iñchiw:nostros dos, nostros
+eymu:ustedes dos , ustedes.
+fey engu:ellos,ellas.
+TAÑI: Mi , de mio.
+TAMI: Tu , de tuyo.
+TAMU: Su , de ustedes dos . 
+TAMN: Su , de ustedes más.
+TAIU :Nuestro , de nosotros dos.
+TAIÑ: Nuestro , de nosotros o más de dos . 

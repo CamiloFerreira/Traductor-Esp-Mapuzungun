@@ -3,7 +3,7 @@ import json
 
 def BuscarTraduccion(buscar):
 	#Abre el archivo json
-	with open('json/dicSin.json') as file:
+	with open('json/dic.json') as file:
 		
 		#Carga el archivo json
 		data = json.load(file)
@@ -21,13 +21,14 @@ def BuscarTraduccion(buscar):
 				significados = pal[1]
 
 				for s in significados : 
+					
 					if(buscar.lower() == s.lower()):
 						aPal.append(palabra)
 
 		return aPal
 			#print(lista)
 
-def Traduccir(text):
+def Traducir(text):
 	nlp = es_core_news_sm.load()
 	buscar = nlp(text)
 	t = " "
@@ -38,3 +39,6 @@ def Traduccir(text):
 		else:
 			t += w.text + " " 
 	return t 
+
+
+print(Traducir("Esto es un poco de todo ! "))

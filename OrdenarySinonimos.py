@@ -36,7 +36,7 @@ def QuitarNumeros(pal):
 
 #Funcion que ordena el json , quitando tanto "," en una misma oracion y tambien como numeros 
 #Esto permitiendo realizar una mejor busqueda a futuro y permitir realizar la busqueda de sinonimos
-
+#Esta debe ejecutarse cuando se genera por primera vez el "obtener_palabras.py"
 def OrdenarJson():
 	#Cargar el json con las palabras
 	with open('json/dic.json','r') as file:
@@ -55,7 +55,6 @@ def OrdenarJson():
 
 			#Para poder buscar los sinonimos correctamente hay que eliminar tanto los "," , "." y ";"
 			#print("Palabra:", palabra)
-
 
 			#Retirar los ";" y numeros  
 			if(len(significado.split(";"))> 1):
@@ -97,6 +96,13 @@ def OrdenarJson():
 	with open('json/dic.json','w') as file:
 		json.dump(data,file,indent=4)
 
+
+
+
+#Funcion que quita los caracteres que sobran , tanto como "." , ";" , esta funcion es para cuando 
+def QuitarCaracter():
+	with open('json/dic.json','r') as file:
+		data = json.load(file)
 
 
 
