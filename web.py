@@ -21,7 +21,7 @@ def gText():
 
 	cadena = data['cadena']
 
-	trad = Traduccir(cadena)
+	trad = Traducir(cadena)
 
 	print(trad)
 
