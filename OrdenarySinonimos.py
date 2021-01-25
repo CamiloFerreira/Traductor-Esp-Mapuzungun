@@ -31,73 +31,120 @@ def QuitarNumeros(pal):
 
 	if(normal):
 		return pal
-
-
-
 #Funcion que ordena el json , quitando tanto "," en una misma oracion y tambien como numeros 
 #Esto permitiendo realizar una mejor busqueda a futuro y permitir realizar la busqueda de sinonimos
 #Esta debe ejecutarse cuando se genera por primera vez el "obtener_palabras.py"
 def OrdenarJson():
-	#Cargar el json con las palabras
+
 	with open('json/dic.json','r') as file:
 		data = json.load(file)
-
-
 	#Se va a generar un orden en el json 
 	#Si presenta mas de un significado estos seran separados en un arreglo 
 	#Separando mediante ","
+	guardar = False # bandera para realizar un guardado con pal o pal2 
+	existe = False # bandera para detectar si existe un " " o vacio 
 	for l in data["Palabras"]:
 		lista = data["Palabras"][l] # guarda la lista de una letra - ejemplo todas las "a" o todas las "b"
 
+		#Recorre la lista de palabras teniendo como indice el (i)
 		for i in range(len(lista)):
 			palabra = lista[i][0]
-			significado= lista[i][1]
+			significado = lista[i][1]
+			#Si detecta que el lista es una cadena significa que el script se ejecuto por primera vez
+			if (type(significado) == str):
+				#Para poder buscar los sinonimos correctamente hay que eliminar tanto los "," , "." y ";"
+				#print("Palabra:", palabra)
+				#Retirar los ";" y numeros  
+				if(significado.find(";")> 1):
+					separado = significado.split(";")
+					aSig = [] #Guarda los significados en lista
+					#print(separado)
 
-			#Para poder buscar los sinonimos correctamente hay que eliminar tanto los "," , "." y ";"
-			#print("Palabra:", palabra)
-
-			#Retirar los ";" y numeros  
-			if(len(significado.split(";"))> 1):
-				separado = significado.split(";")
-				aSig = [] #Guarda los significados en lista
-				#print(separado)
-
-				#Quita los numeros que se encuentran
-				
-				for s in separado:
-					p = QuitarNumeros(s.strip()) 
+					#Quita los numeros que se encuentran
 					
-					if(len(p.split(","))>1):
-						for coma in p.split(","):
-							#print(coma.strip())
-							aSig.append(coma.strip())
-					else:
-						aSig.append(p.strip())
-				data["Palabras"][l][i] = [palabra,aSig] 
+					for s in separado:
+						p = QuitarNumeros(s.strip()) 
+						
+						if(len(p.split(","))>1):
+							for coma in p.split(","):
+								#print(coma.strip())
+								aSig.append(coma.strip())
+						else:
+							aSig.append(p.strip())
+					data["Palabras"][l][i] = [palabra,aSig] 
 
-			#Separa mas de un significado dependiendo si tiene ","
-			elif(len(significado.split(","))>1):
-				separado = significado.split(",")
-				aSig=[] #Guarda los significados en lista
-				for s in separado:
-					p = QuitarNumeros(s.strip())
+				#Separa mas de un significado dependiendo si tiene ","
+				elif(significado.find(",")>1):
+					#print(significado)
+					separado = significado.split(",")
+					aSig=[] #Guarda los significados en lista
+					for s in separado:
+						p = QuitarNumeros(s.strip())
 
-					#Vuelve a quitar numeros por si quedo alguno
-					p = QuitarNumeros(p)
-					aSig.append(p)
-				data["Palabras"][l][i]=[palabra,aSig]
+						#Vuelve a quitar numeros por si quedo alguno
+						p = QuitarNumeros(p)
+						aSig.append(p)
+					data["Palabras"][l][i]=[palabra,aSig]
 
+				else:
+					#Si no cumple la condicion se edita igualmente
+					data["Palabras"][l][i]=[palabra,[significado]]
+
+			#De lo contrario si es otro tipo de variable es porque se ha ejecutado anteriormente 
 			else:
-				#Si no cumple la condicion se edita igualmente
-				data["Palabras"][l][i]=[palabra,[significado]]
 
+				for y in range(len(significado)):
+					pal = significado[y]
+					#detecta si existe numeros 
+					#print(pal)
+					pal = QuitarNumeros(pal.strip()) 
+					
+					#Si detecta que existen comas 
+					if(pal.find("(")>= 0 and pal.find(")") >= 0):
+						inicio = pal.find("(")
+						fin    = pal.find(")")
+						buscar  = pal[inicio:fin+1]
 
+						#Guarda lo que se encuentra en "(" , ")" pero en una posicion distinta
+						significado.append(buscar)
+					
+						pal = pal.replace(buscar,"")
+					#elif(pal.find(",") > 0):
+					#	pass
+					#elif (pal.find(";") > 0):
+						
+					elif(pal.find(".") > 0):
+						
+						pal2 = pal.split(".")
+
+						for p in pal2 :
+							if (p == ""):
+								existe = True
+								break
+						#quitar las posiciones que se encuentren vacias ( Si existe alguna)
+						if(existe):
+							pal2.remove("")
+						guardar = True
+					#Cuando las operaciones terminen se escribe nuevamente el signficado
+
+					if(guardar == False):
+						significado[y] = pal
+					else:
+						significado[y] = pal2
+					#print(pal)
+				
+				for p in significado :
+					if(p == ""):
+						existe = True
+						break
+
+				if(existe == True):
+					significado.remove("")
+					existe=False
+				data["Palabras"][l][i] = [palabra,significado]
 	#Guarda el diccionario
 	with open('json/dic.json','w') as file:
 		json.dump(data,file,indent=4)
-
-
-
 
 #Funcion que quita los caracteres que sobran , tanto como "." , ";" , esta funcion es para cuando 
 def QuitarCaracter():
@@ -151,5 +198,6 @@ t = input("Ingrese numero : ")
 
 if(int(t) == 1 ):
 	OrdenarJson()
+	print("Json ordenado")
 elif(int(t) == 2):
 	ObtenerSinonimos()

@@ -2,8 +2,6 @@ import requests as rq
 from bs4 import BeautifulSoup 
 import json
 
-
-
 #-------------------------------------------
 #Variables a utilizar 
 #-------------------------------------------
@@ -63,10 +61,8 @@ def QuitarRepetidos(d2,aLetras):
 						if(pal2[0].lower() == pal[0].lower()):
 							repetido = True
 							break
-
 					if(repetido):
 						palabra = pal[0]
-						print("Palabras : ",palabra)
 						if(pal2[1] != pal[1]):
 							sig = pal2[1]+"," + pal[1]
 							d[le][y] = [palabra,sig] 
