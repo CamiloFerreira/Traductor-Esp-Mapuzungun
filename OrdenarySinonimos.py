@@ -142,14 +142,50 @@ def OrdenarJson():
 					significado.remove("")
 					existe=False
 				data["Palabras"][l][i] = [palabra,significado]
+
+	data = QuitarRepetidos(data)
 	#Guarda el diccionario
 	with open('json/dic.json','w') as file:
 		json.dump(data,file,indent=4)
 
-#Funcion que quita los caracteres que sobran , tanto como "." , ";" , esta funcion es para cuando 
-def QuitarCaracter():
-	with open('json/dic.json','r') as file:
-		data = json.load(file)
+
+#Funcion que quita valroes repetidos del json0
+def QuitarRepetidos(d2):
+	aLetras=[
+		 'a','b','c','d','e','f','g','h','i','j',
+		 'k','l','m','n','ñ','o','p','q','r','s',
+		 't','u','v','w','x','y','z'
+		 ]
+	d={}
+	for l in aLetras:
+		d[l] = []
+	repetido = False
+	for l in d2 :
+		for i in range(len(d2[l])):
+			pal = d2[l][i]
+			for le in d :
+				#si no existen datos en el diccionario "D" se llena con el primero
+				if(len(d[le]) == 0 ):
+					d[le].append(pal)
+				else:
+					#carga las palabras del segundo diccionario 
+					#si detecta un valor repetido sube la bandera y termina el bucle
+					for y in range(len(d[le])):
+						pal2 = d[le][y]
+						if(pal2[0].lower() == pal[0].lower()):
+							repetido = True
+							break
+					if(repetido):
+						palabra = pal[0]
+						if(pal2[1] != pal[1]):
+							sig = pal2[1]+"," + pal[1]
+							d[le][y] = [palabra,sig] 
+						repetido = False
+					else:
+						d[le].append(pal)
+	return d
+
+
 
 
 
