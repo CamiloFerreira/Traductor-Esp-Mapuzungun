@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<meta charset="ISO-8859-1">
+<html>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/dic.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/dic.css">
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<head>
+	<title>Diccionario</title>
+</head>
+<body>
+
+	<!--- Barra de navegacion --->
+	<nav class="navbar nav-tabs navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Traductor Esp-Mapu</a>
+		
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="/"> Traductor </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Diccionario"> Diccionario</a>
+				</li>
+
+			</ul>
+
+		</div>
+	</nav>
+
+	<!--- Seccion de la pagina -->
+
+	<section class="contaniner">
+		<div class="row shadow-lg bg-white rounded" id="textarea">
+			<!--- Contenedor de palabras input ---->
+			<div class="col-10">
+					
+				<!----- Contenedor de input para buscar palabras --->
+				<div class="card">
+					  <div class="card-body">
+		    				<h5 class="card-title">Buscar Palabra </h5>
+		    				<hr>
+		    				<!---<p class="card-text">AQUI SE MOSTRARAN LAS TRADUCCIONES ANTERIORES</p>--->
+		    				<div class="row" >
+		    					<div class="col-2">
+		    						<select class="form-control">
+		    							<option>Español</option>
+		    							<option>Mapudungun</option>
+		    						</select>
+		    					</div>
+		    					<div class="col-3">
+		    						<input type="text" class="form-control" name="palabra" placeholder="Palabra a buscar ">
+		    					</div>
+		    					<div class="col-3">
+									<button class="btn btn-primary" id="buscar"> Buscar</button>
+								</div>
+		    				</div>
+		  			  </div>
+				</div>
+				<hr>
+
+				<!--- Contenedor de busquedas  ---->
+				<div class="col-15" id="busquedas">
+						
+					<!----- Contenedor de input para buscar palabras --->
+					<div class="card" >
+						  <div class="card-body">
+			    				<h5 class="card-title">Palabras Existentes </h5>
+			    				<hr>
+			    				
+			    				<div class="row" >
+			    					<ul class="col-10" align="left" style="list-style: none ; font-size: 20px; color: #27BBFF" >
+			    						{% for 	letra in letras%}
+			    						<li class="li"> {{letra}}</li>
+			    						{% endfor %}
+			    					</ul>
+
+
+			    					<div class="col-20" id="mostrar" style="overflow-y:scroll;width: 100%">
+			    						<table class="table">
+			    							<thead>
+			    								<tr>
+			    									<th scope="col">Palabra</th>
+			    									<th scope="col">Traduccion</th>
+			    								</tr>
+			    							</thead>
+			    							<tbody>
+			    							</tbody>
+			    						</table>
+
+			    					</div>
+
+
+
+			    				</div>
+			  			  </div>
+					</div>
+				</div>
+
+		<div>
+
+	</section>
+</body>
+</html>
+
+

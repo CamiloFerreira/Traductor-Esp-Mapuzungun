@@ -13,10 +13,14 @@ def index():
 
 @app.route("/Diccionario")
 def dic():
-	return render_template("dic.html")
+	aLetras=[
+		 'a','b','c','d','e','f','g','h','i','j',
+		 'k','l','m','n','ñ','o','p','q','r','s',
+		 't','u','v','w','x','y','z'
+		 ]
+	return render_template("dic.html",letras=aLetras,dic=datos)
 
 @app.route("/gText",methods=["POST"])
-
 def gText():
 	data = request.get_json()
 
@@ -24,6 +28,10 @@ def gText():
 
 	trad = Traducir(cadena,datos)
 	return json.dumps({'status':'ok','t':trad})
+
+@app.route("/gDic",methods=["POST"])
+def gDic():
+	return json.dumps(datos)
 
 
 if __name__ == "__main__":

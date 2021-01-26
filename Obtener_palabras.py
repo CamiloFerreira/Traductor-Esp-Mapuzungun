@@ -139,8 +139,6 @@ def BuscarPalabras2(iLetras,aLetras):
 		if(len(separados) > 1):
 			palabra     = separados[0]
 			significado = separados[1]
-			if(palabra == "FEY"):
-				print(significado)
 			#Se obtiene la primera palabra para ordenar alfabeticamente
 			p = normalize(palabra[:1].lower())
 			dic[p].append([palabra,significado])
@@ -172,9 +170,10 @@ def BuscarPalabras3(iLetras,aLetras):
 					palabra = i.strip().split("-")[1].strip() # separa la palabra por la "-" y quita los espacios vacios
 					letra = normalize(palabra[:1]).lower() # obtiene la primera letra de la palabra 
 					traduccion = i.strip().split("-")[0].strip() # separa la traduccion por la "-" y quita los espacios vacios
+
 					if(len(letra)>0):
-						pal[letra].append([palabra.upper(),traduccion])
-					#print(palabra,":",traduccion)
+						if(traduccion != ""):
+							pal[letra].append([palabra.upper(),traduccion])
 			
 		except Exception as e:
 			pass
@@ -185,6 +184,67 @@ def BuscarPalabras3(iLetras,aLetras):
 	return pal
 
 
+#Funcion que busca los repetidos de 2 diccionarios , llenando solo con los valores que se encuentren repetidos
+def BuscarRepetidos(pal,pal2):
+	dic = {}
+	#Primero guarda los valores que son iguales en ambos diccionarios
+	for key in pal : 
+		lista = pal[key]
+		dic[key] = []
+		#Carga el primer diccionario
+		for x in range(len(lista)):
+			pal_palabra = lista[x][0].strip().upper()
+			pal_sig     = lista[x][1].lower().strip()
+			#Carga el segundo diccionario utilizando la key del primer diccionario
+			lista2 = pal2[key]
+			for y in range(len(lista2)):
+				pal2_palabra = lista2[y][0].strip().upper()
+				pal2_sig      = lista2[y][1].lower().strip()
+				#Comprueba si la palabra son iguales
+				if(pal2_palabra.lower() == pal_palabra.lower() ):
+					
+					#para esto se debe quitar tanto puntos , como otros carateres que molesten.
+					if(pal_sig.find(".") > 0):
+						pal_sig = pal_sig.split(".")
+						#quita los espacios en " " en blanco o vacio
+						cad = ""
+						for p in pal_sig:
+							if(p != ""):
+								cad += p + " " 
+						pal_sig = cad
+						#con la cadena limpia de caracteres se agrega a pal2_sig y se guarda
+						pal2_sig += "," +cad 
+						dic[key].append([pal_palabra,pal2_sig])
+					#Si no tiene puntos se guarda 
+					else:
+						pal_sig += ","+pal2_sig 
+						dic[key].append([pal_palabra,pal_sig])
+
+					break
+	return dic
+
+#Funcion que guarda los valores restantes del diccionario
+def llenar(pal,dic):
+	existe = False
+	for key in pal:
+		lista = pal[key]
+		lista2 = dic[key]
+		for i in range(len(lista)): 
+			pal_palabra = lista[i][0]
+			pal_sig     = lista[i][1]
+			for y in range(len(lista2)):
+				pal2_palabra = lista2[y][0]
+				pal2_sig     = lista2[y][1]
+				#si existe la palabra levanta la bandera 
+				if(pal2_palabra == pal_palabra):
+					existe = True
+					break
+			#Mientras no existe el valor se guarda
+			if(existe == False):
+				dic[key].append([pal_palabra,pal_sig])
+			else:
+				existe = False
+	return dic 
 #----------------------------------------------------------------
 # Proceso de guardado de las palabras en json
 #-------------------------------------------------------------------
@@ -194,18 +254,19 @@ print("Obteniendo palabras .....")
 pal = BuscarPalabras(iLetras,aLetras)
 #Obtiene las palabras del txt
 pal2= BuscarPalabras2(iLetras,aLetras)
-
 #Obtiene las palabras de la segunda pagina
 pal3 = BuscarPalabras3(iLetras,aLetras)
 
 
+#Busca los valores repetidos
+d = BuscarRepetidos(pal,pal2)
+d = BuscarRepetidos(d,pal3)
+#Llena con las palabras que restan 
+d = llenar(pal,d);d = llenar(pal2,d);d = llenar(pal3,d);
 
-# Se juntan los dos diccionarios
-pal.update(pal2) 
-pal.update(pal3)
 
 #Diccionario para guardar palabra + traduccion y convertir en json
-dic = {'Palabras':pal}
+dic = {'Palabras':d}
 
 #Guarda el diccionario
 with open('json/dic.json','w') as file:
