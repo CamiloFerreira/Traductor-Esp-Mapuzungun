@@ -36,45 +36,6 @@ def CargarWeb(url):
 	soup=BeautifulSoup(r.content,'html5lib')
 	return soup
 
-
-#Funcion para quitar valores repetidos en los diccionarios
-
-def QuitarRepetidos(d2,aLetras):
-	d={}
-
-	for l in aLetras:
-		d[l] = []
-
-	repetido = False
-	for l in d2 :
-		for i in range(len(d2[l])):
-			pal = d2[l][i]
-			for le in d :
-				#si no existen datos en el diccionario "D" se llena con el primero
-				if(len(d[le]) == 0 ):
-					d[le].append(pal)
-				else:
-					#carga las palabras del segundo diccionario 
-					#si detecta un valor repetido sube la bandera y termina el bucle
-					for y in range(len(d[le])):
-						pal2 = d[le][y]
-						if(pal2[0].lower() == pal[0].lower()):
-							repetido = True
-							break
-					if(repetido):
-						palabra = pal[0]
-						if(pal2[1] != pal[1]):
-							sig = pal2[1]+"," + pal[1]
-							d[le][y] = [palabra,sig] 
-						repetido = False
-					else:
-						d[le].append(pal)
-	return d
-
-
-
-
-
 #Funcion para realizar busqueda en la pagina
 #https://www.interpatagonia.com/mapuche/diccionario.html
 def BuscarPalabras(iLetras,aLetras):
@@ -138,7 +99,6 @@ def BuscarPalabras2(iLetras,aLetras):
 			for ind in range(len(cad)):
 				if(cad[ind] != "\n" ):
 					actual = ind #Indice del actual
-
 					#Si existe siguiente ve si tiene ":" , sino concadena lo del siguiente con el actual
 					if ( actual+1 < len(cad) and actual > 0):
 						siguiente = actual+1
@@ -179,7 +139,8 @@ def BuscarPalabras2(iLetras,aLetras):
 		if(len(separados) > 1):
 			palabra     = separados[0]
 			significado = separados[1]
-
+			if(palabra == "FEY"):
+				print(significado)
 			#Se obtiene la primera palabra para ordenar alfabeticamente
 			p = normalize(palabra[:1].lower())
 			dic[p].append([palabra,significado])
@@ -238,19 +199,13 @@ pal2= BuscarPalabras2(iLetras,aLetras)
 pal3 = BuscarPalabras3(iLetras,aLetras)
 
 
+
 # Se juntan los dos diccionarios
 pal.update(pal2) 
 pal.update(pal3)
 
-#Se quitan los valores repetidos para cada diccionario
-
-print("Quitando palabras repetidas .....")
-pal = QuitarRepetidos(pal,aLetras)
-
-
 #Diccionario para guardar palabra + traduccion y convertir en json
 dic = {'Palabras':pal}
-
 
 #Guarda el diccionario
 with open('json/dic.json','w') as file:

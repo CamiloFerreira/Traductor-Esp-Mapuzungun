@@ -1,14 +1,6 @@
 import es_core_news_sm
 import json 
 
-
-#Cuando se inicie el script cargue el archivo json
-if __name__ == '__main__':
-	with open('json/dic.json') as file:
-		#Carga el archivo json
-		data = json.load(file)
-
-
 def normalize(s):
     replacements = (
         ("á", "a"),
@@ -23,37 +15,47 @@ def normalize(s):
     return s
 
 
-def BuscarTraduccion(buscar):
+def BuscarTraduccion(buscar,data):
 	#Abre el archivo json
-		aPal = [] #Lista con las palabras
+	aPal = [] #Lista con las palabras
 
-		for l in data['Palabras']:
-			#Recorre el json de manera alfabetica
-			lista = data['Palabras'][l]
-			for pal in lista : 
-				palabra = pal[0]
-				significados = pal[1]
-				for s in significados : 
-					if (s == buscar):
-						print("Son iguales")
-		return aPal
+	for l in data['Palabras']:
+		#Recorre el json de manera alfabetica
+		lista = data['Palabras'][l]
+		for pal in lista : 
+			palabra = pal[0]
+			significados = pal[1]
+			for s in significados : 
+				if (s == buscar):
+					aPal.append(palabra.strip())
+
+
+			#Si son los pronombres los saca directos 
+	if(buscar == "yo"):
+		aPal = [aPal[0].split(",")[0]]
+	return aPal
 			#print(lista)
 
-def Traducir(text):
+def Traducir(text,data):
 	nlp = es_core_news_sm.load()
 	buscar = nlp(text)
+	variantes = []
 	t = " "
 	for w in buscar:
 		n = normalize(w.text)
-		trad = BuscarTraduccion(n)
-		if ( len(trad) > 0 ):
-			t +=trad[0] + " "
-			print(trad)
-		else:
-			t += w.text + " " 
-	return t 
+		trad = BuscarTraduccion(n,data)
 
+		#Si existe solo una traduccion
+		
+		if( len(trad) == 1 or len(trad) == 0 ):
+			
+			#si no existe traduccion guarda la palabra original
+			if(len(trad) == 0 ):
+				t += w.text + " "
+			else:
+				t += trad[0] + " " 
 
-
-
-print(Traducir("marido"))
+		#Si existe mas de una 
+		elif(len(trad) > 1 ):
+			print("Existe mas de una ")
+	return t.strip()

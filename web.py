@@ -5,6 +5,7 @@ from traductor import Traducir
 app = Flask(__name__)
 
 
+
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -21,11 +22,13 @@ def gText():
 
 	cadena = data['cadena']
 
-	trad = Traducir(cadena)
-
-	print(trad)
-
+	trad = Traducir(cadena,datos)
 	return json.dumps({'status':'ok','t':trad})
 
+
 if __name__ == "__main__":
+	with open('json/dic.json') as file:
+		#Carga el archivo json
+		datos = json.load(file)
+
 	app.run()
