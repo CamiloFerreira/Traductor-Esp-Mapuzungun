@@ -1,9 +1,6 @@
 import es_core_news_sm
 import json 
 
-with open('json/dic.json') as file:
-	#Carga el archivo json
-	datos = json.load(file)
 
 def normalize(s):
     replacements = (
@@ -62,9 +59,5 @@ def Traducir(text,data):
 		#Si existe mas de una 
 		elif(len(trad) > 1 ):
 			t += trad[0] + " " 
-
-
 	return t.strip()
 
-
-print(Traducir("el es grande y guapo",datos))
