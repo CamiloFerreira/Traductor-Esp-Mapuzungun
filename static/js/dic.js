@@ -1,10 +1,6 @@
 $(document).ready(function() {
 	
-	var height = $(window).height(); // Obtiene el tamaño de la pantalal
-	var res ;
-	$('section').height(height);
 
-	$("#mostrar").css('height',height/2);
 	//Carga las palabras al comenzar la pagina
 	var datos = $.ajax({
 			async: false, // permite guardar la variable de response como global

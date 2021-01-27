@@ -1,59 +1,129 @@
 <!DOCTYPE html>
 <meta charset="ISO-8859-1">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 <html>
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script type="text/javascript" src="/static/js/popper.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/dic.js"></script>
-<link rel="stylesheet" type="text/css" href="/static/css/dic.css">
+<!--<link rel="stylesheet" type="text/css" href="/static/css/dic.css">--->
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 <head>
 	<title>Diccionario</title>
 </head>
+
+<style type="text/css">
+	@media (max-width: 900px){ 
+		.navbar{
+			text-align: center;
+		}
+		#textarea{
+			margin-top: 10%;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 50%;
+			
+		}
+		#card-buscar{
+			margin-top: 10% ;
+			padding-top: 10%;
+		}
+		#card-form{
+			padding-left: 10%;
+			margin-left:  -5%; 
+			margin-right: -6%;
+		}
+		#btn{
+			padding-top: 5%;
+		}
+	}
+	@media (min-width: 901px){
+		#textarea{
+			margin-top: 3%;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 5%;
+
+		}
+
+		
+		.row{
+			padding-left: 10%
+		}
+		#btn{
+			padding-top: 1%;
+		}
+
+		#card-buscar{
+			margin-top: 5% ;
+		
+		}
+
+
+
+	}
+body
+	{
+		background-color: #4468E1;
+		
+	}
+
+ul li {
+	  display:inline-block;
+	  list-style-type: none;
+	  text-align: left;
+	}
+
+
+
+</style>
+
+
 <body>
 
 	<!--- Barra de navegacion --->
-	<nav class="navbar nav-tabs navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Traductor Esp-Mapu</a>
-		
-		<div class="collapse navbar-collapse">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="/">Traductor Esp-Mapu</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+ 		 </button>
+	  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<ul class="navbar-nav ">
+				<li class="nav-item ">
 					<a class="nav-link" href="/"> Traductor </a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="/Diccionario"> Diccionario</a>
 				</li>
 
 			</ul>
-
-		</div>
+	  </div>
 	</nav>
 
 	<!--- Seccion de la pagina -->
 
-	<section class="contaniner">
+	<section class="contaniner-fluid">
 		<div class="row shadow-lg bg-white rounded" id="textarea">
 			<!--- Contenedor de palabras input ---->
-			<div class="col-10">
+			<div class="col-12 col-lg-10">
 					
 				<!----- Contenedor de input para buscar palabras --->
-				<div class="card">
-					  <div class="card-body">
+				<div class="card" id="card-buscar">
+					  <div class="card-body" >
 		    				<h5 class="card-title">Buscar Palabra </h5>
 		    				<hr>
 		    				<!---<p class="card-text">AQUI SE MOSTRARAN LAS TRADUCCIONES ANTERIORES</p>--->
 		    				<div class="row" >
-		    					<div class="col-2">
+		    					<div class="col-6 col-lg-2" id="card-form" >
 		    						<select class="form-control">
 		    							<option>Español</option>
 		    							<option>Mapudungun</option>
 		    						</select>
 		    					</div>
-		    					<div class="col-3">
+		    					<div class="col-7" >
 		    						<input type="text" class="form-control" name="palabra" placeholder="Palabra a buscar ">
 		    					</div>
-		    					<div class="col-3">
+		    					<div class="col-10" id="btn">
 									<button class="btn btn-primary" id="buscar"> Buscar</button>
 								</div>
 		    				</div>
@@ -62,7 +132,7 @@
 				<hr>
 
 				<!--- Contenedor de busquedas  ---->
-				<div class="col-15" id="busquedas">
+				<div class="col-13" id="busquedas">
 						
 					<!----- Contenedor de input para buscar palabras --->
 					<div class="card" >
@@ -76,9 +146,7 @@
 			    						<li class="li"> {{letra}}</li>
 			    						{% endfor %}
 			    					</ul>
-
-
-			    					<div class="col-20" id="mostrar" style="overflow-y:scroll;width: 100%">
+			    					<div class="col-20" id="mostrar" style="overflow-y:scroll;width: 100% ; height: 400px">
 			    						<table class="table">
 			    							<thead>
 			    								<tr>
