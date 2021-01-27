@@ -20,3 +20,4 @@ instalar un modulo de spacy  ( Modulo para trabajar con NLP)
 
 python -m spacy download es_core_news_sm
 
+esta funcionaod este proyecto en la siguiente pagina www.lfserver.tk:5000
