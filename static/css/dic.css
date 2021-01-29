@@ -1,0 +1,59 @@
+@media (max-width: 900px){ 
+		.navbar{
+			text-align: center;
+		}
+		#textarea{
+			margin-top: 10%;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 50%;
+			
+		}
+		#card-buscar{
+			margin-top: 10% ;
+			padding-top: 10%;
+		}
+		#card-form{
+			padding-left: 10%;
+			margin-left:  -5%; 
+			margin-right: -6%;
+		}
+		#btn{
+			padding-top: 5%;
+		}
+	}
+@media (min-width: 901px){
+		#textarea{
+			margin-top: 3%;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding-bottom: 5%;
+
+		}
+
+		
+		.row{
+			padding-left: 10%
+		}
+		#btn{
+			padding-top: 1%;
+		}
+
+		#card-buscar{
+			margin-top: 5% ;
+		
+		}
+
+
+
+	}
+
+ul li {
+	  display:inline-block;
+	  list-style-type: none;
+	  text-align: left;
+	}
+body
+{
+	background-color: #4468E1;
+}

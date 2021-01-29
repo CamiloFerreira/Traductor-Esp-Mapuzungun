@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	
-
 	//Carga las palabras al comenzar la pagina
 	var datos = $.ajax({
 			async: false, // permite guardar la variable de response como global
@@ -18,37 +17,65 @@ $(document).ready(function() {
 		})
 
 
-	//Llena con la primera posicion de palabras osea "a"
+	//Llena con todas las palabras
 
 	$.each(res,function(i,item){
 		
-		//Recorre cada fila para la letra "a"
-		cad = ""
-		for(var i =0 ; i < item.a.length ; i++)
-		{
-			lista = item.a[i];
 
-			palabra = item.a[i][0];
-			significado = item.a[i][1];
+		cad = " "
+		//Obtiene las key del json
+		for(const letra in item){
+			var lista = item[letra];
 
-			cad += "<tr>" 
-			cad += "<td>"+palabra+"</td>" 
-			cad += "<td>"+significado+"</td>" 
-			cad += "</th>"
-			
+			for (var i = 0; i < lista.length; i++) 
+			{
+				var palabra     = lista[i][0];
+				var significado = lista[i][1];
+
+				cad += "<tr class='"+letra+"'>" 
+				cad += "<td class='pal'>"+palabra+"</td>" 
+				cad += "<td class='sig'>"+significado+"</td>" 
+				cad += "</th>"
+
+			}
 		}
+
 		$("tbody").html(cad); 
+
+		 
 	})
 
 
+	$("#input").keyup(function(){
+		var cadena = $("#input").val().toLowerCase();
+		var sel    = $("select").val();
 
-	$("#buscar").click(function (evt) {
+		if(sel == "1"){
+			$("#data tr").each(function(){
+				var sig = $(this).find(".sig").text().toLowerCase();
 
-		//Se obtiene el texto ingresado para ser mandado a python
-		var dic = {cadena :$("#texto").val()};	
+
+				if(sig.includes(cadena)){
+					$(this).show()
+				}else{
+					$(this).hide();
+				}
+
+			})
+		}else{
+			$("#data tr").each(function(){
+				var sig = $(this).find(".pal").text().toLowerCase();
+
+				if(sig.includes(cadena)){
+					$(this).show()
+				}else{
+					$(this).hide();
+				}
+
+			})
+		}
+
 	})
-
-
 	// Añadir animacion a li
 
 	$(".li")
@@ -63,28 +90,14 @@ $(document).ready(function() {
 	.click(function(){
 		var letra = $(this).text().trim();
 
-		$.each(res,function(i,item){
-				
+		$("#data tr").each(function(){
+			if ( letra != $(this).attr('class')){
 
-				//Recorre cada fila para la letra "a"
-				$("tbody").html(" ");
-				cad = ""
-
-				for(var i =0 ; i < item[letra].length ; i++)
-				{
-					lista = item[letra][i];
-
-					palabra = item[letra][i][0];
-					significado = item[letra][i][1];
-
-					cad += "<tr>" 
-					cad += "<td>"+palabra+"</td>" 
-					cad += "<td>"+significado+"</td>" 
-					cad += "</th>"
-					
-				}
-				$("tbody").html(cad); 
-			})
+				$(this).hide();
+			}else{
+				$(this).show();
+			}
+		})
 	})
 
 });

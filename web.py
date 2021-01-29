@@ -39,4 +39,4 @@ if __name__ == "__main__":
 		#Carga el archivo json
 		datos = json.load(file)
 
-	app.run("192.168.1.116")
+	app.run(debug=True,host="192.168.1.116",port=80)

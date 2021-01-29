@@ -5,53 +5,12 @@
 <script type="text/javascript" src="/static/js/popper.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/index.js"></script>
-<!---<link rel="stylesheet" type="text/css" href="/static/css/index.css"> --->
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-
-<style type="text/css">
-	@media (max-width: 900px){ 
-		.navbar{
-			text-align: center;
-		}
-		#textarea{
-			margin-top: 10%;
-			margin-left: 5%;
-			margin-right: 5%;
-			padding-bottom: 50%;
-			
-		}
-	}
-	@media (min-width: 901px){
-		#textarea{
-			margin-top: 3%;
-			margin-left: 5%;
-			margin-right: 5%;
-			padding-bottom: 5%;
-
-		}
-
-		
-		.row{
-			padding-left: 10%
-		}
-		#boton{
-			padding-left: 10%
-		}
-	}
-
-			body{
-			background-color: #4468E1;
-		}
-
-
-</style>
-
+<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 <head>
 	<title>Traductor</title>
 </head>
 	
-
-
 <body>
 	<!--- Barra de navegacion --->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -86,13 +45,13 @@
 								<p>Texto a Traduccir:</p>
 								<textarea id="texto" class="form-control"></textarea>
 							<div id="little">
-								<textarea  class="texto2 form-control"></textarea>
+								<textarea readonly="readonly" class="texto2 form-control"></textarea>
 							</div>
 								
 							</div>
 						<div class="col-lg-5 form-group" id="small">
 							<p> Texto Mapudungun: </p>
-							<textarea  class="texto2 form-control"></textarea>
+							<textarea  readonly="readonly" class="texto2 form-control"></textarea>
 						</div>
 
 						</div>
@@ -106,12 +65,26 @@
 				
 		
 				<!--- Contenedor de palabras recientes usadas y la traduccion -->
-				<div class="col-12" >
+				<div class="col-12 col-lg-10" >
 					<hr>
 					<div class="card">
-						  <div class="card-body">
-			    				<h5 class="card-title">Historial reciente</h5>
-			    				<p class="card-text">AQUI SE MOSTRARAN LAS TRADUCCIONES ANTERIORES</p>
+						  <div class="card-body" style="height: 500px">
+			    				<h5 class="card-title" style="text-align: center;">Historial reciente</h5>
+			    				<br>
+
+			    				<div style="height: 400px;overflow-y:scroll;width: 100% ">
+				    				<ul id="historial" style="list-style: none">
+			    						<!--- Contenedor de cada palabra traduccida --->
+			    						<div id="tVacio" class="cont col-13 col-lg-11 shadow-lg bg-white rounded">
+					    					<p class="trad_or" style="text-align: center;"> No se han realizado traducciones </p>
+				    					</div>
+			    						<div id="div_cont"></div>
+
+
+			    					</ul>		    					
+
+			    				</div>
+
 			    				
 			  			  </div>
 					</div>
