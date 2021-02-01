@@ -272,4 +272,4 @@ dic = {'Palabras':d}
 with open('json/dic.json','w') as file:
 	json.dump(dic,file,indent=4)
 
-
+print("Palabras obtenidas !! ")

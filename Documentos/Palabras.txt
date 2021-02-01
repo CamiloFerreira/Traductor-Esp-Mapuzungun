@@ -1397,3 +1397,34 @@ TAMU: Su , de ustedes dos .
 TAMN: Su , de ustedes más.
 TAIU :Nuestro , de nosotros dos.
 TAIÑ: Nuestro , de nosotros o más de dos . 
+FELEY:asi es , de acuerdo , si . 
+Gelay : no hay .
+Txaqeltu may , Mañumkülen : Gracias.
+Pewkalleael: Hasta pronto.
+Chey: Tal vez.
+Anüge: Tome asiento.
+Küpage: Ven aquí.
+Müchawula: Más rato.ve
+Kümelen: Estoy bien.
+Wezaelkalen: Estoy mal.
+Eyew püle: Por acá.
+Faw püle: Por aquí.
+Wezalen: estoy satisfecho.
+Nhewen: Fuerza.
+Iney pigeymi:Cómo es tu nombre?,Cómo te llamas?.
+Chew tuwimi: ¿de dónde vienes?,¿de dónde eres?
+Chum: ¿Cómo?.
+Chumael: ¿Para qué?.
+Mawünhay: ¿Va a llover?.
+Chew püle: ¿En que lugar?,¿En dónde?.
+Chumalu am: ¿Para que?.
+Chumgelu am: ¿Por qué?.
+Chumül: ¿Cuándo?.
+Ipeymi: ¿Comiste?.
+Tunten txipantu nieymi: ¿Cuántos años tienes?.
+Kelluafen: ¿Me puedes ayudar?.
+Chumül wiñotuaymi: ¿Cuándo vuelves?.
+Eymi kay: ¿Y tú?.
+Chew: ¿Donde?.
+Iney akuy: ¿Quien llego?.
+
