@@ -121,7 +121,7 @@ def OrdenarJson():
 					else:	
 						significado[y] = pal
 
-				set(significado) #sirve para eliminar palabras repetidas
+				significado = list(set(significado)) #sirve para eliminar palabras repetidas
 				data["Palabras"][l][i] = [palabra,significado]
 
 

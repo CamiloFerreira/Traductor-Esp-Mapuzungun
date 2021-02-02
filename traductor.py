@@ -162,8 +162,3 @@ def Traducir(text,data):
 
 	return t.strip()
 
-
-with open('json/dic.json','r') as file:
-	data = json.load(file)
-
-print(Traducir("como te llamas ? , yo me llamo camilo" , data))
