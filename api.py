@@ -3,6 +3,7 @@ from traductor import Traducir
 import json
 
 
+
 #Se carga el json con el diccionario 
 with open('json/dic.json') as file:
 	#Carga el archivo json
@@ -14,7 +15,19 @@ app = Flask(__name__)
 #Ruta que retorna el diccionario que actualmente se tiene
 @app.route("/gDic")
 def getDic():
-	return jsonify(datos['Palabras'])
+	dic={}
+	for letras in datos['Palabras']:
+		dic[letras] = []
+		aLetras = datos['Palabras'][letras]
+		aPal = []
+		for pal in aLetras:
+			palabra     = pal[0]
+			significado = pal[1] 
+			aPal.append({"palabra":palabra,"significado":significado})
+		dic[letras] = aPal
+		aPal = []
+
+	return jsonify(dic)
 #Ruta que retorna las traducciones 
 @app.route("/gTrad/<string:text>")
 def gTrad(text):
@@ -32,6 +45,6 @@ def gSel(letra):
 	return jsonify(dic)	
 
 if __name__ == "__main__":
-	app.run(debug=True,host="192.168.1.116",port=8080)
+	app.run(debug=True,host="192.168.1.254",port=5000)
 
 
