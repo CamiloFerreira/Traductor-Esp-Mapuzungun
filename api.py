@@ -15,18 +15,21 @@ app = Flask(__name__)
 #Ruta que retorna el diccionario que actualmente se tiene
 @app.route("/gDic")
 def getDic():
-	dic={}
+	ListaPal = []
+	i = 0 #Indice de la lista Lista pal 
 	for letras in datos['Palabras']:
-		dic[letras] = []
+		#Se agrega los datos a listaPal 
+		ListaPal.append({"letra":letras})
 		aLetras = datos['Palabras'][letras]
 		aPal = []
 		for pal in aLetras:
 			palabra     = pal[0]
 			significado = pal[1] 
 			aPal.append({"palabra":palabra,"significado":significado})
-		dic[letras] = aPal
+		ListaPal[i]['palabras'] = aPal
 		aPal = []
-
+		i +=1
+	dic={"datos":ListaPal}
 	return jsonify(dic)
 #Ruta que retorna las traducciones 
 @app.route("/gTrad/<string:text>")
@@ -45,6 +48,6 @@ def gSel(letra):
 	return jsonify(dic)	
 
 if __name__ == "__main__":
-	app.run(debug=True,host="192.168.1.254",port=5000)
+	app.run(debug=True,host="0.0.0.0",port=5000)
 
 
