@@ -23,11 +23,10 @@ def dic():
 		 ]
 	return render_template("dic.html",letras=aLetras,dic=datos)
 
-@app.route("/gText",methods=["POST"])
-def gText():
-	data = request.get_json()
-
-	cadena = data['cadena']
+@app.route("/gText/<string:text>")
+def gText(text):
+	
+	cadena = text # data['cadena']
 
 	trad = Traducir(cadena,datos)
 	return json.dumps({'status':'ok','t':trad})
