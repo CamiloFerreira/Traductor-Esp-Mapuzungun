@@ -21,8 +21,8 @@ $(document).ready(function() {
 	//Se obtiene el texto ingresado para ser mandado a python
 	var dic = {cadena :$("#texto").val()};
 	$.ajax({
-		url:"/gText/"+$("#texto").val(),
-		type:"GET",
+		url:"/gText",
+		type:"POST",
   		data : JSON.stringify(dic),
     	contentType: "application/json",
 

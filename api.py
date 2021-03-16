@@ -48,11 +48,15 @@ def getDic():
 
 	return jsonify(ListaPal)
 
-#Ruta que retorna las traducciones 
-@app.route("/gTrad/<string:text>")
-def gTrad(text):
-	t = Traducir(text, datos)
-	return jsonify({"traduccion": t}) 
+#Ruta que retorna las traducciones
+@app.route("/gTrad",methods=["POST"])
+def gTrad():
+        data=request.get_json()
+        object = json.loads(data)
+        cadena = object['cadena']
+        #cadena=data['cadena']
+        t = Traducir(cadena, datos)
+        return jsonify({"traduccion": t})
 
 #Ruta que retorna json pero solo una key 
 
