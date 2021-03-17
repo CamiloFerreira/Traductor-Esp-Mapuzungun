@@ -15,7 +15,6 @@ def normalize(s):
         s = s.replace(a, b).replace(a.upper(), b.upper())
     return s
 
-
 def BuscarTraduccion(buscar,data):
 	#Abre el archivo json
 	buscar = normalize(buscar).lower()
@@ -66,7 +65,6 @@ def BuscarxToken(buscar,data):
 	return t
 
 def esPregunta(buscar,data):
-	
 	bToken = False
 	#Primero busca la palabra completa 
 	#si tiene "¿" al comienzo busca normal
@@ -87,24 +85,16 @@ def esPregunta(buscar,data):
 			else:
 				cad +=i
 			ant = i 
-
 		buscar = cad
 		pal = BuscarTraduccion(buscar,data)[0]
 		if(pal != None):
 			return pal[0] + "?"
 		else:
 			bToken = True 
-
 	if(bToken):
 		return BuscarxToken(buscar,data)
 
-
-
 def Traducir(text,data):
-
-	print(text)
-	
-
 	#Primero realiza la busqueda con la oracion completa 
 	trad_p = BuscarTraduccion(text,data)
 	isAnswer = text.find("?") > 0 # Si es true , es porque es una pregunta
@@ -116,12 +106,10 @@ def Traducir(text,data):
 			return trad_p[0][0]
 	else:
 		t = " " # variable que contendra la traduccion
-
 		#Primero pregunta si existe separacion por ","
 		if(text.find(",") > 0):
 			Ctext = text.split(",") # separa el texto por las comas
 			#Recorre la lista del texto separado por comas
-
 			for pal in Ctext:
 				#Primero pregunta si la palabra es una pregunta 
 				if(isAnswer):
@@ -146,19 +134,12 @@ def Traducir(text,data):
 							t += BuscarxToken(pal.strip(),data)
 						else :
 							t += BuscarxToken(pal.strip(),data) + "," 
-
-
-
 		#Si no existe separacion por "," continua con la busqueda
 		else:
-
 			#Pregunta si es una pregunta 
 			if(isAnswer):
-				t += esPregunta(text,data)
-				
+				t += esPregunta(text,data)				
 			else:
 				t += BuscarxToken(text,data)
-
-
 	return t.strip()
 
