@@ -1,5 +1,7 @@
-from flask import Flask, render_template,request,json
+from flask import Flask, render_template,request,json , jsonify
 from traductor import Traducir
+import json
+
 
 
 app = Flask(__name__)
