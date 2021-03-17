@@ -39,7 +39,7 @@ def gDic():
 
 #Ruta que retorna el diccionario que actualmente se tiene
 @app.route("/gDic2")
-def getDic():
+def getDic2():
 	ListaPal = []
 	i = 0 #Indice de la lista Lista pal 
 	for letras in datos['Palabras']:
