@@ -1,12 +1,14 @@
 from flask import Flask, render_template,request,json , jsonify
 from traductor import Traducir
 import json
+import os
 
 
 
 app = Flask(__name__)
 
-with open('json/dic.json') as file:
+
+with open(os.getcwd()+'/json/dic.json') as file:
 	#Carga el archivo json
 	datos = json.load(file)
 
@@ -35,6 +37,7 @@ def gText():
 @app.route("/gDic",methods=["POST"])
 def gDic():
 	return json.dumps(datos)
+
 
 
 #Ruta que retorna el diccionario que actualmente se tiene
@@ -78,4 +81,4 @@ def gSel(letra):
 
 
 if __name__ == "__main__":
-	app.run(debug=True,host="0.0.0.0",port=80)
+	app.run(debug=True,host="0.0.0.0",port=5000)
