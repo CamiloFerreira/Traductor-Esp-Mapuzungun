@@ -33,7 +33,7 @@ def dic():
 def gText():
 	data = request.get_json()
 	cadena = data['cadena']
-	trad = Traducir(cadena,datos)
+	trad = Traducir(cadena)
 	return json.dumps({'status':'ok','t':trad})
 
 @app.route("/gDic",methods=["POST"])
