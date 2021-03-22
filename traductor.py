@@ -141,5 +141,11 @@ def Traducir(text,data):
 				t += esPregunta(text,data)				
 			else:
 				t += BuscarxToken(text,data)
+
+
+	
+
 	return t.strip()
+
+
 

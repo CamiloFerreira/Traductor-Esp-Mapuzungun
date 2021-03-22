@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template,request,json , jsonify
-from traductor import Traducir
+from traductor2 import Traducir
 import json
 import os
 
@@ -67,7 +69,7 @@ def gTrad():
         object = json.loads(data)
         cadena = object['cadena']
         #cadena=data['cadena']
-        t = Traducir(cadena, datos)
+        t = Traducir(cadena)
         return jsonify({"traduccion": t})
 
 #Ruta que retorna json pero solo una key 
