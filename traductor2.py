@@ -48,11 +48,11 @@ def BuscarToken(token,aPalabras):
 		tmpPal =token
 	return tmpPal.lower()+" "
 
-def Traducir(palabra,datos):
+def Traducir(palabra):
 	nlp = es_core.load()
-	#with open('json/dic2.json') as file:
+	with open('json/dic2.json') as file:
 		#Carga el archivo json
-	#	datos = json.load(file)
+		datos = json.load(file)
 	'''
 		Se cargan las palabras en un arreglo para 
 		realizar las busquedas mas simples 
