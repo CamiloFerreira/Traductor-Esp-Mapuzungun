@@ -33,7 +33,7 @@ def dic():
 def gText():
 	data = request.get_json()
 	cadena = data['cadena']
-	trad = Traducir(cadena)
+	trad = Traducir(cadena,datos)
 	return json.dumps({'status':'ok','t':trad})
 
 @app.route("/gDic",methods=["POST"])
@@ -69,7 +69,7 @@ def gTrad():
         object = json.loads(data)
         cadena = object['cadena']
         #cadena=data['cadena']
-        t = Traducir(cadena)
+        t = Traducir(cadena,datos)
         return jsonify({"traduccion": t})
 
 #Ruta que retorna json pero solo una key 

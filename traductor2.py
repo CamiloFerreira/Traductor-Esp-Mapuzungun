@@ -1,10 +1,5 @@
-import psutil
 import es_core_news_sm as es_core
 import json 
-import traductor as td
-import time
-
-
 
 def normalize(s):
     replacements = (
@@ -20,72 +15,84 @@ def normalize(s):
     return s
 
 
+def BuscarToken(token,aPalabras):
+	'''
+		Funcion que busca la palabra por token 
+		ejemplo se ingresa la palabra "Hola " busca esa palabra en el diccionario
+		y retorna "Foche"
+	'''
+	token = normalize(token.lower().strip())
+	buscar = True
+	i = 0 ; # indice de aPalabras
+	i_sig = 0 ; # indice para buscar el el array de los significados
 
-class Traductor():
+	tmpPal = "No existe";
+	while buscar:
+		pal = aPalabras[i]['palabra']
+		sig = aPalabras[i]['significado'] # Array con significados
+		palabra = normalize(sig[i_sig].lower().strip())
 
-	data = "" #Variable que guardara los datos del json
-	letras =[
-		 'a','b','c','d','e','f','g','h','i','j',
-		 'k','l','m','n','ñ','o','p','q','r','s',
-		 't','u','v','w','x','y','z'
-		 ]
+		if(palabra== token):
+			tmpPal = pal
+			buscar = False	 
+		if(i_sig < len(sig)-1):
+			i_sig +=1
+		else:
+			i_sig = 0 
+			if(i < len(aPalabras)-1):
+				i +=1
+			else:
+				buscar = False
+
+	if(tmpPal == "No existe"):
+		tmpPal =token
+	return tmpPal.lower()+" "
+
+def Traducir(palabra,datos):
+	nlp = es_core.load()
+	#with open('json/dic2.json') as file:
+		#Carga el archivo json
+	#	datos = json.load(file)
+	'''
+		Se cargan las palabras en un arreglo para 
+		realizar las busquedas mas simples 
+	'''
+
+	cad = " "
 	aPalabras = []
+	for jsonObject in datos:
+		aPalabras += jsonObject['palabras']
 
-	
-	def __init__(self, data):
-		self.nlp =es_core.load()
-		""" Instancia la clase traductor
-			Parametros data -- json que contiene el diccionario
-		"""
-		self.data = data
-		for jsonObject in self.data:
-			for palabras in jsonObject['palabras']:
-				self.aPalabras.append(palabras)
-	def BuscarPal(self,pal):
-		
-		buscar = True
+	w = nlp(palabra)
 
+	#Pregunta si existe el signo de pregunta
+	if(palabra.find("?") > 0):
+		#Pregunta si existe separacion por coma
+		if(palabra.find(",") > 0):
+			#Separa mediante split por coma
+			aComa = palabra.split(",")
+			for i in range(len(aComa)):
+				if(i == len(aComa)-1):
+					cad += "¿"+BuscarToken(aComa[i],aPalabras)+"?"
+				else:
+					cad += BuscarToken(aComa[i],aPalabras)+","
+		else:
+			cad ="¿"+BuscarToken(palabra,aPalabras)+"?"
+	else:
+		#Si no existe traduce token x token
+		for token in w :
+			cad +=BuscarToken(str(token),aPalabras)
 
+	return cad
 
+	#inicio = time.process_time()
+	#print(BuscarToken(token,aPalabras))
+	#final = time.process_time() - inicio
 
-	def getTrad(self,oracion):
-		"""Funcion que busca la traduccion teniendo 
-		   como parametro la oracion
-			1. Busca la oracion completa para ver si existe 
-			
-		"""
-		
-		w =self.nlp(oracion)
-		for text in w :
-			print(text)
-		
+	#inicio_1 = time.process_time()
+	#print(BuscarFor(token,aPalabras))
+	#final_2 = time.process_time() - inicio_1
 
-
-	def getData(self):
-		return self.data
-
-
-
-
-with open('json/dic2.json') as file:
-	#Carga el archivo json
-	datos = json.load(file)
-
-with open('json/dic.json') as file:
-	#Carga el archivo json
-	data = json.load(file)
-traductor = Traductor(datos)
-
-cadena = "Hola , como te llamas?"
-
-
-inicio_1 = time.process_time()
-traductor.getTrad(cadena)
-final_1  = time.process_time() - inicio_1
-#inicio_2 = time.process_time()
-#td.Traducir(cadena,data)
-#final_2  = time.process_time() - inicio_2
-
-
-print("Ejecutar con clase : ",final_1)
-#print("Codigo anterior :",final_2)
+	#print("Velocidad while : ",final)
+	#print("Velocidad for :",final_2)
+	#print("While es mas veloz : " ,final < final_2)
