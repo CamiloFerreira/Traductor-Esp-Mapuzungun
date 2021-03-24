@@ -1,6 +1,5 @@
 import es_core_news_sm as es_core
 import json 
-
 #----------------------------------
 #Variables globales 
 #---------------------------------
@@ -17,8 +16,6 @@ for jsonObject in datos:
 
 #------------------------------------
 #------------------------------------
-
-
 
 def normalize(s):
 	"""
@@ -126,17 +123,10 @@ def isAnswer(palabra,aPal):
 					trad = BuscarToken(aComa[i])
 					print(trad)
 					cad += trad+","
-
-
-
-
 		#Si no existe separacion por coma
 		else:
-
 			#Primero realiza la traducion a la palabra completa 
-
 			cad += BuscarToken(palabra)
-
 			"""
 				 Si detecta que la cadena obtenida es igual a la original realiza la traduccion
 				 por tokens
@@ -144,9 +134,7 @@ def isAnswer(palabra,aPal):
 			if(palabra == cad.strip()):
 				cad = ""
 				for pal in aPal:
-
 					#if(pal[1] == "CCONJ"):
-					
 					cad += BuscarToken(str(pal[0]))+ " "
 			else:
 				cad = "¿"+cad
@@ -165,9 +153,6 @@ def Traducir(palabra):
 		oracion a traduccir 
 
 	"""
-
-	
-
 	cad = ""	   # variable que contendra la traduccion 
 
 	# Realiza la normalizacion de la palabra y quita posibles espacios
@@ -176,33 +161,19 @@ def Traducir(palabra):
 	
 	#Crea lista con los tokens y su tipo  
 	aPal = [ [text,text.pos_] for text in w]
-	
-
 
 	#Realiza la comprobacion si es pregunta
 	esPregunta = palabra.find("?") > 0 
-
-
 	if(esPregunta):
 		#Llama a la funcion si es pregunta
 		cad = isAnswer(palabra,aPal)
-
 	else:
 		"""
 		Primero detecta si existe una coma para descubrir si 
 		existe mas de una oracion 
 
 		"""
-	
 		for pal in aPal:
 			cad +=BuscarToken(str(pal[0]))+" " 
 
-
 	return cad
-
-
-
-
-
-cad = Traducir("soy camilo , como te llamas?")
-print(cad)
