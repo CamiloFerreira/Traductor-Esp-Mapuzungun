@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template,request,json , jsonify
-from traductor2 import Traducir
+from traductor import Traducir
 import json
-import os
 
 
 
 app = Flask(__name__)
 
 
-with open(os.getcwd()+'/json/dic.json') as file:
+with open('json/dic_final.json') as file:
 	#Carga el archivo json
 	datos = json.load(file)
-
-
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -40,27 +37,10 @@ def gText():
 def gDic():
 	return json.dumps(datos)
 
-
-
 #Ruta que retorna el diccionario que actualmente se tiene
 @app.route("/gDic2")
 def getDic2():
-	ListaPal = []
-	i = 0 #Indice de la lista Lista pal 
-	for letras in datos['Palabras']:
-		#Se agrega los datos a listaPal 
-		ListaPal.append({"letra":letras})
-		aLetras = datos['Palabras'][letras]
-		aPal = []
-		for pal in aLetras:
-			palabra     = pal[0]
-			significado = pal[1] 
-			aPal.append({"palabra":palabra,"significado":significado})
-		ListaPal[i]['palabras'] = aPal
-		aPal = []
-		i +=1
-
-	return jsonify(ListaPal)
+	return jsonify(datos)
 
 #Ruta que retorna las traducciones
 @app.route("/gTrad",methods=["POST"])
@@ -71,15 +51,6 @@ def gTrad():
         #cadena=data['cadena']
         t = Traducir(cadena)
         return jsonify({"traduccion": t})
-
-#Ruta que retorna json pero solo una key 
-@app.route("/gSel/<string:letra>")
-def gSel(letra):
-	temp = datos['Palabras'][letra]
-	dic =[]
-	for i in range(len(temp)):
-		dic.append({'Palabra':temp[i][0],"Significados":temp[i][1]})
-	return jsonify(dic)	
 
 
 if __name__ == "__main__":

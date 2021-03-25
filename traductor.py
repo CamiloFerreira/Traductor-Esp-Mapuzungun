@@ -1,151 +1,189 @@
-import es_core_news_sm
+import es_core_news_sm as es_core
 import json 
+#----------------------------------
+#Variables globales 
+#---------------------------------
 
+
+nlp = es_core.load()
+
+with open('json/dic_final.json') as file:
+	#Carga el archivo json
+	datos = json.load(file)
+
+aPalabras = [] # Lista que contiene el arreglo con las palabras 
+
+for jsonObject in datos:
+	aPalabras += jsonObject['palabras']
+
+#------------------------------------
+#------------------------------------
 
 def normalize(s):
-    replacements = (
-        ("á", "a"),
-        ("é", "e"),
-        ("í", "i"),
-        ("ó", "o"),
-        ("ú", "u"),
-        ("ü","u")
-    )
-    for a, b in replacements:
-        s = s.replace(a, b).replace(a.upper(), b.upper())
-    return s
+	"""
+		Funcion que quita los ascentos y otros signos extraños 
+		que contiene las palabras para retornar una vocal limpia y sin 
+		caracteres extras 
 
-def BuscarTraduccion(buscar,data):
-	#Abre el archivo json
-	buscar = normalize(buscar).lower()
-	aPal = [] #Lista con las palabras
-	palExiste = False
-	for l in data['Palabras']:
-		#Recorre el json de manera alfabetica
-		lista = data['Palabras'][l]
-		for pal in lista : 
-			palabra = pal[0]
-			significados = pal[1]
-			for s in significados :
-				s = normalize(s).lower() 
-				#busca similitud de palabras
-				if (s == buscar):
-					aPal.append(palabra.strip().lower())
-					palExiste = True # Si existe la palabra
+		parametro_1 : s
 
-			#Si son los pronombres los saca directos 
-	if(buscar == "yo"):
-		aPal = [aPal[0].split(",")[0]]
+		palabra a normalizar ejemplo "estás"
+	""" 
+	replacements = (
+		("á", "a"),
+		("é", "e"),
+		("í", "i"),
+		("ó", "o"),
+		("ú", "u"),
+		("ü","u")
+	)
+	for a, b in replacements:
+		s = s.replace(a, b).replace(a.upper(), b.upper())
+	return s
 
-	if(palExiste):
-		return [aPal,palExiste]
-	else:
-		return [None,palExiste]		
 
-def BuscarxToken(buscar,data):
-	nlp = es_core_news_sm.load()
-	w = nlp(buscar) # convierte palabra en tokens
-	t = " " 
-	for token in w :
-		text = token.text # guarda la palabra
-		type = token.pos_ # establece el tipo de palabra 
+def BuscarToken(token):
+	'''
+		Funcion que busca la palabra por token 
+		ejemplo se ingresa la palabra "Hola " busca esa palabra en el diccionario
+		y retorna "Foche"
 
-		trad = BuscarTraduccion(text,data)[0] #Obtiene la traduccion
+		parametro_1 : token
 
-		#Si no existe traduccion 
-		if(trad == None):
-			t += text + " "
-		#Si existe traduccion
+		esta contiene la palabra a ingresar ejemplo "hola" , "como ", "te","llamas","?"
+
+		parametro_2 : aPalabras
+
+		arreglo que contiene el diccionario obtenido del json
+	'''
+	token = normalize(token.lower().strip())
+	buscar = True
+	i = 0 ; # indice de aPalabras
+	i_sig = 0 ; # indice para buscar el el array de los significados
+
+	tmpPal = "No existe";
+	while buscar:
+		pal = aPalabras[i]['palabra'][0]
+
+		#print(pal)
+		sig = aPalabras[i]['significado'] # Array con significados
+		
+		if(len(sig) == 0):
+			sig = [""]
+
+		palabra = normalize(sig[i_sig].lower().strip())
+
+
+		if(palabra== token):
+			tmpPal = pal
+			buscar = False	 
+		if(i_sig < len(sig)-1):
+			i_sig +=1
 		else:
-			 #Si posee solo una traduccion osea una sola posicion el arreglo
-			 if(len(trad) == 1):
-			 	t += trad[0] + " "
-			 else :
-			 	t += trad[0] + " " 
-	return t
-
-def esPregunta(buscar,data):
-	bToken = False
-	#Primero busca la palabra completa 
-	#si tiene "¿" al comienzo busca normal
-	if(buscar.find("¿") >= 0):
-		pal = BuscarTraduccion(buscar,data)[0]
-		if(pal != None):
-			return pal[0] + "?"
-		else:
-			bToken = True 
-	else:
-		ant = ""
-		cad = ""
-		for i in buscar:
-			#Esta parte quita el posible espacio que existe entre la palabra y el signo
-			if ( ant == " " and i == "?"):
-				cad = cad[:len(cad)-1]
-				cad +="?" 
+			i_sig = 0 
+			if(i < len(aPalabras)-1):
+				i +=1
 			else:
-				cad +=i
-			ant = i 
-		buscar = cad
-		pal = BuscarTraduccion(buscar,data)[0]
-		if(pal != None):
-			return pal[0] + "?"
-		else:
-			bToken = True 
-	if(bToken):
-		return BuscarxToken(buscar,data)
+				buscar = False
 
-def Traducir(text,data):
-	#Primero realiza la busqueda con la oracion completa 
-	trad_p = BuscarTraduccion(text,data)
-	isAnswer = text.find("?") > 0 # Si es true , es porque es una pregunta
+	if(tmpPal == "No existe"):
+		tmpPal =token
 	
-	if(trad_p[1]):
-		if(isAnswer):
-			return trad_p[0][0] +"?"
-		else:
-			return trad_p[0][0]
-	else:
-		t = " " # variable que contendra la traduccion
-		#Primero pregunta si existe separacion por ","
-		if(text.find(",") > 0):
-			Ctext = text.split(",") # separa el texto por las comas
-			#Recorre la lista del texto separado por comas
-			for pal in Ctext:
-				#Primero pregunta si la palabra es una pregunta 
-				if(isAnswer):
-					t += esPregunta(pal.strip(),data) + ","
-				else :
-					#Realiza primero la busqueda con la palabra sin operar con tokens
-					tr = BuscarTraduccion(pal.strip(),data)
-					if(tr[0] != None):
-						aPal = list(set(tr[0])) # obtiene la lista de palabras y quita si existen palabras repetidas
-						#Pregunta si tiene mas de un signficado
-						if(len(aPal) == 1 ):
-							t += aPal[0].strip() + "," 
-						else:
-							#print("TIene mas de uno")
-							#print(aPal)
-							t += aPal[0].strip() + "," 
-					#Si no encuentra traduccion suma la palabra a la cadena
+
+	return tmpPal.lower()
+
+
+
+
+def isAnswer(palabra,aPal):
+	"""
+		Funcion que retorna la traduccion dependiendo si existe 
+		un signo de pregunta en la oracion
+
+		parametro_1 : palabra
+		Esta siendo la oracion a recibir 
+		parametro_2 : aPal
+		Siendo el arreglo que contiene la tokenizacion de la oracion 
+		con su respectiva clasificacion
+    """
+    
+	cad = ""
+	#Si contiene el signo "?" 
+	if(palabra.find("?") > 0):
+		existe = True
+
+		#Pregunta si existe separacion por coma
+		if(palabra.find(",") > 0):
+			#Separa mediante split por coma
+			aComa = palabra.split(",")
+			trad =" "
+
+			for i in range(len(aComa)):
+				if(i == len(aComa)-1):
+					trad = BuscarToken(aComa[i]).strip()
+					#Si la cadena obtenida es igual a la original
+					if(trad == aComa[i].strip()):
+						w = nlp(aComa[i].strip())
+						for text in w :
+							cad += " "+BuscarToken(str(text))
 					else:
-						#Si es la palabra que se encuentra al final de la lista no se agrega coma
-						
-						if(Ctext.index(pal) == len(Ctext)-1):
-							t += BuscarxToken(pal.strip(),data)
-						else :
-							t += BuscarxToken(pal.strip(),data) + "," 
-		#Si no existe separacion por "," continua con la busqueda
+						cad += trad
+				else:
+					trad = BuscarToken(aComa[i])
+					print(trad)
+					cad += trad+","
+		#Si no existe separacion por coma
 		else:
-			#Pregunta si es una pregunta 
-			if(isAnswer):
-				t += esPregunta(text,data)				
+			#Primero realiza la traducion a la palabra completa 
+			cad += BuscarToken(palabra)
+			"""
+				 Si detecta que la cadena obtenida es igual a la original realiza la traduccion
+				 por tokens
+			"""
+			if(palabra == cad.strip()):
+				cad = ""
+				for pal in aPal:
+					#if(pal[1] == "CCONJ"):
+					cad += BuscarToken(str(pal[0]))+ " "
 			else:
-				t += BuscarxToken(text,data)
+				cad = "¿"+cad
 
+				cad +="?" 
 
+	return cad
+
+def Traducir(palabra):
+	""" Realiza las traducciones obteniendo 
+		la palabra y/o oracion completa a 	
+		traducir 
+
+		parametro_1 : palabra
+
+		oracion a traduccir 
+
+	"""
+	cad = ""	   # variable que contendra la traduccion 
+
+	# Realiza la normalizacion de la palabra y quita posibles espacios
+	palabra = normalize(palabra.strip()) 
+	w = nlp(palabra)
 	
+	#Crea lista con los tokens y su tipo  
+	aPal = [ [text,text.pos_] for text in w]
 
-	return t.strip()
+	#Realiza la comprobacion si es pregunta
+	esPregunta = palabra.find("?") > 0 
+	if(esPregunta):
+		#Llama a la funcion si es pregunta
+		cad = isAnswer(palabra,aPal)
+	else:
+		"""
+		Primero detecta si existe una coma para descubrir si 
+		existe mas de una oracion 
 
+		"""
+		for pal in aPal:
+			cad +=BuscarToken(str(pal[0]))+" " 
 
+	return cad
 

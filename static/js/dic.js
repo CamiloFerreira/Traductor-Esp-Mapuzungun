@@ -22,24 +22,28 @@ $(document).ready(function() {
 	$.each(res,function(i,item){
 		
 
-		cad = " "
-		//Obtiene las key del json
-		for(const letra in item){
-			var lista = item[letra];
+		cad = $("tbody").html(); 
 
-			for (var i = 0; i < lista.length; i++) 
-			{
-				var palabra     = lista[i][0];
-				var significado = lista[i][1];
 
+
+		var lista = item['palabras']
+		var letra = item['letra']
+
+
+		for (var i = 0; i < lista.length; i++) 
+		 {
+		 		var palabra     =  lista[i]['palabra'];
+		 		var significado = lista[i]['significado'];
+		 		
 				cad += "<tr class='"+letra+"'>" 
-				cad += "<td class='pal'>"+palabra+"</td>" 
-				cad += "<td class='sig'>"+significado+"</td>" 
-				cad += "</th>"
+		 		cad += "<td class='pal'>"+palabra.join()+"</td>" 
+		 		cad += "<td class='sig'>"+significado.join()+"</td>" 
+		 		cad += "</th>"
 
-			}
-		}
 
+		 }		
+
+		
 		$("tbody").html(cad); 
 
 		 

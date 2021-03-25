@@ -43,26 +43,31 @@ def BuscarPalabras(iLetras,aLetras):
 	#Carga la pagina y separa la seccion 
 	web = CargarWeb("https://www.interpatagonia.com/mapuche/diccionario.html").find('section')
 
-	pal = {} #Diccionario para establecer palabra + traduccion
+	pal = [] #Diccionario para establecer palabra + traduccion
 
 	for i in aLetras : 
-		pal[i]= []
-
+		pal.append({'letra':i,'palabras':[]})
 	#-------------------------------------------------
 	#Recopilacion de palabras para la primera pagina 
 	#-------------------------------------------------
-	aPalabras = []
 	#busca todas las etiquetas Ul de la pagina 
 	for ul in web.findAll('ul'):
 		#Busta todas las etiquetas li de la pagina
 		for li in ul.findAll('li'):
 			try : 
-				text = li.strong.text.split(":")[0]
-				letra = text[:1].lower() # Obtiene la primera letra 
-				traduccion = ''
+				
+				palabra = li.strong.text.split(":")[0].strip() # Palabra en mapugundun
+				letra = palabra[:1].lower() # Obtiene la primera letra 
+				#traduccion = ''
 				if ( len(li.text.split(":")) > 1 ):
-					traduccion = li.text.split(":")[1]
-					pal[letra].append([text,traduccion])
+					traduccion = li.text.split(":")[1].strip()
+					if(traduccion != ""):
+						#Se llena con los datos 
+						for pos in pal:
+							if(pos['letra'] == letra):
+								pos['palabras'].append({'palabra':palabra,'significado':traduccion})
+					#print(traduccion)
+					#pal[letra].append([text,traduccion])
 			except AttributeError:
 				pass
 	return pal
@@ -79,14 +84,9 @@ def BuscarPalabras2(iLetras,aLetras):
 
 	iLetras = 0 # Inicia el indice en 0 
 	aCad = []
-	dic  = {} 
 	actual_pto = False # Bandera para detectar si existe dob punto en palabra actual
 	sig_pto    = False # Bandera para detectar si existe dob punto en palabra siguiente
 	
-	#Crea las llaves para el diccionario 
-	for i in aLetras:
-		dic[i] = []
-
 	for i in f.read().split('.'):
 		cad = i.split('\n') #Obtiene un arreglo donde separa las palabras por los saltos de linea
 		
@@ -134,17 +134,29 @@ def BuscarPalabras2(iLetras,aLetras):
 	#--------------------------------------------------------------------------
 	#Parte que regulariza el diccionario en Json por orden alfabetico 
 	#-------------------------------------------------------------------------
+	
+
+	pal=[]
+	#Crea las llaves para el diccionario 
+	for i in aLetras:
+		pal.append({'letra':i,'palabras':[]})
+
+
 	for i in range(len(aCad)) : 
 		separados = aCad[i].split(":") # Variable que separa la cadena por ":"
 		if(len(separados) > 1):
 			palabra     = separados[0]
 			significado = separados[1]
 			#Se obtiene la primera palabra para ordenar alfabeticamente
-			p = normalize(palabra[:1].lower())
-			dic[p].append([palabra,significado])
+			letra = normalize(palabra[:1].lower())
+			
+			for pos in pal:
+				if(pos['letra'] == letra):
+					pos['palabras'].append({'palabra':palabra,'significado':significado})
+
 	#---------------------------------------------------------------------
 
-	return dic
+	return pal
 
 
 
@@ -155,10 +167,10 @@ def BuscarPalabras2(iLetras,aLetras):
 #https://www.mapuche.nl/espanol/idioma/"letra".htm <- tiene esa estructura
 def BuscarPalabras3(iLetras,aLetras):
 
-	pal = {} #Diccionario para establecer palabra + traduccion
+	pal = [] #Diccionario para establecer palabra + traduccion
 
 	for i in aLetras:
-		pal[i]=[]
+		pal.append({'letra':i,'palabras':[]})
 
 	for letra in aLetras:
 
@@ -173,78 +185,117 @@ def BuscarPalabras3(iLetras,aLetras):
 
 					if(len(letra)>0):
 						if(traduccion != ""):
-							pal[letra].append([palabra.upper(),traduccion])
+							for pos in pal:
+								if(pos['letra'] == letra):
+									pos['palabras'].append({'palabra':palabra,'significado':traduccion})
 			
 		except Exception as e:
 			pass
 
-
-
-
 	return pal
 
 
-#Funcion que busca los repetidos de 2 diccionarios , llenando solo con los valores que se encuentren repetidos
 def BuscarRepetidos(pal,pal2):
-	dic = {}
-	#Primero guarda los valores que son iguales en ambos diccionarios
-	for key in pal : 
-		lista = pal[key]
-		dic[key] = []
-		#Carga el primer diccionario
-		for x in range(len(lista)):
-			pal_palabra = lista[x][0].strip().upper()
-			pal_sig     = lista[x][1].lower().strip()
-			#Carga el segundo diccionario utilizando la key del primer diccionario
-			lista2 = pal2[key]
-			for y in range(len(lista2)):
-				pal2_palabra = lista2[y][0].strip().upper()
-				pal2_sig      = lista2[y][1].lower().strip()
-				#Comprueba si la palabra son iguales
-				if(pal2_palabra.lower() == pal_palabra.lower() ):
-					
-					#para esto se debe quitar tanto puntos , como otros carateres que molesten.
-					if(pal_sig.find(".") > 0):
-						pal_sig = pal_sig.split(".")
-						#quita los espacios en " " en blanco o vacio
-						cad = ""
-						for p in pal_sig:
-							if(p != ""):
-								cad += p + " " 
-						pal_sig = cad
-						#con la cadena limpia de caracteres se agrega a pal2_sig y se guarda
-						pal2_sig += "," +cad 
-						dic[key].append([pal_palabra,pal2_sig])
-					#Si no tiene puntos se guarda 
-					else:
-						pal_sig += ","+pal2_sig 
-						dic[key].append([pal_palabra,pal_sig])
+	"""
+		Funcion que busca los repetidos de los 2 arreglo , llenando con valores sin tener ninguno repetido
 
-					break
-	return dic
+	"""
+	palabras1 = [pos['palabras'] for pos in pal] #Obtiene el arreglo de palabras 
+	palabras2 = [pos['palabras'] for pos in pal2] # Obtiene el arreglo de palabras
+
+	pal_final = [] #Arreglo donde se guardaran las palabras sin repetisione
+
+	for i in pal:
+		pal_final.append({'letra':i['letra'],'palabras':[]})
+
+	for i in range(len(palabras1)):
+		a_palabras1  = palabras1[i] #obtiene el arreglo para cada posicion
+		a_palabras2  = palabras2[i] #obtiene el arreglo para cada posicion
+
+		repetidos = False
+
+		i_pal1 = 0 #Indice de a_palabras1 
+		i_pal2 = 0 #Indice de a_palabras2 
+		
+		#Si el largo es mayor a  0 continua la busqueda
+		if(len(a_palabras1) > 0 ):
+
+			for i in a_palabras1:
+				pal1 = i['palabra']     #Guarda palabra
+				sig1 = i['significado'] #Guarda significado
+
+				#print(sig1)
+				for y in a_palabras2:
+					pal2 = y['palabra']     #Guarda palabra
+					sig2 = y['significado'] #Guarda significado		
+
+
+					#Consulta si la palabras son iguales 
+					if(normalize(pal1.lower()) == normalize(pal2.lower())):
+						letra = pal1[:1].lower()
+						cad = ""
+
+						#Ve si tiene punto y si tiene lo elimina
+						if(sig1.find(".") > 0 ):
+							a = sig1.split(".")
+							cad += a[0]
+						else:
+							cad += sig1
+						#Ve si tiene punto y si tiene lo elimina
+						if(sig2.find(".") > 0):
+							a = sig2.split(".")
+							cad +=","+a[0]
+						else:
+							cad +=","+sig2
+
+						#Guarda el dato repetido
+						for z in pal_final:
+							if(z['letra'] == letra):
+								z['palabras'].append({'palabra':pal1,'significado':cad})
+
+	return pal_final	
+
 
 #Funcion que guarda los valores restantes del diccionario
 def llenar(pal,dic):
 	existe = False
-	for key in pal:
-		lista = pal[key]
-		lista2 = dic[key]
-		for i in range(len(lista)): 
-			pal_palabra = lista[i][0]
-			pal_sig     = lista[i][1]
-			for y in range(len(lista2)):
-				pal2_palabra = lista2[y][0]
-				pal2_sig     = lista2[y][1]
-				#si existe la palabra levanta la bandera 
-				if(pal2_palabra == pal_palabra):
-					existe = True
-					break
-			#Mientras no existe el valor se guarda
-			if(existe == False):
-				dic[key].append([pal_palabra,pal_sig])
-			else:
-				existe = False
-	return dic 
+
+	palabras1 = [pos['palabras'] for pos in dic]
+
+	palabras2 = [pos['palabras'] for pos in pal]	
+
+	for i in range(len(palabras1)) :
+		
+		#Si la posicion de palabras1 esta vacio se llena automaticamente
+		#con la de palabras2
+		if(len(palabras1[i]) == 0):
+			if(len(palabras2[i]) > 0):
+				palabras1[i] = palabras2[i]
+		else:
+			pos1 = palabras1[i]
+			pos2 = palabras2[i]
+			for y in pos2:
+				
+				pal  = y['palabra']
+				sig  = y['significado']
+				for z in pos1:
+					pal2 = z['palabra']
+					if(normalize(pal.lower()) == normalize(pal2.lower())):
+						existe = True
+						break
+				if(existe):
+					#Si existe la palabra la salta
+					existe=False
+				else:
+					#Si no existe la guarda
+					palabras1[i].append({'palabra':pal,'significado':sig})
+
+
+	for i in range(len(dic)):
+		dic[i]['palabras'] = palabras1[i]
+
+	return dic
+
 #----------------------------------------------------------------
 # Proceso de guardado de las palabras en json
 #-------------------------------------------------------------------
@@ -261,15 +312,12 @@ pal3 = BuscarPalabras3(iLetras,aLetras)
 #Busca los valores repetidos
 d = BuscarRepetidos(pal,pal2)
 d = BuscarRepetidos(d,pal3)
+
 #Llena con las palabras que restan 
 d = llenar(pal,d);d = llenar(pal2,d);d = llenar(pal3,d);
 
-
-#Diccionario para guardar palabra + traduccion y convertir en json
-dic = {'Palabras':d}
-
 #Guarda el diccionario
-with open('json/dic.json','w') as file:
-	json.dump(dic,file,indent=4)
+with open('json/dic_inicial.json','w') as file:
+	json.dump(d,file,indent=4)
 
 print("Palabras obtenidas !! ")
