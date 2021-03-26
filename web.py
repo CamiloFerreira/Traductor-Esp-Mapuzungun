@@ -3,17 +3,20 @@
 from flask import Flask, render_template,request,json , jsonify
 from traductor import Traducir
 import json
-
+import logging
 
 
 app = Flask(__name__)
 
+logging.basicConfig(filename='../logs/record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 with open('json/dic_final.json') as file:
 	#Carga el archivo json
 	datos = json.load(file)
+
 @app.route("/")
 def index():
+
 	return render_template("index.html")
 
 
@@ -31,6 +34,8 @@ def gText():
 	data = request.get_json()
 	cadena = data['cadena']
 	trad = Traducir(cadena)
+	app.logger.info('palabra:'+cadena)
+	app.logger.info('traduccion:'+trad)
 	return json.dumps({'status':'ok','t':trad})
 
 @app.route("/gDic",methods=["POST"])
@@ -50,8 +55,12 @@ def gTrad():
         cadena = object['cadena']
         #cadena=data['cadena']
         t = Traducir(cadena)
+        app.logger.info('palabra:'+cadena)
+        app.logger.info('traduccion:'+t)
         return jsonify({"traduccion": t})
 
 
 if __name__ == "__main__":
 	app.run(debug=True,host="0.0.0.0",port=5000)
+	
+

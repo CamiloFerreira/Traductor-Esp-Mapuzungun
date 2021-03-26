@@ -88,16 +88,8 @@ def OrdenarJson():
 			if(sig.find(",") > 0):
 				a_coma = sig.split(",")
 
-
-
-
-
-
 				aComa = []
 				for i in a_coma:
-
-
-
 					if(i.find("?") > 0):
 						esPregunta = True
 					i = QuitarNumeros(i)

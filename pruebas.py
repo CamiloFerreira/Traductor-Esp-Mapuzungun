@@ -1,6 +1,5 @@
 
 
-
 def QuitarNumeros(pal):
 
 	aNumeros=["1.","2.","3.","4.","5.","6.","7.","8.","9."]
@@ -32,7 +31,5 @@ if(cad.find(";") > 0):
 	s_punto = cad.split(";")
 	
 	s_punto = QuitarNumeros(s_punto)
-
-print(s_punto)
 
 #cad = QuitarNumeros(cad,False)
