@@ -43,7 +43,7 @@ def gDic():
 	return json.dumps(datos)
 
 #Ruta que retorna el diccionario que actualmente se tiene
-@app.route("/gDic2")
+@app.route("/gDic2",methods=["GET"])
 def getDic2():
 	return jsonify(datos)
 
@@ -61,6 +61,6 @@ def gTrad():
 
 
 if __name__ == "__main__":
-	app.run(debug=False,host="0.0.0.0",port=5000)
+	app.run(debug=False,host="192.168.1.254",port=5000)
 	
 
