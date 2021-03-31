@@ -67,50 +67,47 @@ def OrdenarJson():
 			"""
 			##token = nlp(palabra)
 			
-			if(palabra.find("?") < 0):
-				pal = []
-				tmp_coma = [] # variable para guardar la separacion 
+			
+			pal = []
+			tmp_coma = [] # variable para guardar la separacion 
 
-				if(palabra.find(",") > 0 ):
-
-					#Realiza la separacion por comas
-					s_coma = palabra.split(",")
-					
-					for i in range(len(s_coma)):
-						if(s_coma[i] != ""):
-							tmp_coma.append(s_coma[i].strip()) #Quita los espacios 
-					aPalabras[pos][fila]['palabra'] = tmp_coma
-		
-				else:
-					
-					#Pregunta si se encuentra el caracter "o" en la palabra
-					if(palabra.find(" ")> 0 ):
-						s_car = palabra.split(" ") # contendra la lista con la separacion de las palabras
-						tmp_car = []
-						existe = False 
-						for i in range(len(s_car)):
-							if(s_car[i] == "o"):
-								existe = True
-
-							if(s_car[i] != "" and s_car[i] != "o"):
-								tmp_car.append(s_car[i])
-						
-						#Si existe la separacion por coma guarda la lista 
-						if(existe):
-							aPalabras[pos][fila]['palabra'] = tmp_car
-							existe = False
-						else:
-							aPalabras[pos][fila]['palabra'] = [palabra]
-					else:
-						aPalabras[pos][fila]['palabra'] = [palabra]
-				"""for i in range(len(token)):
-					w = token[i]
-					if(w.text != "," and w.text!="." and w.text!="o" and w.text!="O"):
-						pal.append(w.text.strip())
-				"""
-
-
+			if(palabra.find(",") >=0):
+				#print(palabra)
+				#Realiza la separacion por comas
+				s_coma = palabra.split(",")
+				
+				for i in range(len(s_coma)):
+					if(s_coma[i] != ""):
+						tmp_coma.append(s_coma[i].strip()) #Quita los espacios 
+				aPalabras[pos][fila]['palabra'] = tmp_coma
+	
 			else:
+				
+				#Pregunta si se encuentra el caracter "o" en la palabra
+				if(palabra.find(" ")> 0 ):
+					s_car = palabra.split(" ") # contendra la lista con la separacion de las palabras
+					tmp_car = []
+					existe = False 
+					for i in range(len(s_car)):
+						if(s_car[i] == "o"):
+							existe = True
+
+						if(s_car[i] != "" and s_car[i] != "o"):
+							tmp_car.append(s_car[i])
+					
+					#Si existe la separacion por coma guarda la lista 
+					if(existe):
+						aPalabras[pos][fila]['palabra'] = tmp_car
+						existe = False
+					else:
+						
+						aPalabras[pos][fila]['palabra'] = [palabra]
+				else:
+
+					aPalabras[pos][fila]['palabra'] = [palabra]
+
+			#Pregunta si es palabra
+			if(palabra.find("?") >=0):
 				#Si encuentra signo de pregunta en la palabra lo remueve
 				s_signo = palabra.split("?")
 				aPalabras[pos][fila]['palabra'] = [s_signo[0]]
@@ -125,8 +122,6 @@ def OrdenarJson():
 
 				aComa = []
 				for i in a_coma:
-					if(i.find("?") > 0):
-						esPregunta = True
 					i = QuitarNumeros(i)
 					#Revisa nuevamente que la palabra obtenida
 					#no contenga comas 
@@ -137,21 +132,12 @@ def OrdenarJson():
 					else:
 						aComa.append(i)
 				
-				
-				#Si es pregunta guarda la palabra de manera normal sin realizar separacion
-				if(esPregunta):
-					aPalabras[pos][fila]['palabra'] = [palabra]
+
 				#Guarda los significados ya como lista
 				aPalabras[pos][fila]['significado'] = aComa
 			else:
 				#Si no lo encuentra guarda el unico significado como una lista
 				sig = QuitarNumeros(sig)
-
-
-				#Si es pregunta guarda la palabra de manera normal sin realizar separacion
-				if(sig.find("?") > 0):
-					aPalabras[pos][fila]['palabra'] = [palabra]
-
 
 				if(sig.find(",") > 0):
 					aComa = sig.split(",")
