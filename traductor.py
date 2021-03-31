@@ -76,7 +76,6 @@ def BuscarToken(token):
 
 
 		if(palabra== token):
-			print(pal)
 			tmpPal = pal
 			buscar = False	 
 		if(i_sig < len(sig)-1):
@@ -126,7 +125,6 @@ def isAnswer(palabra,aPal):
 					#Si la cadena obtenida es igual a la original
 					if(trad == aComa[i].strip()):
 						w = nlp(aComa[i].strip())
-						print(w)
 						for y in range(len(w)) :
 
 
@@ -149,10 +147,8 @@ def isAnswer(palabra,aPal):
 							
 					else:
 						if(cad.find("?") > 0 ):
-							print("Contiene signo")
 							cad += trad + " "
 						else: 
-							print("ENtre en else")
 							cad += trad + "?"
 						
 				else:
@@ -194,22 +190,27 @@ def Traducir(palabra):
 	palabra = normalize(palabra.strip()) 
 	w = nlp(palabra)
 	
-	#Crea lista con los tokens y su tipo  
-	aPal = [ [text,text.pos_] for text in w]
 
-	#Realiza la comprobacion si es pregunta
-	esPregunta = palabra.find("?") > 0 
-	if(esPregunta):
-		#Llama a la funcion si es pregunta
-		cad = isAnswer(palabra,aPal)
+	#Primero realiza la busqueda de la palabra completa 
+	if(BuscarToken(palabra) != palabra and palabra.find("?")<0):
+		return BuscarToken(palabra)  
 	else:
-		"""
-		Primero detecta si existe una coma para descubrir si 
-		existe mas de una oracion 
+		#Crea lista con los tokens y su tipo  
+		aPal = [ [text,text.pos_] for text in w]
 
-		"""
-		for pal in aPal:
-			cad +=BuscarToken(str(pal[0]))+" " 
+		#Realiza la comprobacion si es pregunta
+		esPregunta = palabra.find("?") > 0 
+		if(esPregunta):
+			#Llama a la funcion si es pregunta
+			cad = isAnswer(palabra,aPal)
+		else:
+			"""
+			Primero detecta si existe una coma para descubrir si 
+			existe mas de una oracion 
 
-	return cad
+			"""
+			for pal in aPal:
+				cad +=BuscarToken(str(pal[0]))+" " 
+
+		return cad
 
