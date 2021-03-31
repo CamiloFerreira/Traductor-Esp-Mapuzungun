@@ -56,8 +56,9 @@ def BuscarPalabras(iLetras,aLetras):
 		for li in ul.findAll('li'):
 			try : 
 				
-				palabra = li.strong.text.split(":")[0].strip() # Palabra en mapugundun
+				palabra = li.strong.text.split(":")[0].strip().lower() # Palabra en mapugundun
 				letra = palabra[:1].lower() # Obtiene la primera letra 
+
 				#traduccion = ''
 				if ( len(li.text.split(":")) > 1 ):
 					traduccion = li.text.split(":")[1].strip()
@@ -145,14 +146,14 @@ def BuscarPalabras2(iLetras,aLetras):
 	for i in range(len(aCad)) : 
 		separados = aCad[i].split(":") # Variable que separa la cadena por ":"
 		if(len(separados) > 1):
-			palabra     = separados[0]
+			palabra     = separados[0].lower()
 			significado = separados[1]
-			#Se obtiene la primera palabra para ordenar alfabeticamente
-			letra = normalize(palabra[:1].lower())
-			
-			for pos in pal:
-				if(pos['letra'] == letra):
-					pos['palabras'].append({'palabra':palabra,'significado':significado})
+			if(significado != " "):
+				#Se obtiene la primera palabra para ordenar alfabeticamente
+				letra = normalize(palabra[:1].lower())
+				for pos in pal:
+					if(pos['letra'] == letra):
+						pos['palabras'].append({'palabra':palabra,'significado':significado})
 
 	#---------------------------------------------------------------------
 
@@ -179,7 +180,7 @@ def BuscarPalabras3(iLetras,aLetras):
 			contenido = web.find("td",attrs={'width':'749'}).text.split("\n") # Obtiene la parte que contiene las palabras + traduccion
 			for i in contenido:
 				if(len(i.strip().split("-")) > 1):
-					palabra = i.strip().split("-")[1].strip() # separa la palabra por la "-" y quita los espacios vacios
+					palabra = i.strip().split("-")[1].strip().lower() # separa la palabra por la "-" y quita los espacios vacios
 					letra = normalize(palabra[:1]).lower() # obtiene la primera letra de la palabra 
 					traduccion = i.strip().split("-")[0].strip() # separa la traduccion por la "-" y quita los espacios vacios
 
@@ -234,7 +235,6 @@ def BuscarRepetidos(pal,pal2):
 					if(normalize(pal1.lower()) == normalize(pal2.lower())):
 						letra = pal1[:1].lower()
 						cad = ""
-
 						#Ve si tiene punto y si tiene lo elimina
 						if(sig1.find(".") > 0 ):
 							a = sig1.split(".")
@@ -247,7 +247,6 @@ def BuscarRepetidos(pal,pal2):
 							cad +=","+a[0]
 						else:
 							cad +=","+sig2
-
 						#Guarda el dato repetido
 						for z in pal_final:
 							if(z['letra'] == letra):

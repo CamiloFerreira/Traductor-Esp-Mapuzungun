@@ -65,6 +65,7 @@ def BuscarToken(token):
 	while buscar:
 		pal = aPalabras[i]['palabra'][0]
 
+
 		#print(pal)
 		sig = aPalabras[i]['significado'] # Array con significados
 		
@@ -75,6 +76,7 @@ def BuscarToken(token):
 
 
 		if(palabra== token):
+			print(pal)
 			tmpPal = pal
 			buscar = False	 
 		if(i_sig < len(sig)-1):
@@ -124,13 +126,37 @@ def isAnswer(palabra,aPal):
 					#Si la cadena obtenida es igual a la original
 					if(trad == aComa[i].strip()):
 						w = nlp(aComa[i].strip())
-						for text in w :
-							cad += " "+BuscarToken(str(text))
+						print(w)
+						for y in range(len(w)) :
+
+
+							#Pregunta si el indice actual es igual al final
+							if(y == len(w)-1 ):
+							
+								#Si encuentra que contiene un ? no lo agrega , ya que el token lo contiene
+								if(str(w[y]) ==  "?"):
+									cad += " "+BuscarToken(str(w[y]))
+								else:
+									cad += ""+BuscarToken(str(w[y]))+"?"
+							else : 
+
+								#Si no es igual primero pregunta si se encuentra en el indice 0 
+								if(y == 0 ):
+
+									cad += "¿"+BuscarToken(str(w[y]))
+								else:
+									cad += " "+BuscarToken(str(w[y]))
+							
 					else:
-						cad += trad
+						if(cad.find("?") > 0 ):
+							print("Contiene signo")
+							cad += trad + " "
+						else: 
+							print("ENtre en else")
+							cad += trad + "?"
+						
 				else:
 					trad = BuscarToken(aComa[i])
-					print(trad)
 					cad += trad+","
 		#Si no existe separacion por coma
 		else:
