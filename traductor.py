@@ -13,6 +13,30 @@ with open('json/dic_final.json') as file:
 
 aPalabras = [] # Lista que contiene el arreglo con las palabras 
 
+
+"""
+	Se crea un arreglo con los pronombres personales 
+	esto se hace para poder realizar el reemplazo sin tener que buscar en 
+	el json y tambien para poder detectar de manera facil si existe un pronombre
+	en la oracion 
+"""
+
+aPronombres=[
+				#Pronombres singular
+				{"palabra":"iñche","trad":"yo","tipo":"singular"},
+				{"palabra":"eymi","trad":"tu","tipo":"singular"},
+				{"palabra":"eymi","trad":"usted","tipo":"singular"},
+				{"palabra":"fey","trad":"ella","tipo":"singular"},
+				#Pronombres dual
+				{"palabra":"iñchiw","trad":"nosotros dos","tipo":"dual"},
+				{"palabra":"eymu","trad":"ustedes dos","tipo":"dual"},
+				{"palabra":"feyegu","trad":"ellos dos","tipo":"dual"},
+				#Pronombres plural
+				{"palabra":"iñchiñ","trad":"nosotros","tipo":"plural"},
+				{"palabra":"eymun","trad":"ustedes","tipo":"plural"},
+				{"palabra":"feyegun","trad":"ellos","tipo":"plural"},
+				{"palabra":"feyegun","trad":"ellas","tipo":"plural"}
+			]
 for jsonObject in datos:
 	aPalabras += jsonObject['palabras']
 
@@ -185,19 +209,55 @@ def Traducir(palabra):
 
 	"""
 	cad = ""	   # variable que contendra la traduccion 
+	
+	"""
+		Bandera que detecta cuando una palabra es plurar,esto
+		detectandose si contiene un pronombre plurar
+
+	"""
+	esPlurar = False 
 
 	# Realiza la normalizacion de la palabra y quita posibles espacios
-	palabra = normalize(palabra.strip()) 
-	w = nlp(palabra)
-	
+	palabra = normalize(palabra.strip().lower())
 
-	#Primero realiza la busqueda de la palabra completa 
+	"""
+		Primero se realiza la pregunta si existen adjetivos antes de traducir donde 
+		se reemplazara de manera inmediata si detecta que existen pronombres personales
+	"""
+	for pro in aPronombres:
+		if(palabra.find(pro['trad'])!= -1):
+
+			#Pregunta si utiliza un pronombre en plurar o dual
+
+			if(pro['tipo'] == 'plural' or pro['tipo'] == 'dual'):
+				esPlurar = True
+			palabra = palabra.replace(pro['trad'],pro['palabra'])
+
+
+	w = nlp(palabra)
+
+	#Primero realiza la busqueda de la palabra completa , pero no debe ser pregunta
 	if(BuscarToken(palabra) != palabra and palabra.find("?")<0):
 		return BuscarToken(palabra)  
 	else:
+
 		#Crea lista con los tokens y su tipo  
 		aPal = [ [text,text.pos_] for text in w]
+		print(aPal)
 
+		#Si la palabra contiene plurar , se debe quitar "s" y/o "es" 
+		# se debe volver a singular
+		if(esPlurar):
+			for i in range(len(aPal)):
+				pal = str(aPal[i][0]) # Se guarda la palabra
+				tipo = aPal[i][1]
+				"""
+					Para de detectar si la palabra contiene plurar deberia contener "s" final , siendo esta plurar
+				"""
+				if(pal[len(pal)-2:].find("s")!= -1 and  tipo != "AUX"):
+					pal = pal[:len(pal)-1]
+					aPal[i][0] = pal
+				
 		#Realiza la comprobacion si es pregunta
 		esPregunta = palabra.find("?") > 0 
 		if(esPregunta):
