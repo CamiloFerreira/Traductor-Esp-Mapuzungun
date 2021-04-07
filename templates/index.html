@@ -1,105 +1,200 @@
 <!DOCTYPE html>
 <html>
-<meta content="width=device-width, initial-scale=1" name="viewport" />
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <script type="text/javascript" src="/static/js/jquery.js"></script>
-<script type="text/javascript" src="/static/js/popper.min.js"></script>
-<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/index.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>	
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/index.css">
-<link rel="icon" type="image/png" href="/static/img/ico.png" />
 <head>
-	<title>Inicio</title>
+	<title>Athengun</title>
 </head>
-	
+
+<div id="fondo"></div>
 <body>
-	<!--- Barra de navegacion --->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-	  <a class="navbar-brand" href="/">
-	  	<img src="/static/img/ruca_ico.png" width="50" height="50" alt="">
-	  	Athengun
-	  </a>
-  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
- 		 </button>
-	  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-			<ul class="navbar-nav ">
-				<li class="nav-item active">
-					<a class="nav-link" href="/"> Traductor </a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/Diccionario"> Diccionario</a>
-				</li>
+	<!--- Navegacion --->
+	<nav class="navbar navbar-expand-lg navbar-dark ">
+			<div class="collapse navbar-collapse">
+				<!--- Circulo con la letra --->
+				<ul class="navbar-nav ">
+					<li class="nav-item" >
+						<div class="rounded-circle" id="A"><span>A</span></div>
+					</li>
+				</ul>
+				<!--- Items de la navbar --->
+				<ul class="navbar-nav w-100">
+					<li class="nav-item ml-auto">
+						<a id="btn-dic" class="nav-link text-light">Diccionario</a>
+					</li>
+					<li class="nav-item">
+						<a id="btn-help" class="nav-link text-light">Ayuda</a>
+					</li>
+					<li class="nav-item">
+						<a id="btn-proyect" class="nav-link text-light">El proyecto</a>
+					</li>
+				<!--- Circulos blancos --->
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+				</ul>
+			</div>
+	</nav>		
+	<!---Section-->
+	<section>
 
-			</ul>
-	  </div>
-	</nav>
+			<div id="contenedor" class="row">
+				<!--- Div que contendra la parte dede se realizan traducciones --->
+				<div  id="cont_form" class="col-5">
+					
+					<div class="row">
 
-	<!--- Seccion de la pagina -->
-
-	<section class="contaniner-fluid">
-			<div class="row shadow-lg bg-white rounded" id="textarea" >
-				<!--- shadow-lg bg-white rounded --->
-				<!--- Contenedor de textarea para ingresar el texto -->
-				<div class="col-lg-11 col-12 " >
-					<br>
-					<form>			
-						<div class="row" style="">
-							<div class="col-lg-5 form-group ">
-								<p>Texto a Traduccir:</p>
-								<textarea id="texto" class="form-control"></textarea>
-							<div id="little">
-								<textarea readonly="readonly" class="texto2 form-control"></textarea>
-							</div>
-								
-							</div>
-						<div class="col-lg-5 form-group" id="small">
-							<p> Texto Mapudungun: </p>
-							<textarea  readonly="readonly" class="texto2 form-control"></textarea>
+						<div class="col-10">
+							<span id="e_idiomas">Elige idiomas</span>
 						</div>
-
+						<div class="col-10">
+							<br>
 						</div>
+						<div class="col-10">
+						 	<div class="row">
+						 		<div class="col-4">
+						 			<select id="idm_sel">
+										<option selected>Español</option>
+										<!--<option>Mapudungun</option>-->
+									</select>		
+						 		</div>
+						 		<div class="col-1">
+						 			<h5>></h5>
+						 		</div>
+						 		<div class="col-4">
+									<select id="map_sel">
+										<!--<option>Español</option>-->
+										<option selected>Mapudungun</option>
+									</select>
+						 		</div>
+						 		<div class="col-2">
+						 			
+									<div id="input_text">
+										<span >Añadir archivo a traducir </span>
+									</div>
+						 		</div>
+						 		<input type="file" id="file" accept=".txt" > 
+						 		<div class="col-1">
+						 			<label  id="btn" class="btn btn-primary rounded-circle" for="file">+</label>
+						 		</div>
 
-					</form>		
-					<div class="col-lg-3 form-group" id="boton">
-								<button id="enviar" class="btn btn-success">Traduccir</button>
-					</div>		
+						 	</div>								
+						 </div>
+
+						<div class="col-10">
+							<br>
+						</div>
+						<div class="col-10">
+						 	<textarea id="textIdioma"placeholder="Texto a traducir" ></textarea>
+						</div>
+						<div class="col-10">
+							<br>
+						</div>
+						<div class="col-10">
+						 	<textarea  id="map" placeholder="Mapudungun" 	></textarea>
+						</div>
+					</div>
 				</div>
-
-				
+				<!-- Div que contendra la imagen que se actualiza -->
+				<div id="cont_img" class="col-5">
+					<img >
+						<p id="descripcion"></p>
+				</div>
+			</div>
+					<!--- Ventanas emergentes --->
+	<div class="pop_menu">
 		
-				<!--- Contenedor de palabras recientes usadas y la traduccion -->
-				<div class="col-12 col-lg-10" >
-					<hr>
-					<div class="card">
-						  <div class="card-body" style="height: 500px">
-			    				<h5 class="card-title" style="text-align: center;">Historial reciente</h5>
-			    				<br>
-
-			    				<div style="height: 400px;overflow-y:scroll;width: 100% ">
-				    				<ul id="historial" style="list-style: none">
-			    						<!--- Contenedor de cada palabra traduccida --->
-			    						<div id="tVacio" class="cont col-13 col-lg-11 shadow-lg bg-white rounded">
-					    					<p class="trad_or" style="text-align: center;"> No se han realizado traducciones </p>
-				    					</div>
-			    						<div id="div_cont"></div>
-
-
-			    					</ul>		    					
-
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<br>
+				</div>
+				<div class="col-12">
+					<div class="card" id="card-buscar">
+						  <div class="card-body" >
+			    				<h5 class="card-title">Buscar Palabra </h5>
+			    				<hr>
+			    				<!---<p class="card-text">AQUI SE MOSTRARAN LAS TRADUCCIONES ANTERIORES</p>--->
+			    				<div class="row" >
+			    					<div class="col-6 col-lg-2" id="card-form" >
+			    						<select id="dic_sel"class="form-control">
+			    							<option value="1">Español</option>
+			    							<option value="2">Mapudungun</option>
+			    						</select>
+			    					</div>
+			    					<div class="col-7" >
+			    						<input id="input" type="text" class="form-control" name="palabra" placeholder="Palabra a buscar ">
+			    					</div>
 			    				</div>
-
-			    				
 			  			  </div>
 					</div>
+				</div>
+		
+				<div class="col-12">
+					<br>
+				</div>		
+				<div class="col-12" id="busquedas">
+						
+					<!----- Contenedor de input para buscar palabras --->
+					<div class="card" >
+						  <div class="card-body">
+			    				<h5 class="card-title">Palabras Existentes </h5>
+			    				<hr>
+			    				
+			    				<div class="row" >
+			    					<ul class="col-10" align="left" style="list-style: none ; font-size: 20px; color: #27BBFF" >
+			    						{% for 	letra in letras%}
+			    						<li class="li"> {{letra}}</li>
+			    						{% endfor %}
+			    					</ul>
+			    					<div class="col-20" id="mostrar" style="overflow-y:scroll;width: 100% ; height: 400px">
+			    						<table  class="table table-responsive table-striped">
+			    							<thead>
+			    								<tr>
+			    									<th scope="col">Palabra</th>
+			    									<th scope="col">Traduccion</th>
+			    								</tr>
+			    							</thead>
+			    							<tbody id="data">
+			    							</tbody>
+			    						</table>
 
-				</div>			
-			
-			<div>
+			    					</div>
 
 
 
+			    				</div>
+			  			  </div>
+					</div>
+				</div>
+
+			</div>			
+		</div>
+
+	</div>
 	</section>
+	<!--Franja negra -->
+	<footer>
+		<div id="franja"></div>
+	</footer>
+	
+
+
+
+
 </body>
+
 </html>

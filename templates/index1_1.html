@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<meta content="width=device-width, initial-scale=1.5" name="viewport" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/popper.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>	
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<head>
+	<title>Athengun</title>
+</head>
+<script type="text/javascript">
+	var height = screen.height;
+
+	$(document).ready(function() {
+		$("body").css({'height':height});
+		$("#fondo").css({'height':height});
+
+		$("textarea").attr('rows',height/110);
+	})
+	
+
+</script>
+
+<style type="text/css">
+
+
+	/* Margenes de secciones */
+	body{
+		background-image: url("static/img/DSCN2604.png");
+		background-repeat: repeat-x;
+		height: 100px;
+		width: 100%;
+	}
+
+
+	nav{
+		height: 10%;
+	}
+	section{
+		height: 60%;
+		width: 100%
+	}
+	footer{
+		height: 30%;
+		width: 100%
+	}
+
+	 #franja{	
+ 		width: 100%;
+ 		height: 100%;
+ 		background-color: rgba(23,26,33,1);
+ 	}
+	.nav-item{
+		margin-top: 1%;
+		margin-left: 0.5%;
+	}
+	.navbar-nav{
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 2%;
+	}
+
+	#A{
+		width: 50px;
+		height: 50px;
+		font-size: 31px;
+		background-color:rgba(145,109,255,1);
+	}
+	#A span{
+		padding: 26%;
+		color : white ;
+		font-family: Lato;
+	}
+
+	a{
+		color : white;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 17px;
+	}
+	#fondo
+	{
+		position:absolute;
+		width: 100%;		
+		opacity: 0.39;
+		background-color: black;
+	}
+	.circle{
+		width: 22px;
+		height: 22px;
+		left: 1742px;
+		background-color: white;
+	}
+
+	#circulo{
+		margin-top: 1.5%;
+	}
+
+	#contenedor{
+		margin-left: 10%;
+		margin-top: 3%;
+		border-radius: 30px;
+		width: 80%;
+		height: 100%;
+		background: rgb(245,245,245);
+		background: linear-gradient(41deg, rgba(245,245,245,1) 35%, rgba(219,219,219,1) 100%);
+	}
+ 
+
+
+ 	.btn{
+ 		background-color: rgba(145,109,255,1) 
+ 	}
+
+
+
+ 	.col-12{
+ 		border:10px solid blue;
+ 	}
+</style>
+	<div id="fondo"></div>
+<body>
+
+	<!--- Navegacion --->
+	<nav class="navbar navbar-expand-lg navbar-dark ">
+			<div class="collapse navbar-collapse">
+				<!--- Circulo con la letra --->
+				<ul class="navbar-nav ">
+					<li class="nav-item" >
+						<div class="rounded-circle" id="A"><span>A</span></div>
+					</li>
+				</ul>
+				<!--- Items de la navbar --->
+				<ul class="navbar-nav w-100">
+					<li class="nav-item ml-auto">
+						<a class="nav-link text-light" href="#">Diccionario</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-light" href="#">Ayuda</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-light" href="#">El proyecto</a>
+					</li>
+				<!--- Circulos blancos --->
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+					<li class="nav-item" id="circulo">
+						<div class="circle rounded-circle"></div>
+					</li>
+				</ul>
+			</div>
+	</nav>		
+	<!---Section-->
+	<section>
+		<div style="margin: 2%">
+			
+			<div class="row">
+				<div class="col-5">
+					<div id="contenedor">
+						
+					</div>
+				</div>
+				<div class="col-5">
+					<img src="static/img/Allende-y-papai.png">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Franja negra -->
+	<footer>
+		<div id="franja"></div>
+	</footer>
+	
+</body>
+
+</html>

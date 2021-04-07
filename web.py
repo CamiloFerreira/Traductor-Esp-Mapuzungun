@@ -16,18 +16,12 @@ with open('json/dic_final.json') as file:
 
 @app.route("/")
 def index():
-
-	return render_template("index.html")
-
-
-@app.route("/Diccionario")
-def dic():
 	aLetras=[
 		 'a','b','c','d','e','f','g','h','i','j',
 		 'k','l','m','n','ñ','o','p','q','r','s',
 		 't','u','v','w','x','y','z'
 		 ]
-	return render_template("dic.html",letras=aLetras,dic=datos)
+	return render_template("index.html",letras=aLetras,dic=datos)
 
 @app.route("/gText",methods=["POST"])
 def gText():
