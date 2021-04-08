@@ -1,33 +1,35 @@
 	/* Margenes de secciones */
 	body{
-		background-image: url("../img/DSCN2604.png");
-		background-repeat: all;
+		width: 100%;
+		background: rgb(145,109,255);
+		background: linear-gradient(109deg, rgba(145,109,255,1) 0%, rgba(151,203,255,1) 94%);
 	}
+
+	/* Delimitar secciones*/
 
 	nav{
 		height: 10%;
 	}
 	section{
-		height: 60%;
+		height: 35%;
+		width: 100%;
 	}
 	footer{
-		background-color: white;
-		height: 30%;
-	}
-	
-	#fondo
-	{
-		position:absolute;
-		width: 100%;	
-		height: 100%;	
-		opacity: 0.39;
-		background-color: black;
+		height: 55%;
+		background-color: rgb(40,43,51);
 	}
 
+
 	/* Parte para definir atributos del nav */
+
+	.active{
+		background-color: rgb(145,109,255);
+		border-radius: 25px;
+	}
 	.nav-item{
 		margin-top: 1%;
 		margin-left: 0.5%;
+		
 	}
 	.navbar-nav{
 		margin-left: 2%;
@@ -39,7 +41,6 @@
 		width: 50px;
 		height: 50px;
 		font-size: 31px;
-		background-color:rgba(145,109,255,1);
 	}
 	#A span{
 		padding: 26%;
@@ -57,96 +58,55 @@
 	}
 
 	.circle{
+		margin-top: 50%;
 		width: 22px;
 		height: 22px;
 		left: 1742px;
 		background-color: white;
 	}
 
-	#circulo{
-		margin-top: 1.5%;
-	}
-
 	/* Seccion   */
-
-	#cont_form{
-
-
-		padding-left: 5%;
-		padding-top: 2%;
-		border-radius: 20px;
-		background: rgb(245,245,245);
-		background: linear-gradient(41deg, rgba(245,245,245,1) 35%, rgba(219,219,219,1) 100%);
+	.container{
 	}
-	#contenedor{
 
-		position: absolute;
-		width: 100%;
-		height: 90%;
-		padding-top: 3%;
-		padding-left: 10%;
+	select{
+		text-align-last: center;
+		background-color: white;
+		border : 1px solid white;
+		border-radius: 5px;
+	}
+	#cont-1{
+		padding-top: 1%;
+		padding-bottom: 1%;
+		border-radius: 10px;
+		background-color: rgb(248,248,248);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 	}
-	#franja{	
+	#cont-2{
+		padding-top: 1%;
+		padding-bottom: 1%;
+		border-radius: 10px;
+		background-color: rgb(40,42,51);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
- 		width: 100%;
- 		height: 100%;
- 		background-color: rgba(23,26,33,1);
- 	}
-
- 	textarea {
- 		resize: none;
- 		border-radius: 10px;	
- 		background: none;
-		height: 20em;
-		width: 100%;
- 	}
-
- 	#idm_sel{
-  		resize: none;
- 		border-radius: 5px;
- 		border: 2px  groove rgba(145,109,255,1);	
- 		background: none;
- 		text-align-last: center;	
-
- 		font-family: Lato;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;	
- 	}
-
- 	#map_sel{
-
- 		resize: none;
- 		border-radius: 5px;
- 		border: 2px  groove rgba(145,109,255,1);	
- 		background: none;
- 		text-align-last: center;	
-
- 		overflow: visible;
-		width: 110px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Lato;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		color: rgba(241,241,241,1);
-		background-color: rgba(145,109,255,1);
- 	}
-
- 	#e_idiomas{
+	}
+	img{
+		margin-top: -5%;
+	}
+ 	p{
+ 		margin-left: 10%;
+ 		width: 600px;
 		overflow: visible;
-		width: 146px;
-		white-space: nowrap;
+		line-height: 22px;
 		text-align: left;
 		font-family: Lato;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 25px;
-		color: rgba(103,103,103,1);
+		font-size: 13px;
+		color: rgba(188,188,188,1);
  	}
- 	#input_text{
+	#input_text{
 
  		text-align: right;
 		font-family: Lato;
@@ -156,17 +116,19 @@
 		color: rgba(188,188,188,1);
  	}
 
- 	#btn{
- 		text-align-last: center;
-		font-family: Lato;
-		font-style: bold;
-		font-weight: normal;	
- 		font-size: 12px;
- 		border-color: rgba(145,109,255,1);
- 		background-color: rgba(145,109,255,1);	
+ 	.btn-primary{
+ 		border:1px solid white;
+ 		background-color: white;
+ 		color: black;
+ 		font-size: 15px;
+ 		font-weight: bold;
  	}
-
  	textarea{
+ 		resize: none;
+ 		border-radius: 10px;	
+ 		background: none;
+		height: 15em;
+		width: 100%;
  		background-color:rgba(248,248,248,1);
  		overflow: visible;
 		white-space: nowrap;
@@ -177,43 +139,22 @@
 		padding: 10px;
 		color: rgba(123,123,123,1);
 		border-color: rgba(248,248,248,1);
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
  	}
- 	p{
-
- 		margin-left: 10%;
- 		width: 600px;
-
-		overflow: visible;
-		line-height: 22px;
-		text-align: left;
-		font-family: Lato;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 13px;
-		color: rgba(188,188,188,1);
+ 	#map{
+ 		border : 1px solid rgb(40,42,51);;
+ 		background-color: rgb(40,42,51);
  	}
- 	input[type="file"] {
-  		width: 0px;
-  		height: 0px;
- 	 	opacity: 0;
-	}
-	h5{
-		color : rgba(145,109,255,1);
-		font-style: bold;
-	}
 
 
-	.pop_menu{
-		opacity: 0%;
+ 	/*Pop Menu */
+
+ 	.pop_menu{
+		opacity: 0;
 		position: absolute;
 		background-color: white;
-		margin-top: 3%;
-		margin-left:  15%;
-		width: 75%;
-		height:80%;
-
+	
+		margin-top: -36%;
+		margin-left: 10%;
 		border-radius: 10px;
 		background: linear-gradient(41deg, rgba(245,245,245,1) 35%, rgba(219,219,219,1) 100%);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

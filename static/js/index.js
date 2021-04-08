@@ -24,13 +24,20 @@ $(document).ready(function(){
 		$(".pop_menu").hide();
 
 
+		var width = screen.width;
 		var height = screen.height;
-		var img_h = height / 1.6;
-		
-
+		var img_h = height / 1.8;
 		$("body").css({'height':height});
-		$("#fondo").css({'height':height});
 		$("img").css({'height':img_h});
+		//Detecta el tamaño de la pantalla
+
+
+		//Si es pantalla pequeña
+		if(width < 1024){
+			$(".circle").remove();
+			$("li").removeClass("ml-auto");
+			$("#cont_img").remove();
+		}
 		
 		//Se carga el json que contiene los nombres de las imagenes
 		$.getJSON("/static/img/imagenes.json",function(data){
