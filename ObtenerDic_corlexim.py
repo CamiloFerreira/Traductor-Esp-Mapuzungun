@@ -1,26 +1,27 @@
-import requests as rq
 from bs4 import BeautifulSoup 
-import json
 from tqdm import tqdm
-import sys
+import json , sys , pandas
+import requests as rq
 
-
-url = "http://corlexim.cl/aug1916mapcas&comp"
-
-user     = sys.argv[1]
-password = sys.argv[2]
-
-#Datos para iniciar sesion
-form_data={
-	'name':user,
-	'pass': password,
-	'form_build_id': 'form-OTXF0WYiwhYAxXD6YyyUWVcaLiKNJ1jFQqIHb0isdDI',
-	'form_id': 'user_login',
-	'op': 'Iniciar sesión'
-}
 
 
 def ObtenerDic(url,name_json):
+
+	user     = sys.argv[1]
+	password = sys.argv[2]
+
+	#Datos para iniciar sesion
+	form_data={
+		'name':user,
+		'pass': password,
+		'form_build_id': 'form-OTXF0WYiwhYAxXD6YyyUWVcaLiKNJ1jFQqIHb0isdDI',
+		'form_id': 'user_login',
+		'op': 'Iniciar sesión'
+	}
+
+
+
+
 	response = rq.post(url,form_data)
 	soup=BeautifulSoup(response.content,'html5lib')
 	#Busca la tabla , por la clase 
@@ -45,6 +46,7 @@ def ObtenerDic(url,name_json):
 			significado = aTr[i].find('td',{'class':'views-field-description'}).find("p").getText()
 
 			dic.append({'palabra':palabra,'significado':significado})
+
 	#Guarda el diccionario
 	with open('json/'+name_json+'.json','w') as file:
 		json.dump(dic,file,indent=4)
@@ -53,27 +55,61 @@ def ObtenerDic(url,name_json):
 
 #Guardar todos los diccionarios de corlexim
 
+def Descargar():
+	url = "http://corlexim.cl/aug1916mapcas&comp"
+	name_json = "dic_Augusta1916"
+	ObtenerDic(url,name_json)
 
-url = "http://corlexim.cl/aug1916mapcas&comp"
+	url = "http://corlexim.cl/es/aug2016mapcas"
+	name_json = "dic_Augusta2016"
+	ObtenerDic(url,name_json)
+
+
+	url = "http://corlexim.cl/vald1606mapcas&comp"
+	name_json = "dic_Valdivia"
+	ObtenerDic(url,name_json)
+
+
+	url = "http://corlexim.cl/febr1882mapcas&comp"
+	name_json = "dic_febres1765"
+	ObtenerDic(url,name_json)
+
+
+	url = "http://corlexim.cl/febr1846mapcas&comp"
+	name_json = "dic_febres1846"
+	ObtenerDic(url,name_json)
+
+
+def JsonToExcel(name_json):
+	with open('json/'+name_json+'.json') as file:
+		datos = json.load(file)
+
+	df = pandas.DataFrame(data=datos)
+	df.to_excel('json/'+name_json+'.xlsx')
+
+
+
 name_json = "dic_Augusta1916"
-ObtenerDic(url,name_json)
+JsonToExcel(name_json)
 
 
-url = "http://corlexim.cl/es/aug2016mapcas"
+name_json = "dic_Augusta1916"
+JsonToExcel(name_json)
+
+
 name_json = "dic_Augusta2016"
-ObtenerDic(url,name_json)
+JsonToExcel(name_json)
 
 
-url = "http://corlexim.cl/vald1606mapcas&comp"
+
 name_json = "dic_Valdivia"
-ObtenerDic(url,name_json)
+JsonToExcel(name_json)
 
 
-url = "http://corlexim.cl/febr1882mapcas&comp"
+
 name_json = "dic_febres1765"
-ObtenerDic(url,name_json)
+JsonToExcel(name_json)
 
 
-url = "http://corlexim.cl/febr1846mapcas&comp"
 name_json = "dic_febres1846"
-ObtenerDic(url,name_json)
+JsonToExcel(name_json)
