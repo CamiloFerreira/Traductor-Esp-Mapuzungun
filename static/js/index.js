@@ -28,7 +28,7 @@ $(document).ready(function(){
 		var height = screen.height;
 		var img_h = height / 1.8;
 		$("body").css({'height':height});
-		$("img").css({'height':img_h});
+		$("#foto").css({'height':img_h});
 		//Detecta el tamaño de la pantalla
 
 
@@ -43,7 +43,7 @@ $(document).ready(function(){
 		$.getJSON("/static/img/imagenes.json",function(data){
 			var i = Math.floor(Math.random() * data.length);
 			var dir = "/static/img/"+data[i].imagen;
-			$("img").attr("src",dir);
+			$("#foto").attr("src",dir);
 			$("#descripcion").text(data[i].descripcion);
 		});
 

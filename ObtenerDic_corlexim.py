@@ -18,15 +18,17 @@ def ObtenerDic(url,name_json):
 		'form_id': 'user_login',
 		'op': 'Iniciar sesión'
 	}
-
-
-
-
 	response = rq.post(url,form_data)
 	soup=BeautifulSoup(response.content,'html5lib')
 	#Busca la tabla , por la clase 
 	#Siendo la tabla que contiene los significados y traducciones
-	table = soup.find('table',{'class':['views-table','sticky-enabled','tableheader-processed','sticky-table']})
+
+	if( soup.find('table',{'class':['views-table','tableheader-processed','sticky-table']}) == None):
+		pint(soup.find('table'))
+		table = soup.find('table',{'class':['views-table','cols-3']})
+	else:
+		table = soup.find('table',{'class':['views-table','tableheader-processed','sticky-table']})
+
 	#Se saca el contenido de la tabla 
 	tbody = table.find('tbody')
 	#Se sacan todas las etiquetas tr de la tabla
@@ -55,8 +57,15 @@ def ObtenerDic(url,name_json):
 
 #Guardar todos los diccionarios de corlexim
 
+
 def Descargar():
-	url = "http://corlexim.cl/aug1916mapcas&comp"
+
+	url="http://corlexim.cl/aug2016casmap&comp"
+	name_json="dic_Augusta2016_espmap"
+	ObtenerDic(url,name_json)
+
+
+'''	url = "http://corlexim.cl/aug1916mapcas&comp"
 	name_json = "dic_Augusta1916"
 	ObtenerDic(url,name_json)
 
@@ -79,7 +88,7 @@ def Descargar():
 	name_json = "dic_febres1846"
 	ObtenerDic(url,name_json)
 
-
+'''
 def JsonToExcel(name_json):
 	with open('json/'+name_json+'.json') as file:
 		datos = json.load(file)
@@ -88,7 +97,9 @@ def JsonToExcel(name_json):
 	df.to_excel('json/'+name_json+'.xlsx')
 
 
+Descargar()
 
+"""
 name_json = "dic_Augusta1916"
 JsonToExcel(name_json)
 
@@ -113,3 +124,4 @@ JsonToExcel(name_json)
 
 name_json = "dic_febres1846"
 JsonToExcel(name_json)
+"""

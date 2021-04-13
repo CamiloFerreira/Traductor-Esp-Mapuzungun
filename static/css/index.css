@@ -1,8 +1,8 @@
 	/* Margenes de secciones */
 	body{
 		width: 100%;
-		background: rgb(145,109,255);
-		background: linear-gradient(109deg, rgba(145,109,255,1) 0%, rgba(151,203,255,1) 94%);
+		background: rgb(146,110,255);
+		background: linear-gradient(132deg, rgba(146,110,255,1) 54%, rgba(151,206,255,1) 100%);
 	}
 
 	/* Delimitar secciones*/
@@ -16,7 +16,7 @@
 	}
 	footer{
 		height: 55%;
-		background-color: rgb(40,43,51);
+		background-color:rgba(23,26,33,1);
 	}
 
 
@@ -87,7 +87,7 @@
 		padding-top: 1%;
 		padding-bottom: 1%;
 		border-radius: 10px;
-		background-color: rgb(40,42,51);
+		background-color: rgba(40,43,51,1);
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 	}
@@ -142,7 +142,7 @@
  	}
  	#map{
  		border : 1px solid rgb(40,42,51);;
- 		background-color: rgb(40,42,51);
+ 		background-color: rgba(40,43,51,1);
  	}
 
 
