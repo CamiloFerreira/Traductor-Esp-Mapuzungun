@@ -7,8 +7,8 @@ import requests as rq
 
 def ObtenerDic(url,name_json):
 
-	user     = sys.argv[1]
-	password = sys.argv[2]
+	user     = "lferreira2017@alu.uct.cl"# sys.argv[1]
+	password = "camilo500"#sys.argv[2]
 
 	#Datos para iniciar sesion
 	form_data={
@@ -59,9 +59,8 @@ def ObtenerDic(url,name_json):
 
 
 def Descargar():
-
-	url="http://corlexim.cl/aug2016casmap&comp"
-	name_json="dic_Augusta2016_espmap"
+	url = "http://corlexim.cl/febr1846casmap&comp"
+	name_json="dic_febres1846_espmap"
 	ObtenerDic(url,name_json)
 
 
@@ -97,7 +96,8 @@ def JsonToExcel(name_json):
 	df.to_excel('json/'+name_json+'.xlsx')
 
 
-Descargar()
+
+
 
 """
 name_json = "dic_Augusta1916"
