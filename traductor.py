@@ -7,7 +7,8 @@ import json
 
 nlp = es_core.load()
 
-with open('json/dic_final.json') as file:
+#with open('json/dic_final.json') as file:
+with open('json/dic_febres1846_espmap_final.json') as file:
 	#Carga el archivo json
 	datos = json.load(file)
 

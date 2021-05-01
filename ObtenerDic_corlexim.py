@@ -42,8 +42,6 @@ def ObtenerDic(url,name_json):
 		else:
 			palabra = aTr[i].find('td',{'class':'entrymap'}).find('strong').getText()
 
-
-
 		if(aTr[i].find('td',{'class':'views-field-description'}).find("p") != None):
 			significado = aTr[i].find('td',{'class':'views-field-description'}).find("p").getText()
 
