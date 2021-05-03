@@ -63,92 +63,162 @@ pal = [] #Diccionario para establecer palabra + traduccion
 for i in aLetras : 
 	pal.append({'letra':i,'palabras':[]})
 
-
-with open("json/"+dic_name[4]+".json") as file :
-	datos = json.load(file)
-	for i in range(len(datos)):
-		#Palabra -> Palabra en mapudungun o palabras en mapudungun
-		#Significado ->traduccion en español  
-		significado     = datos[i]['palabra'].strip()
-		palabra = datos[i]['significado']
-		#Primero pregunta si el signficado presenta comas
-		#Si encuentra coma separa las palabras 
-		if(significado.find(",") > 0 ):
-			aComa = significado.split(",")
-			#For para quitar espacios y caracteres que no sirvan 
-			#Para ser guardados en un diccionario
-			for c in range(len(aComa)):
-				aComa[c] = aComa[c].strip() # Quita el caracter vacio del comienzo
-				#Si encuentra una o pero debe detectar si es para realizar
-				#una separacion de ideas o palabras ( Como lo realizado en el comentario)
-				sep = SepararPorO(aComa[c])
-				if(sep[0] != "" and sep[1] != ""):
-					aComa.pop(c) # Elimina la cadena original
-					aComa.append(sep[0])
-					aComa.append(sep[1])
-			#guarda lo obtenido en aComa en singnificado
-			significado = aComa
-		else:	
-			#print(significado)
-			sep = SepararPorO(significado)
-			#print(significado)
-			if(sep[0] != "" and sep[1] !=""):
-				significado = sep
-			else :
-				significado = [significado]
-
-
-
-
-		#Pregunta si presenta separacion por comas , si es asi 
-		#Realiza el procesado de las palabras para determinar y separar
-		if(palabra.find(",") >= 0 ):
-			
-			aComa = palabra.split(",")
-			#print("or :",aComa)
-
-			fin = False;c = 0 
-			while(fin == False):
-				aComa[c] = aComa[c].strip()
-				if(aComa[c].find(";")>=0):
-						#print(aComa[c])
-					p1 = aComa[c][:aComa[c].find(";")].strip() # Palabra
-					p2 = aComa[c][aComa[c].find(";")+1:].strip() #Significado
-						#print(p1[:1])
-					pal[getIndice(p1[:1])]['palabras'].append({'palabra':p1,'significado':p2})
-					aComa.pop(c)
-					c = 0 
-				else:
-					 
+#Limpia el dic Febres que es de Español - mapudungn
+def DicFebresEspMap():
+	with open("json/"+dic_name[4]+".json") as file :
+		datos = json.load(file)
+		for i in range(len(datos)):
+			#Palabra -> Palabra en mapudungun o palabras en mapudungun
+			#Significado ->traduccion en español  
+			significado     = datos[i]['palabra'].strip()
+			palabra = datos[i]['significado']
+			#Primero pregunta si el signficado presenta comas
+			#Si encuentra coma separa las palabras 
+			if(significado.find(",") > 0 ):
+				aComa = significado.split(",")
+				#For para quitar espacios y caracteres que no sirvan 
+				#Para ser guardados en un diccionario
+				for c in range(len(aComa)):
+					aComa[c] = aComa[c].strip() # Quita el caracter vacio del comienzo
+					#Si encuentra una o pero debe detectar si es para realizar
+					#una separacion de ideas o palabras ( Como lo realizado en el comentario)
 					sep = SepararPorO(aComa[c])
-
 					if(sep[0] != "" and sep[1] != ""):
-						#print(aComa[c])
 						aComa.pop(c) # Elimina la cadena original
 						aComa.append(sep[0])
 						aComa.append(sep[1])
-					#Se quitan los puntos
-					if(aComa[c].find(".") > 0):
-						aComa[c] = aComa[c][:aComa[c].find(".")]
-					#print(aComa[c])
-					c += 1
-					if(c > len(aComa)-1):
-						fin=True 
-
-			palabra = aComa
-
-		else:
-			
-			palabra = [palabra]
-		#Se guardan las palabras con sus significados
+				#guarda lo obtenido en aComa en singnificado
+				significado = aComa
+			else:	
+				#print(significado)
+				sep = SepararPorO(significado)
+				#print(significado)
+				if(sep[0] != "" and sep[1] !=""):
+					significado = sep
+				else :
+					significado = [significado]
 
 
 
-		pal[getIndice(palabra[0][:1])]['palabras'].append({'palabra':palabra,'significado':significado})
 
+			#Pregunta si presenta separacion por comas , si es asi 
+			#Realiza el procesado de las palabras para determinar y separar
+			if(palabra.find(",") >= 0 ):
+				
+				aComa = palabra.split(",")
+				#print("or :",aComa)
+
+				fin = False;c = 0 
+				while(fin == False):
+					aComa[c] = aComa[c].strip()
+					if(aComa[c].find(";")>=0):
+							#print(aComa[c])
+						p1 = aComa[c][:aComa[c].find(";")].strip() # Palabra
+						p2 = aComa[c][aComa[c].find(";")+1:].strip() #Significado
+							#print(p1[:1])
+						pal[getIndice(p1[:1])]['palabras'].append({'palabra':p1,'significado':p2})
+						aComa.pop(c)
+						c = 0 
+					else:
+						 
+						sep = SepararPorO(aComa[c])
+
+						if(sep[0] != "" and sep[1] != ""):
+							#print(aComa[c])
+							aComa.pop(c) # Elimina la cadena original
+							aComa.append(sep[0])
+							aComa.append(sep[1])
+						#Se quitan los puntos
+						if(aComa[c].find(".") > 0):
+							aComa[c] = aComa[c][:aComa[c].find(".")]
+						#print(aComa[c])
+						c += 1
+						if(c > len(aComa)-1):
+							fin=True 
+
+				palabra = aComa
+
+			else:
+				
+				palabra = [palabra]
+			#Se guardan las palabras con sus significados
+			pal[getIndice(palabra[0][:1])]['palabras'].append({'palabra':palabra,'significado':significado})
+
+
+
+	with open('json/dic_febres1846_espmap_final.json','w') as file:
+		json.dump(pal,file,indent=4)
 
 			#print("fin:",aComa)
 			#print("------------")
+
+
+
+
+
+
+
+
+
+#Limpia el dic febres de mapudungun - Español
+def DicValdiviaMapEsp():
+	with open('json/dic_Valdivia.json') as  file:
+		datos =	json.load(file)
+
+
+		for d in datos :
+
+			palabra = d['palabra']
+			significado = d['significado']
+
+			#Se separan las palabras que estan unidas 
+
+			if(palabra.find(",") > 0 ):
+
+
+				sComa = palabra.split(",")
+
+				for i in range(len(sComa)):
+					sComa[i] = sComa[i].strip()
+
+			else:
+				palabra = [palabra]
+				#print(palabra)
+
+
+
+			if(significado.find(",") > 0):
+				sComa = significado.split(",")
+
+				for i in range(len(sComa)):
+					sComa[i] = sComa[i].strip()
+					if(sComa[i].find(".") > 0):
+						sComa[i] = sComa[i][:sComa[i].find(".")]
+
+
+				significado = sComa
+			else:
+				significado = significado[:significado.find(".")]
+
+				sep = SepararPorO(significado)
+				#print(significado)
+				if(sep[0] != "" and sep[1] !=""):
+					significado = sep
+				else :
+					significado = [significado]
+
+
+
+			pal[getIndice(palabra[0][:1])]['palabras'].append({'palabra':palabra,'significado':significado})
+				#print(sComa)
+		#print(datos)
+
+	with open('json/dic_Valdivia_espmap_final.json','w') as file:
+		json.dump(pal,file,indent=4)
+
+
+DicValdiviaMapEsp()
+
 """
 		if(significado.find(",") >= 0 ):
 			significado = significado.split(",")
@@ -207,5 +277,3 @@ with open("json/"+dic_name[4]+".json") as file :
 
 
 """
-with open('json/dic_febres1846_espmap_final.json','w') as file:
-	json.dump(pal,file,indent=4)
