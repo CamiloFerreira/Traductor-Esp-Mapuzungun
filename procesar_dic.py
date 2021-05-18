@@ -29,6 +29,28 @@ dic_name = [
 			"dic_febres1846_espmap",
 			"dic_febres1846"] # Nombres de los archivos 
 
+def normalize(s):
+	"""
+		Funcion que quita los ascentos y otros signos extraños 
+		que contiene las palabras para retornar una vocal limpia y sin 
+		caracteres extras 
+
+		parametro_1 : s
+
+		palabra a normalizar ejemplo "estás"
+	""" 
+	replacements = (
+		("á", "a"),
+		("é", "e"),
+		("í", "i"),
+		("ó", "o"),
+		("ú", "u"),
+		("ü","u")
+	)
+	for a, b in replacements:
+		s = s.replace(a, b).replace(a.upper(), b.upper())
+	return s
+
 def getIndice(letra):
 	ind = 0 
 	for i in range(len(aLetras)):
@@ -168,7 +190,7 @@ def DicValdiviaMapEsp():
 
 		for d in datos :
 
-			palabra = d['palabra']
+			palabra = normalize(d['palabra'])
 			significado = d['significado']
 
 			#Se separan las palabras que estan unidas 
